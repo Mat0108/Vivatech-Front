@@ -1,4 +1,4 @@
-# front
+# VivaTech Front
 
 A new Flutter project.
 
