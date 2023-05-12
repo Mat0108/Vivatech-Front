@@ -16,7 +16,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const ConferenceDetail(),
+      //Ajoutez les pages ici
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const ConferenceDetail(),
+      },
+
     );
   }
 }
