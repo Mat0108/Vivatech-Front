@@ -31,8 +31,12 @@ class ConferenceDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    double width = MediaQuery.of(context).size.width;
+    return Scaffold(
+    body: Container(
+      
+    ),
+    );
   }
 }
 
