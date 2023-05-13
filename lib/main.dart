@@ -34,7 +34,13 @@ class ConferenceDetail extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
     body: Container(
-      
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("images/background.png"),
+          fit: BoxFit.cover,
+        ),
+      ),
+
     ),
     );
   }
