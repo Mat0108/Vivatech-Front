@@ -1,37 +1,8 @@
 import 'package:flutter/material.dart';
-import 'tresor.dart';
+import 'color.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter test Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-      ),
-      home: const TresorPage(title: 'Chasse au trésor', progress: 0.5),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class TresorPage extends StatefulWidget {
+  const TresorPage({super.key, required this.title, required this.progress});
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -43,12 +14,13 @@ class MyHomePage extends StatefulWidget {
   // always marked "final".
 
   final String title;
+  final double progress;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<TresorPage> createState() => _TresorPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _TresorPageState extends State<TresorPage> {
   int _counter = 0;
 
   void _incrementCounter() {
@@ -72,10 +44,9 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
+          // Here we take the value from the MyHomePage object that was created by
+          // the App.build method, and use it to set our appbar title.
+          ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
@@ -96,13 +67,32 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+            Container(
+                margin: const EdgeInsets.all(62),
+                height: 45.0,
+                width: 233.0,
+                child: Container(
+                    decoration: const BoxDecoration(
+                        color: VivatechColor.blue,
+                        borderRadius: BorderRadius.all(Radius.circular(90.0))),
+                    child: Center(
+                        child: Text(widget.title,
+                            style: const TextStyle(
+                                fontSize: 22, color: VivatechColor.white))))),
+            Container(
+                width: 277,
+                height: 14,
+                margin: const EdgeInsets.all(23),
+                child: LinearProgressIndicator(
+                  value: widget.progress,
+                  minHeight: 14,
+                  backgroundColor: VivatechColor.blue,
+                  color: widget.progress < 0.33
+                      ? VivatechColor.purple
+                      : (widget.progress < 0.66
+                          ? VivatechColor.pink
+                          : VivatechColor.red),
+                )),
           ],
         ),
       ),
