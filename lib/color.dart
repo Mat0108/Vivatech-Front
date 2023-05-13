@@ -10,6 +10,7 @@ class VivatechColor {
   VivatechColor._(); // this basically makes it so you can instantiate this class
 
   static const Color white = Colors.white;
+  static const Color black = Colors.black;
   static const Color blue = Color(0xFF5508B0);
   static const Color purple = Color(0xFFA1009B);
   static const Color red = Color(0xFFFF0081);
