@@ -21,7 +21,6 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const ConferenceDetail(),
       },
-
     );
   }
 }
@@ -31,19 +30,30 @@ class ConferenceDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
+    double width = MediaQuery
+        .of(context)
+        .size
+        .width;
     return Scaffold(
-    body: Container(
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage("images/background.png"),
-          fit: BoxFit.cover,
+      // Ajouter une image de fond qui s'applique à tous les enfants
+      backgroundColor: Colors.transparent,
+      extendBodyBehindAppBar: true,
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('images/background.png'),
+            fit: BoxFit.cover,
+          ),
         ),
+        child: Column(
+          children: [
+            Row()
+          ],
+        )
       ),
-
-    ),
     );
   }
-}
 
   
+
+}
