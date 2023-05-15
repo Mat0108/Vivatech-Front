@@ -61,7 +61,10 @@ flutter:
     # To add assets to your application, add an assets section, like this:
     assets:
       - images/background.png
-      - images/RectangleFutur.png
+      - images/futur.png
+      - images/pres1.png
+      - images/pres2.png
+      - images/pres3.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

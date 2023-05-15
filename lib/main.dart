@@ -19,41 +19,111 @@ class MyApp extends StatelessWidget {
       //Ajoutez les pages ici
       initialRoute: '/',
       routes: {
-        '/': (context) => const ConferenceDetail(),
+        '/': (context) => ConferenceDetail(),
       },
     );
   }
 }
 
 class ConferenceDetail extends StatelessWidget {
-  const ConferenceDetail({super.key});
+  ConferenceDetail({super.key});
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery
-        .of(context)
-        .size
-        .width;
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       // Ajouter une image de fond qui s'applique à tous les enfants
       backgroundColor: Colors.transparent,
       extendBodyBehindAppBar: true,
       body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('images/background.png'),
-            fit: BoxFit.cover,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('images/background.png'),
+              fit: BoxFit.cover,
+            ),
           ),
-        ),
-        child: Column(
-          children: [
-            Row()
-          ],
-        )
-      ),
+          child: Column(children: [
+            Row(
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(left: 10, right: 10),
+                  padding: const EdgeInsets.all(3),
+                  decoration:
+                      BoxDecoration(borderRadius: BorderRadius.circular(30)),
+                  child: myProfilePic(30),
+                ),
+                Expanded(
+                    child: Container(
+                  margin: const EdgeInsets.only(left: 10, right: 20),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 13, horizontal: 30),
+                  decoration: BoxDecoration(
+                    color: Colors.grey[300],
+                    borderRadius: const BorderRadius.only(
+                      topRight: Radius.circular(10),
+                      bottomRight: Radius.circular(10),
+                    ),
+                    border: Border.all(color: Colors.green, width: 2),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Mon titre'.toUpperCase(),
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.purple),
+                      ),
+                      SizedBox(width: 10),
+                      CircleAvatar(
+                        backgroundColor: Colors.grey[300],
+                        radius: 10,
+                        child: const Icon(
+                          Icons.check,
+                          size: 12,
+                          color: Colors.green,
+                        ),
+                      ),
+                    ],
+                  ),
+                )),
+              ],
+            ),
+            Container(
+                margin: const EdgeInsets.only(left: 12, right: 12, top: 30),
+                height: 300,
+                decoration: const BoxDecoration(
+                  color: Colors.black,
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(15.0),
+                    bottomRight: Radius.circular(15.0),
+                  ),
+                ),
+                child: Column(
+                  children: [],
+                )),
+          ])),
     );
   }
 
-  
-
+  Container myProfilePic(double radius) {
+    return Container(
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        border: Border.all(
+          color: Colors.lightGreenAccent,
+          // Spécifier la couleur de la bordure ici
+          width: 2,
+        ),
+        color: Colors.white, // Spécifier la couleur de fond ici
+      ),
+      child: CircleAvatar(
+        foregroundColor: null,
+        backgroundColor: Colors.transparent,
+        radius: radius,
+        backgroundImage: const AssetImage("images/futur.png"),
+      ),
+    );
+  }
 }
