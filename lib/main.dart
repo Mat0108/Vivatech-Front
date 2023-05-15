@@ -92,7 +92,6 @@ class ConferenceDetail extends StatelessWidget {
             ),
             Container(
                 margin: const EdgeInsets.only(left: 12, right: 12, top: 30),
-                height: 300,
                 decoration: const BoxDecoration(
                   color: Colors.black,
                   borderRadius: BorderRadius.only(
@@ -105,9 +104,28 @@ class ConferenceDetail extends StatelessWidget {
                     RowPink('Description'),
                     PadDescription(
                         'Description jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjgggg'
-                            'ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh'
-                            'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh'
-                            'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhgggggg'),
+                        'ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh'
+                        'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh'
+                        'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhgggggg'),
+                    RowPink('Présenteurs'),
+                    Container(
+                      margin: EdgeInsets.only(top: 10),
+                      child: Column(
+                        children: [
+                          for (var i = 0; i < friends.length; i += 3)
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                for (var j = i;
+                                    j < i + 3 && j < friends.length;
+                                    j++)
+                                  FriendsImage(friends.keys.toList()[j],
+                                      friends.values.toList()[j], width / 3.5),
+                              ],
+                            ),
+                        ],
+                      ),
+                    ),
                   ],
                 )),
           ])),
@@ -133,7 +151,6 @@ class ConferenceDetail extends StatelessWidget {
       ),
     );
   }
-
 
   Row RowPink(String text) {
     return Row(
@@ -180,6 +197,54 @@ class ConferenceDetail extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  final Map<String, String> friends = {
+    "José": "images/pres1.png",
+    "Maggie": "images/pres2.png",
+    "Douggy": "images/pres3.png",
+    "Dggy": "images/pres3.png",
+    "Dougg": "images/pres3.png",
+    "Do": "images/pres3.png"
+  };
+
+  Container myPic(double radius, String imagePath) {
+    return Container(
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        border: Border.all(
+          // Spécifier la couleur de la bordure ici
+          width: 2,
+        ),
+        color: Colors.white, // Spécifier la couleur de fond ici
+      ),
+      child: CircleAvatar(
+        foregroundColor: null,
+        backgroundColor: Colors.transparent,
+        radius: radius,
+        backgroundImage: AssetImage(imagePath),
+      ),
+    );
+  }
+
+  Column FriendsImage(String name, String imagePath, double width) {
+    return Column(
+      children: [
+        Container(
+          margin: EdgeInsets.all(5),
+          width: width,
+          height: width,
+          child: myPic(50, imagePath),
+        ),
+        Text(
+          name,
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+        Padding(padding: EdgeInsets.only(bottom: 5)),
+      ],
     );
   }
 }
