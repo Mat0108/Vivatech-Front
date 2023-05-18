@@ -1,34 +1,41 @@
+// conference_details_page.dart
 import 'package:flutter/material.dart';
+import 'conference.dart';
 
-import 'conference_details_page.dart';
+class ConferenceDetailsPage extends StatelessWidget {
+  // Instanciation de la conférence avec des valeurs spécifiques
+  Conference conference = Conference(
+    'Ma conférence',
+    'Description de ma conférence kkkkkkkk llllllllll mmmmmmmmmmmm jjjjjjjjjj hhhhhhhhhhh ggggg'
+        'ggggggg dddddd kkkkkkkk llllllllll mmmmmmmmmmmm jjjjjjjjjj hhhhhhhhhhh gggggggggggg dd'
+        'dddd kkkkkkkk llllllllll mmmmmmmmmmmm jjjjjjjjjj hhhhhhhhhhh gggggggggggg dddddd kkkk'
+        'kkkk llllllllll mmmmmmmmmmmm jjjjjjjjjj hhhhhhhhhhh gggggggggggg dddddd kkkkkkkk lllllll'
+        'lll mmmmmmmmmmmm jjjjjjjjjj hhhhhhhhhhh gggggggggggg dddddd kkkkkkkk llllllllll mmmmmm'
+        'mmmmmm jjjjjjjjjj hhhhhhhhhhh ggggg'
+        'ggggggg ddddddkkkkkkkk llllllllll mmmmmmmmmmmm jjjjjjjjjj hhhhhhhhhhh gggggggggggg dddddd',
+    [
+      Presenter('Présentateur 1', 'images/pres1.png'),
+      Presenter('Présentateur 2', 'images/pres1.png'),
+      Presenter('Présentateur 3', 'images/pres1.png'),
+      Presenter('Présentateur 4', 'images/pres1.png'),
+      Presenter('Présentateur 5', 'images/pres1.png'),
+      Presenter('Présentateur 6', 'images/pres1.png'),
+      Presenter('Présentateur 7', 'images/pres1.png'),
+      Presenter('Présentateur 8', 'images/pres1.png'),
+      Presenter('Présentateur 9', 'images/pres1.png'),
+      Presenter('Présentateur 10', 'images/pres1.png'),
+      Presenter('Présentateur 11', 'images/pres1.png'),
+      Presenter('Présentateur 12', 'images/pres1.png'),
+      Presenter('Présentateur 13', 'images/pres1.png'),
+      Presenter('Présentateur 14', 'images/pres1.png'),
+      Presenter('Présentateur 15', 'images/pres1.png'),
+      Presenter('Présentateur 16', 'images/pres1.png'),
+      Presenter('Présentateur 17', 'images/pres1.png'),
+      Presenter('Présentateur 18', 'images/pres1.png'),
+    ],
+  );
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      //Ajoutez les pages ici
-      initialRoute: '/',
-      routes: {
-        '/': (context) => ConferenceDetailsPage(),
-      },
-    );
-  }
-}
-
-class ConferenceDetail extends StatelessWidget {
-  ConferenceDetail({super.key});
+  ConferenceDetailsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +78,7 @@ class ConferenceDetail extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Mon titre'.toUpperCase(),
+                        conference.name.toUpperCase(),
                         style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -92,44 +99,51 @@ class ConferenceDetail extends StatelessWidget {
                 )),
               ],
             ),
-            Container(
-                margin: const EdgeInsets.only(left: 12, right: 12, top: 30),
-                decoration: const BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(15.0),
-                    bottomRight: Radius.circular(15.0),
-                  ),
-                ),
-                child: Column(
-                  children: [
-                    RowPink('Description'),
-                    PadDescription(
-                        'Description jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjgggg'
-                        'ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh'
-                        'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh'
-                        'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhgggggg'),
-                    RowPink('Présenteurs'),
-                    Container(
-                      margin: EdgeInsets.only(top: 10),
+            Expanded(
+              child: SingleChildScrollView(
+                  child: Container(
+                      margin:
+                          const EdgeInsets.only(left: 12, right: 12, top: 30),
+                      decoration: const BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(15.0),
+                          bottomRight: Radius.circular(15.0),
+                        ),
+                      ),
                       child: Column(
                         children: [
-                          for (var i = 0; i < friends.length; i += 3)
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          RowPink('Description'),
+                          PadDescription(conference.description),
+                          RowPink('Présenteurs'),
+                          Container(
+                            margin: EdgeInsets.only(top: 10),
+                            child: Column(
                               children: [
-                                for (var j = i;
-                                    j < i + 3 && j < friends.length;
-                                    j++)
-                                  FriendsImage(friends.keys.toList()[j],
-                                      friends.values.toList()[j], width / 3.5),
+                                for (var i = 0;
+                                    i < conference.presenters.length;
+                                    i += 3)
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      for (var j = i;
+                                          j < i + 3 &&
+                                              j < conference.presenters.length;
+                                          j++)
+                                        FriendsImage(
+                                          conference.presenters[j].name,
+                                          conference.presenters[j].imageURL,
+                                          width / 3.5,
+                                        ),
+                                    ],
+                                  ),
                               ],
                             ),
+                          ),
                         ],
-                      ),
-                    ),
-                  ],
-                )),
+                      ))),
+            )
           ])),
     );
   }
@@ -202,14 +216,6 @@ class ConferenceDetail extends StatelessWidget {
     );
   }
 
-  final Map<String, String> friends = {
-    "José": "images/pres1.png",
-    "Maggie": "images/pres2.png",
-    "Douggy": "images/pres3.png",
-    "Dggy": "images/pres3.png",
-    "Dougg": "images/pres3.png",
-    "Do": "images/pres3.png"
-  };
 
   Container myPic(double radius, String imagePath) {
     return Container(
