@@ -39,7 +39,7 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_native_splash: ^2.0.1+1
   flutter_launcher_icons: ^0.13.1
-
+  flutter_shake_animated: ^0.0.5
 
 # The following section is specific to Flutter packages.
 flutter:
@@ -72,7 +72,7 @@ flutter_native_splash:
 
 
 #custom launch icon
-flutter_icons:
+flutter_launcher_icons:
   android: launcher_icon
   ios: true
   remove_alpha_ios: true
