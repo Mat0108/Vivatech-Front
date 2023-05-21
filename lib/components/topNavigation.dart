@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 class TopNavigationComponent extends StatelessWidget {
   final String currentPage;
   final String? image;
-  final Widget content;
+  final Widget? content;
 
   const TopNavigationComponent(
-      {Key? key, required this.currentPage, this.image, required this.content})
+      {Key? key, required this.currentPage, this.image, this.content})
       : super(key: key);
 
   @override
@@ -56,10 +56,9 @@ class TopNavigationComponent extends StatelessWidget {
     return Column(children: [
       Row(children: [
         Container(
-          alignment: Alignment.topCenter,
-          margin: EdgeInsets.fromLTRB(20, 40, 20, 40),
-          child: Row(
-            children: [
+            alignment: Alignment.topCenter,
+            margin: EdgeInsets.fromLTRB(20, 40, 20, 40),
+            child: Row(children: [
               Container(
                   height: 70,
                   width: 70,
@@ -91,12 +90,10 @@ class TopNavigationComponent extends StatelessWidget {
                         fontFamily: "MuseoSans",
                         fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center),
-              ),
-            ],
-          ),
-        ),
+              )
+            ]))
       ]),
-      content
+      if (content != null) content!
     ]);
   }
 }
