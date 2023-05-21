@@ -64,23 +64,23 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 assets:
-    - assets/page-1/images/image-5.png
-    - assets/page-1/images/image-20.png
-    - assets/page-1/images/image-19.png
-    - assets/page-1/images/frame-11.png
-    - assets/page-1/images/frame-13.png
-    - assets/page-1/images/icon-magnifying-glass.png
-    - assets/page-1/images/icon-arrow-circle-left.png
-    - assets/page-1/images/rectangle-32-bg.png
-    - assets/page-1/images/image-10.png
-    - assets/page-1/images/icon-arrow-circle-right.png
-    - assets/page-1/images/image-8.png
-    - assets/page-1/images/image-11.png
-    - assets/page-1/images/rectangle-31-bg.png
-    - assets/page-1/images/rectangle-33.png
-    - assets/page-1/images/fr-vt23-small-black-1.png
-    - assets/page-1/images/rectangle-34.png
-    - assets/page-1/images/vt23-gradients-rvb-1080x19202x-2-bg.png
+    - assets/accueil/images/image-5.png
+    - assets/accueil/images/image-20.png
+    - assets/accueil/images/image-19.png
+    - assets/accueil/images/frame-11.png
+    - assets/accueil/images/frame-13.png
+    - assets/accueil/images/icon-magnifying-glass.png
+    - assets/accueil/images/icon-arrow-circle-left.png
+    - assets/accueil/images/rectangle-32-bg.png
+    - assets/accueil/images/image-10.png
+    - assets/accueil/images/icon-arrow-circle-right.png
+    - assets/accueil/images/image-8.png
+    - assets/accueil/images/image-11.png
+    - assets/accueil/images/rectangle-31-bg.png
+    - assets/accueil/images/rectangle-33.png
+    - assets/accueil/images/fr-vt23-small-black-1.png
+    - assets/accueil/images/rectangle-34.png
+    - assets/accueil/images/vt23-gradients-rvb-1080x19202x-2-bg.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
