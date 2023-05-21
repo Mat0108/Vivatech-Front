@@ -1,5 +1,6 @@
 // conference_details_page.dart
 import 'package:flutter/material.dart';
+import 'package:front/widgets/padding_description.dart';
 import 'package:front/widgets/rounded_image.dart';
 import 'conference.dart';
 import 'widgets/pink_row.dart';
@@ -120,28 +121,6 @@ class ConferenceDetailsPage extends StatelessWidget {
         ]));
   }
 
-
-
-
-
-
-  Padding PadDescription(String text) {
-    return Padding(
-      padding: const EdgeInsets.all(15),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
-            text,
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 16,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 
 
   Container myPic(double radius, String imagePath) {
