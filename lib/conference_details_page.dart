@@ -20,18 +20,7 @@ class ConferenceDetailsPage extends StatelessWidget {
       Presenter('Présentateur 4', 'images/pres1.png'),
       Presenter('Présentateur 5', 'images/pres1.png'),
       Presenter('Présentateur 6', 'images/pres1.png'),
-      Presenter('Présentateur 7', 'images/pres1.png'),
-      Presenter('Présentateur 8', 'images/pres1.png'),
-      Presenter('Présentateur 9', 'images/pres1.png'),
-      Presenter('Présentateur 10', 'images/pres1.png'),
-      Presenter('Présentateur 11', 'images/pres1.png'),
-      Presenter('Présentateur 12', 'images/pres1.png'),
-      Presenter('Présentateur 13', 'images/pres1.png'),
-      Presenter('Présentateur 14', 'images/pres1.png'),
-      Presenter('Présentateur 15', 'images/pres1.png'),
-      Presenter('Présentateur 16', 'images/pres1.png'),
-      Presenter('Présentateur 17', 'images/pres1.png'),
-      Presenter('Présentateur 18', 'images/pres1.png'),
+
     ],
   );
 
@@ -40,112 +29,102 @@ class ConferenceDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    return Scaffold(
-      // Ajouter une image de fond qui s'applique à tous les enfants
-      backgroundColor: Colors.transparent,
-      extendBodyBehindAppBar: true,
-      body: Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('images/background.png'),
-              fit: BoxFit.cover,
-            ),
-          ),
-          child: Column(children: [
-            Row(
-              children: [
-                Container(
-                  margin: const EdgeInsets.only(left: 10, right: 10),
-                  padding: const EdgeInsets.all(3),
-                  decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(30)),
-                  child: myProfilePic(30),
-                ),
-                Expanded(
-                    child: Container(
-                  margin: const EdgeInsets.only(left: 10, right: 20),
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 13, horizontal: 30),
-                  decoration: BoxDecoration(
-                    color: Colors.grey[300],
-                    borderRadius: const BorderRadius.only(
-                      topRight: Radius.circular(10),
-                      bottomRight: Radius.circular(10),
-                    ),
-                    border: Border.all(color: Colors.green, width: 2),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        conference.name.toUpperCase(),
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.purple),
-                      ),
-                      SizedBox(width: 10),
-                      CircleAvatar(
-                        backgroundColor: Colors.grey[300],
-                        radius: 10,
-                        child: const Icon(
-                          Icons.check,
-                          size: 12,
-                          color: Colors.green,
-                        ),
-                      ),
-                    ],
-                  ),
-                )),
-              ],
-            ),
-            Expanded(
-              child: SingleChildScrollView(
+    return Container(
+
+        child: Column(children: [
+          Row(
+            children: [
+              Container(
+                margin: const EdgeInsets.only(left: 10, right: 10),
+                padding: const EdgeInsets.all(3),
+                decoration:
+                BoxDecoration(borderRadius: BorderRadius.circular(30)),
+                child: myProfilePic(30),
+              ),
+              Expanded(
                   child: Container(
-                      margin:
-                          const EdgeInsets.only(left: 12, right: 12, top: 30),
-                      decoration: const BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(15.0),
-                          bottomRight: Radius.circular(15.0),
-                        ),
+                    margin: const EdgeInsets.only(left: 10, right: 20),
+                    padding:
+                    const EdgeInsets.symmetric(vertical: 13, horizontal: 30),
+                    decoration: BoxDecoration(
+                      color: Colors.grey[300],
+                      borderRadius: const BorderRadius.only(
+                        topRight: Radius.circular(10),
+                        bottomRight: Radius.circular(10),
                       ),
-                      child: Column(
-                        children: [
-                          RowPink('Description'),
-                          PadDescription(conference.description),
-                          RowPink('Présenteurs'),
-                          Container(
-                            margin: EdgeInsets.only(top: 10),
-                            child: Column(
-                              children: [
-                                for (var i = 0;
-                                    i < conference.presenters.length;
-                                    i += 3)
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      for (var j = i;
-                                          j < i + 3 &&
-                                              j < conference.presenters.length;
-                                          j++)
-                                        FriendsImage(
-                                          conference.presenters[j].name,
-                                          conference.presenters[j].imageURL,
-                                          width / 3.5,
-                                        ),
-                                    ],
-                                  ),
-                              ],
-                            ),
+                      border: Border.all(color: Colors.green, width: 2),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          conference.name.toUpperCase(),
+                          style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.purple),
+                        ),
+                        SizedBox(width: 10),
+                        CircleAvatar(
+                          backgroundColor: Colors.grey[300],
+                          radius: 10,
+                          child: const Icon(
+                            Icons.check,
+                            size: 12,
+                            color: Colors.green,
                           ),
-                        ],
-                      ))),
-            )
-          ])),
-    );
+                        ),
+                      ],
+                    ),
+                  )),
+            ],
+          ),
+          Expanded(
+            child: SingleChildScrollView(
+                child: Container(
+                    margin:
+                    const EdgeInsets.only(left: 12, right: 12, top: 30),
+                    decoration: const BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(15.0),
+                        bottomRight: Radius.circular(15.0),
+                      ),
+                    ),
+                    child: Column(
+                      children: [
+                        RowPink('Description'),
+                        PadDescription(conference.description),
+                        RowPink('Présenteurs'),
+                        Container(
+                          margin: EdgeInsets.only(top: 10),
+                          child: Column(
+                            children: [
+                              for (var i = 0;
+                              i < conference.presenters.length;
+                              i += 3)
+                                Row(
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    for (var j = i;
+                                    j < i + 3 &&
+                                        j < conference.presenters.length;
+                                    j++)
+                                      FriendsImage(
+                                        conference.presenters[j].name,
+                                        conference.presenters[j].imageURL,
+                                        width / 3.5,
+                                      ),
+                                  ],
+                                ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ))),
+          )
+        ]));
   }
 
   Container myProfilePic(double radius) {

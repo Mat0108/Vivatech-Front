@@ -9,7 +9,7 @@ class StandDetailsPage extends StatelessWidget {
           'oooooohhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh'
           'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh'
           'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhoooo"');
- 
+
   StandDetailsPage({super.key});
 
   @override
@@ -87,6 +87,7 @@ class StandDetailsPage extends StatelessWidget {
                       ))),
             )
           ])),
+
     );
   }
 
