@@ -1,35 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:front/stand_details_page.dart';
+import 'stand.dart';
 
-import 'conference_details_page.dart';
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      //Ajoutez les pages ici
-      initialRoute: '/',
-      routes: {
-        '/': (context) => StandDetailsPage(),
-      },
-    );
-  }
-}
-
-class ConferenceDetail extends StatelessWidget {
-  ConferenceDetail({super.key});
+class StandDetailsPage extends StatelessWidget {
+  // Instanciation de la conférence avec des valeurs spécifiques
+  Stand stand = Stand(
+      lieu: "lieu hiiiiiiiiihhhhhhhhhhhhhhhhhhhhhiiiiii",
+      description: '"heloooooooooooù'
+          'oooooohhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh'
+          'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh'
+          'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhoooo"');
+ 
+  StandDetailsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +34,7 @@ class ConferenceDetail extends StatelessWidget {
                   padding: const EdgeInsets.all(3),
                   decoration:
                       BoxDecoration(borderRadius: BorderRadius.circular(30)),
-                  child: myProfilePic(30),
+                  child: myProfilePic(30, Color(0xFF00FF00)),
                 ),
                 Expanded(
                     child: Container(
@@ -66,81 +47,55 @@ class ConferenceDetail extends StatelessWidget {
                       topRight: Radius.circular(10),
                       bottomRight: Radius.circular(10),
                     ),
-                    border: Border.all(color: Colors.green, width: 2),
+                    border: Border.all(color: Color(0xFF00FF00), width: 2),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Mon titre'.toUpperCase(),
+                        "stands".toUpperCase(),
                         style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                             color: Colors.purple),
                       ),
                       SizedBox(width: 10),
-                      CircleAvatar(
-                        backgroundColor: Colors.grey[300],
-                        radius: 10,
-                        child: const Icon(
-                          Icons.check,
-                          size: 12,
-                          color: Colors.green,
-                        ),
-                      ),
                     ],
                   ),
                 )),
               ],
             ),
-            Container(
-                margin: const EdgeInsets.only(left: 12, right: 12, top: 30),
-                decoration: const BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(15.0),
-                    bottomRight: Radius.circular(15.0),
-                  ),
-                ),
-                child: Column(
-                  children: [
-                    RowPink('Description'),
-                    PadDescription(
-                        'Description jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjgggg'
-                        'ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh'
-                        'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh'
-                        'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhgggggg'),
-                    RowPink('Présenteurs'),
-                    Container(
-                      margin: EdgeInsets.only(top: 10),
+            Expanded(
+              child: SingleChildScrollView(
+                  child: Container(
+                      margin:
+                          const EdgeInsets.only(left: 12, right: 12, top: 30),
+                      decoration: const BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(15.0),
+                          bottomRight: Radius.circular(15.0),
+                        ),
+                      ),
                       child: Column(
                         children: [
-                          for (var i = 0; i < friends.length; i += 3)
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                for (var j = i;
-                                    j < i + 3 && j < friends.length;
-                                    j++)
-                                  FriendsImage(friends.keys.toList()[j],
-                                      friends.values.toList()[j], width / 3.5),
-                              ],
-                            ),
+                          RowPink('Description'),
+                          PadDescription(stand.description),
+                          RowPink('Présenteurs'),
+                          PadDescription(stand.lieu)
                         ],
-                      ),
-                    ),
-                  ],
-                )),
+                      ))),
+            )
           ])),
     );
   }
 
-  Container myProfilePic(double radius) {
+  Container myProfilePic(double radius, Color color) {
     return Container(
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         border: Border.all(
-          color: Colors.lightGreenAccent,
+          color: color,
           // Spécifier la couleur de la bordure ici
           width: 2,
         ),
@@ -202,15 +157,6 @@ class ConferenceDetail extends StatelessWidget {
       ),
     );
   }
-
-  final Map<String, String> friends = {
-    "José": "images/pres1.png",
-    "Maggie": "images/pres2.png",
-    "Douggy": "images/pres3.png",
-    "Dggy": "images/pres3.png",
-    "Dougg": "images/pres3.png",
-    "Do": "images/pres3.png"
-  };
 
   Container myPic(double radius, String imagePath) {
     return Container(
