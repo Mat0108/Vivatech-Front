@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+// ignore: unused_import
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
+// ignore: unused_import
 import 'package:google_fonts/google_fonts.dart';
-import 'package:myapp/utils.dart';
-import 'package:myapp/page-1/accueil.dart';
+import 'package:front/utils.dart';
+import 'package:front/page/accueil.dart';
 
 
 void main() {
