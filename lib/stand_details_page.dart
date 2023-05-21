@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:front/widgets/rounded_image.dart';
 import 'stand.dart';
 
 class StandDetailsPage extends StatelessWidget {
@@ -20,12 +21,6 @@ class StandDetailsPage extends StatelessWidget {
       backgroundColor: Colors.transparent,
       extendBodyBehindAppBar: true,
       body: Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('images/background.png'),
-              fit: BoxFit.cover,
-            ),
-          ),
           child: Column(children: [
             Row(
               children: [
@@ -34,7 +29,7 @@ class StandDetailsPage extends StatelessWidget {
                   padding: const EdgeInsets.all(3),
                   decoration:
                       BoxDecoration(borderRadius: BorderRadius.circular(30)),
-                  child: myProfilePic(30, Color(0xFF00FF00)),
+                  child: RoundedImage(30, Color(0xFFFFFF00),AssetImage("images/qr.png")),
                 ),
                 Expanded(
                     child: Container(
@@ -47,7 +42,7 @@ class StandDetailsPage extends StatelessWidget {
                       topRight: Radius.circular(10),
                       bottomRight: Radius.circular(10),
                     ),
-                    border: Border.all(color: Color(0xFF00FF00), width: 2),
+                    border: Border.all(color: Color(0xFFFFFF00), width: 2),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -91,25 +86,6 @@ class StandDetailsPage extends StatelessWidget {
     );
   }
 
-  Container myProfilePic(double radius, Color color) {
-    return Container(
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        border: Border.all(
-          color: color,
-          // Spécifier la couleur de la bordure ici
-          width: 2,
-        ),
-        color: Colors.white, // Spécifier la couleur de fond ici
-      ),
-      child: CircleAvatar(
-        foregroundColor: null,
-        backgroundColor: Colors.transparent,
-        radius: radius,
-        backgroundImage: const AssetImage("images/futur.png"),
-      ),
-    );
-  }
 
   Row RowPink(String text) {
     return Row(

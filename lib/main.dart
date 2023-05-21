@@ -55,7 +55,11 @@ class _MyAppState extends State<MyApp> {
             selectedItemColor: Colors.yellow, // Couleur de l'icône sélectionnée
             backgroundColor: Color(0xFF5508A0),
             elevation: 15,
+            iconSize: 30,
+            selectedFontSize: 0, // Masquer le label
+            unselectedFontSize: 0, // Masquer le label
             items: [
+
               BottomNavigationBarItem(
                 icon: Icon(
                   Icons.home,

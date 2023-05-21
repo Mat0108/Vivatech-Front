@@ -1,5 +1,6 @@
 // conference_details_page.dart
 import 'package:flutter/material.dart';
+import 'package:front/widgets/rounded_image.dart';
 import 'conference.dart';
 
 class ConferenceDetailsPage extends StatelessWidget {
@@ -39,7 +40,7 @@ class ConferenceDetailsPage extends StatelessWidget {
                 padding: const EdgeInsets.all(3),
                 decoration:
                 BoxDecoration(borderRadius: BorderRadius.circular(30)),
-                child: myProfilePic(30),
+                child: RoundedImage(30, Color(0xFF00FF00),AssetImage("images/futur.png")),
               ),
               Expanded(
                   child: Container(
@@ -65,15 +66,6 @@ class ConferenceDetailsPage extends StatelessWidget {
                               color: Colors.purple),
                         ),
                         SizedBox(width: 10),
-                        CircleAvatar(
-                          backgroundColor: Colors.grey[300],
-                          radius: 10,
-                          child: const Icon(
-                            Icons.check,
-                            size: 12,
-                            color: Colors.green,
-                          ),
-                        ),
                       ],
                     ),
                   )),
@@ -127,25 +119,8 @@ class ConferenceDetailsPage extends StatelessWidget {
         ]));
   }
 
-  Container myProfilePic(double radius) {
-    return Container(
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        border: Border.all(
-          color: Colors.lightGreenAccent,
-          // Spécifier la couleur de la bordure ici
-          width: 2,
-        ),
-        color: Colors.white, // Spécifier la couleur de fond ici
-      ),
-      child: CircleAvatar(
-        foregroundColor: null,
-        backgroundColor: Colors.transparent,
-        radius: radius,
-        backgroundImage: const AssetImage("images/futur.png"),
-      ),
-    );
-  }
+
+
 
   Row RowPink(String text) {
     return Row(
