@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:front/widgets/rounded_image.dart';
 import 'conference.dart';
+import 'widgets/pink_row.dart';
 
 class ConferenceDetailsPage extends StatelessWidget {
   // Instanciation de la conférence avec des valeurs spécifiques
@@ -122,35 +123,7 @@ class ConferenceDetailsPage extends StatelessWidget {
 
 
 
-  Row RowPink(String text) {
-    return Row(
-      children: [
-        Container(
-          margin: EdgeInsets.only(left: 10, top: 10),
-          width: 100,
-          height: 30,
-          decoration: BoxDecoration(
-            color: Colors.pink,
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(10.0),
-              bottomLeft: Radius.circular(10.0),
-              topRight: Radius.circular(10.0),
-              bottomRight: Radius.circular(10.0),
-            ),
-          ),
-          child: Center(
-            child: Text(
-              text,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-              ),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
+
 
   Padding PadDescription(String text) {
     return Padding(
