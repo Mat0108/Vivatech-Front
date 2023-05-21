@@ -47,9 +47,14 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-     - assets/background/bg-gradient-vivatech-2.png
-     - assets/pass/pass.png
-     - assets/pass/qrcode.png
+     - assets/background/
+     - assets/icons/
+     - assets/pages/home/
+     - assets/pages/games/
+     - assets/pages/games/characters/
+     - assets/pages/conferences/
+     - assets/pages/stands/
+     - assets/pages/pass/
   fonts:
      - family: MuseoSans
        fonts:
