@@ -1,6 +1,7 @@
 // conference_details_page.dart
 import 'package:flutter/material.dart';
 import 'package:front/widgets/padding_description.dart';
+import 'package:front/widgets/presenters_image.dart';
 import 'package:front/widgets/rounded_image.dart';
 import 'conference.dart';
 import 'widgets/pink_row.dart';
@@ -31,7 +32,10 @@ class ConferenceDetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
+    double width = MediaQuery
+        .of(context)
+        .size
+        .width;
     return Container(
 
         child: Column(children: [
@@ -42,7 +46,8 @@ class ConferenceDetailsPage extends StatelessWidget {
                 padding: const EdgeInsets.all(3),
                 decoration:
                 BoxDecoration(borderRadius: BorderRadius.circular(30)),
-                child: RoundedImage(30, Color(0xFF00FF00),AssetImage("images/futur.png")),
+                child: RoundedImage(
+                    30, Color(0xFF00FF00), AssetImage("images/futur.png")),
               ),
               Expanded(
                   child: Container(
@@ -105,7 +110,7 @@ class ConferenceDetailsPage extends StatelessWidget {
                                     j < i + 3 &&
                                         j < conference.presenters.length;
                                     j++)
-                                      FriendsImage(
+                                      PresentersImage(
                                         conference.presenters[j].name,
                                         conference.presenters[j].imageURL,
                                         width / 3.5,
@@ -122,43 +127,4 @@ class ConferenceDetailsPage extends StatelessWidget {
   }
 
 
-
-  Container myPic(double radius, String imagePath) {
-    return Container(
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        border: Border.all(
-          // Spécifier la couleur de la bordure ici
-          width: 2,
-        ),
-        color: Colors.white, // Spécifier la couleur de fond ici
-      ),
-      child: CircleAvatar(
-        foregroundColor: null,
-        backgroundColor: Colors.transparent,
-        radius: radius,
-        backgroundImage: AssetImage(imagePath),
-      ),
-    );
-  }
-
-  Column FriendsImage(String name, String imagePath, double width) {
-    return Column(
-      children: [
-        Container(
-          margin: EdgeInsets.all(5),
-          width: width,
-          height: width,
-          child: myPic(50, imagePath),
-        ),
-        Text(
-          name,
-          style: TextStyle(
-            color: Colors.white,
-          ),
-        ),
-        Padding(padding: EdgeInsets.only(bottom: 5)),
-      ],
-    );
-  }
 }
