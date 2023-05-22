@@ -3,6 +3,7 @@ import 'package:qr_flutter/qr_flutter.dart';
 import 'package:vivatech/screens/games.dart';
 import 'package:vivatech/screens/pass.dart';
 import 'package:vivatech/screens/scanQrCode.dart';
+import 'package:vivatech/screens/game_logic.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,8 +22,9 @@ class MyApp extends StatelessWidget {
         initialRoute: '/',
         routes: {
           '/pass': (context) => Pass(),
-          '/scan-qrcode': (context) => ScanQrCode(),
-          '/games': (context) => Games()
+          '/scanner-qrcode': (context) => ScanQrCode(),
+          '/jeux': (context) => Games(),
+          '/jeu-logique': (context) => GameLogic()
         });
   }
 }
