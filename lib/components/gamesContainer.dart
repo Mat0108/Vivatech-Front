@@ -4,9 +4,13 @@ import 'package:flutter/material.dart';
 class GamesContainerComponent extends StatelessWidget {
   final String text;
   final String image;
+  final String gameName;
 
   const GamesContainerComponent(
-      {Key? key, required this.image, required this.text})
+      {Key? key,
+      required this.image,
+      required this.text,
+      required this.gameName})
       : super(key: key);
 
   @override
@@ -45,7 +49,7 @@ class GamesContainerComponent extends StatelessWidget {
                                   color: Colors.white,
                                   fontWeight: FontWeight.w700)),
                         )),
-                    onTap: () => {},
+                    onTap: () => {Navigator.pushNamed(context, gameName)},
                   )
                 ])));
   }
