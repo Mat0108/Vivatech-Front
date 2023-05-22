@@ -9,7 +9,6 @@ class QuizScreen extends StatefulWidget {
 }
 
 class _QuizScreenState extends State<QuizScreen> {
-
   List<Question> questionList = getQuestion();
   int currentQuestionIndex = 0;
   int score = 0;
@@ -27,6 +26,7 @@ class _QuizScreenState extends State<QuizScreen> {
               style: TextStyle(color: Colors.black, fontSize: 30),
             ),
             _questionWidget(),
+            _answerList()
           ],
         ),
       ),
@@ -36,9 +36,10 @@ class _QuizScreenState extends State<QuizScreen> {
   _questionWidget() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment:MainAxisAlignment.center ,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text("Question ${currentQuestionIndex + 1}/${questionList.length.toString()}",
+        Text(
+            "Question ${currentQuestionIndex + 1}/${questionList.length.toString()}",
             style: TextStyle(
                 color: Colors.black,
                 fontSize: 20,
@@ -64,5 +65,14 @@ class _QuizScreenState extends State<QuizScreen> {
     );
   }
 
-  
+  _answerList() {
+    return Column(
+      children: questionList[currentQuestionIndex]
+          .answersList
+          .map((e) => Text(e.answerText))
+          .toList(),
+    );
+  }
+
+
 }
