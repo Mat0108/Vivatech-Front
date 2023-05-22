@@ -88,6 +88,8 @@ class _TresorPageState extends State<TresorPage> {
     // than having to individually change instances of widgets.
     return Scaffold(
         body: Container(
+      height: 800,
+      width: 480,
       decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage("assets/images/fond.png"),
@@ -116,8 +118,8 @@ class _TresorPageState extends State<TresorPage> {
           children: <Widget>[
             Container(
                 height: 160,
-                width: 428,
-                margin: const EdgeInsets.fromLTRB(30, 50, 0, 0),
+                width: 430,
+                margin: const EdgeInsets.fromLTRB(30, 30, 0, 0),
                 child: Row(
                   children: [
                     Container(
@@ -214,19 +216,24 @@ class _TresorPageState extends State<TresorPage> {
               ),
             ),
             Container(
+                height: 400,
                 width: 400,
-                height: 100,
-                alignment: Alignment.topLeft,
-                margin: EdgeInsets.fromLTRB(20, 10, 0, 0),
-                child: Container(
-                    width: 160,
-                    height: 100,
-                    decoration: const BoxDecoration(
-                        image: DecorationImage(
-                            image:
-                                AssetImage("assets/images/tresor/captain.png"),
-                            fit: BoxFit.scaleDown)))),
-            if (showwidget) widget.widget!
+                child: Stack(children: [
+                  Container(
+                      width: 400,
+                      height: 100,
+                      alignment: Alignment.topLeft,
+                      margin: EdgeInsets.fromLTRB(20, 10, 0, 0),
+                      child: Container(
+                          width: 160,
+                          height: 100,
+                          decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage(
+                                      "assets/images/tresor/captain.png"),
+                                  fit: BoxFit.scaleDown)))),
+                  if (showwidget) widget.widget!
+                ]))
           ],
         ),
       ),

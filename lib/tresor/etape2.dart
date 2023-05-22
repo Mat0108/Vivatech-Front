@@ -4,7 +4,19 @@ import '../color.dart';
 import 'dart:developer';
 import 'package:flutter/foundation.dart';
 
-const List<double> list = <double>[1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+const List<String> list = <String>[
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "J",
+  "K",
+  "L",
+  "M"
+];
 
 class TresorEtape2 extends StatefulWidget {
   const TresorEtape2({super.key});
@@ -24,22 +36,75 @@ class TresorEtape2 extends StatefulWidget {
 
 class _TresorEtape2 extends State<TresorEtape2> {
   @override
+  bool showmap = false;
   Widget build(BuildContext context) {
     return Container(
-        child: Column(
-      children: <Widget>[
-        Container(
-          width: 390,
-          height: 300,
-          margin: EdgeInsets.fromLTRB(20, 20, 0, 0),
-          decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/images/carte.png"),
-                fit: BoxFit.cover,
-              ),
-              color: VivatechColor.cyan),
-        )
-      ],
-    ));
+        width: 400,
+        height: 400,
+        child: Stack(
+          children: <Widget>[
+            Positioned(
+                width: 160,
+                height: 48,
+                top: 30,
+                left: 180,
+                child: Container(
+                  width: 160,
+                  height: 48,
+                  decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                      color: VivatechColor.blue),
+                  child: TextButton(
+                    onPressed: () {
+                      setState(() {
+                        showmap = true;
+                      });
+                    },
+                    child: const Text("Afficher la carte",
+                        style: TextStyle(
+                            fontSize: 18, color: VivatechColor.white)),
+                  ),
+                )),
+            if (showmap)
+              Positioned(
+                  width: 390,
+                  height: 300,
+                  top: -20,
+                  child: Container(
+                    width: 390,
+                    height: 300,
+                    margin: EdgeInsets.fromLTRB(20, 20, 0, 0),
+                    decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage("assets/images/carte.png"),
+                          fit: BoxFit.cover,
+                        ),
+                        color: VivatechColor.cyan),
+                  )),
+            if (showmap)
+              Positioned(
+                  top: 0,
+                  left: 30,
+                  child: Container(
+                    width: 65,
+                    height: 65,
+                    decoration: BoxDecoration(
+                        color: VivatechColor.white,
+                        border: Border.all(color: VivatechColor.blue, width: 3),
+                        borderRadius: BorderRadius.all(Radius.circular(90))),
+                    child: Ink(
+                      child: IconButton(
+                          iconSize: 40,
+                          icon: const Icon(Icons.close),
+                          color: VivatechColor.blue,
+                          onPressed: () {
+                            setState(() {
+                              showmap = false;
+                            });
+                          }),
+                    ),
+                  ))
+          ],
+        ));
   }
 }
