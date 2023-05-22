@@ -39,7 +39,8 @@ class _QuizScreenState extends State<QuizScreen> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-            "Question ${currentQuestionIndex + 1}/${questionList.length.toString()}",
+            "Question ${currentQuestionIndex + 1}/${questionList.length
+                .toString()}",
             style: TextStyle(
                 color: Colors.black,
                 fontSize: 20,
@@ -69,8 +70,35 @@ class _QuizScreenState extends State<QuizScreen> {
     return Column(
       children: questionList[currentQuestionIndex]
           .answersList
-          .map((e) => Text(e.answerText))
+          .map((e) => _answerButton(e))
           .toList(),
+    );
+  }
+
+  Widget _answerButton(Answer answer) {
+    bool isSelected = answer == selectedAnswer;
+    return Container(
+      width: double.infinity,
+      margin: EdgeInsets.symmetric(vertical: 10),
+      height: 48,
+      child: ElevatedButton(
+        child: Text(answer.answerText),
+        style: ElevatedButton.styleFrom(
+          shape: StadiumBorder(),
+          primary: isSelected?Colors.lightGreenAccent:Colors.purple,
+          onPrimary:isSelected?Colors.black: Colors.white
+
+        ),
+        onPressed:(){
+          if(selectedAnswer == null){
+            if(answer.isCorrect){
+              score++;
+            }
+          }
+          setState(() {
+            selectedAnswer = answer;
+          });
+        },),
     );
   }
 
