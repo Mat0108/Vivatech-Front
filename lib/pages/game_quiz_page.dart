@@ -19,15 +19,10 @@ class _QuizScreenState extends State<QuizScreen> {
     return Scaffold(
       backgroundColor: Colors.yellow,
       body: Container(
+        margin: EdgeInsets.symmetric(horizontal: 10, vertical: 25),
         child: Column(
-          children: [
-            const Text(
-              "hello",
-              style: TextStyle(color: Colors.black, fontSize: 30),
-            ),
-            _questionWidget(),
-            _answerList()
-          ],
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [_questionWidget(), _answerList(), _nextButton()],
         ),
       ),
     );
@@ -38,13 +33,12 @@ class _QuizScreenState extends State<QuizScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(
-            "Question ${currentQuestionIndex + 1}/${questionList.length
-                .toString()}",
-            style: TextStyle(
-                color: Colors.black,
-                fontSize: 20,
-                fontWeight: FontWeight.w600)),
+       Center(child: Text(
+           "Question ${currentQuestionIndex + 1}/${questionList.length.toString()}".toUpperCase(),
+           style: TextStyle(
+               color: Colors.black,
+               fontSize: 20,
+               fontWeight: FontWeight.w900)),) ,
         SizedBox(
           height: 20,
         ),
@@ -78,29 +72,58 @@ class _QuizScreenState extends State<QuizScreen> {
   Widget _answerButton(Answer answer) {
     bool isSelected = answer == selectedAnswer;
     return Container(
-      width: double.infinity,
-      margin: EdgeInsets.symmetric(vertical: 10),
+      width: MediaQuery.of(context).size.width * 0.75,
+      margin: EdgeInsets.symmetric(vertical: 20),
       height: 48,
       child: ElevatedButton(
         child: Text(answer.answerText),
         style: ElevatedButton.styleFrom(
-          shape: StadiumBorder(),
-          primary: isSelected?Colors.lightGreenAccent:Colors.purple,
-          onPrimary:isSelected?Colors.black: Colors.white
-
-        ),
-        onPressed:(){
-          if(selectedAnswer == null){
-            if(answer.isCorrect){
+            shape: StadiumBorder(),
+            primary: isSelected ? Colors.lightGreenAccent : Colors.purple,
+            onPrimary: isSelected ? Colors.black : Colors.white),
+        onPressed: () {
+          if (selectedAnswer == null) {
+            if (answer.isCorrect) {
               score++;
             }
           }
           setState(() {
             selectedAnswer = answer;
           });
-        },),
+        },
+      ),
     );
   }
 
+  _nextButton() {
+    bool isLastQuestion = false;
+    if (currentQuestionIndex == questionList.length - 1) {
+      isLastQuestion = true;
+    }
 
+    return Container(
+      width: MediaQuery.of(context).size.width * 0.5,
+      margin: EdgeInsets.symmetric(vertical: 20),
+      height: 48,
+      child: ElevatedButton(
+        child: Text(
+          isLastQuestion ? "Valider" : "Ensuite",
+          style: TextStyle(fontWeight: FontWeight.w600),
+        ),
+        style: ElevatedButton.styleFrom(
+            shape: StadiumBorder(),
+            primary: Colors.pink,
+            onPrimary: Colors.white),
+        onPressed: () {
+          if (isLastQuestion) {
+          } else {
+            setState(() {
+              selectedAnswer = null;
+              currentQuestionIndex++;
+            });
+          }
+        },
+      ),
+    );
+  }
 }
