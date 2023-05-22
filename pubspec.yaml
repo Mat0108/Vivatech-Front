@@ -61,6 +61,17 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/fond.png
+    - assets/images/fond2.png
+    - assets/images/gradient.png
+    - assets/images/unlock.png
+    - assets/images/tresor/jeu1/bnp.png
+    - assets/images/tresor/jeu1/logo.png
+    - assets/images/tresor/jeu1/poste.png
+    - assets/images/tresor/jeu1/google.png
+    - assets/images/tresor/tresor.png
+    - assets/images/tresor/captain.png
+    - assets/images/tresor/textbox.png
+    - assets/images/carte.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

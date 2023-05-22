@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'tresor.dart';
+import 'tresor/tresor.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter test Demo',
       theme: ThemeData(fontFamily: "MuseoSans"),
-      home: const TresorPage(title: 'Chasse au trésor', progress: 0.8),
+      home: const TresorPage(title: 'Chasse au trésor', type: "1"),
     );
   }
 }
