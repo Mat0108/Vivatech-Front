@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:front/widgets/padding_description.dart';
 import 'package:front/widgets/presenters_image.dart';
 import 'package:front/widgets/rounded_image.dart';
-import 'conference.dart';
-import 'widgets/pink_row.dart';
+import '../models/conference.dart';
+import '../widgets/pink_row.dart';
 
 class ConferenceDetailsPage extends StatelessWidget {
   // Instanciation de la conférence avec des valeurs spécifiques

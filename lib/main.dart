@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'stand_details_page.dart';
-import 'conference_details_page.dart';
+import 'pages/stand_details_page.dart';
+import 'pages/conference_details_page.dart';
 
 
 void main() {
