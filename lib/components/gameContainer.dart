@@ -55,7 +55,7 @@ class _GameContainerComponentState extends State<GameContainerComponent> {
                 Container(
                   alignment: Alignment.topRight,
                   child: Image.asset(
-                    "assets/pages/games/un-message.png",
+                    "assets/pages/games/bubble-chat.png",
                     width: withContent ? 350 : 400,
                     height: withContent ? 250 : 300,
                   ),
