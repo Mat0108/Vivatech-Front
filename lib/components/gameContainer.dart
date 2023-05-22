@@ -5,9 +5,10 @@ import 'package:vivatech/components/textTyperAnimation.dart';
 class GameContainerComponent extends StatefulWidget {
   final List<String> tutorial;
   final String gameName;
+  final Widget? content;
 
   const GameContainerComponent(
-      {Key? key, required this.tutorial, required this.gameName})
+      {Key? key, required this.tutorial, required this.gameName, this.content})
       : super(key: key);
 
   @override
@@ -114,7 +115,8 @@ class _GameContainerComponentState extends State<GameContainerComponent> {
             child: Image.asset(image,
                 width: withContent ? 120 : 180,
                 height: withContent ? 120 : 180),
-          )
+          ),
+          if (widget.content != null) widget.content!
         ]));
   }
 }
