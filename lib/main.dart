@@ -25,11 +25,7 @@ class MyApp extends StatelessWidget {
         fontFamily: "MuseoSans",
         primarySwatch: Colors.blue,
       ),
-      home: const Scaffold(
-        body: SingleChildScrollView(
-          child: Scene(),
-        ),
-      ),
+      home: const Scene(),
     );
   }
 }
