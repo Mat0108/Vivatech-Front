@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 
 import 'pages/stand_details_page.dart';
 import 'pages/conference_details_page.dart';
@@ -108,3 +108,4 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
+*/
