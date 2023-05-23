@@ -121,8 +121,10 @@ class _QuizScreenState extends State<QuizScreen> {
         onPressed: () {
           if (isLastQuestion) {
             if (score > 1) {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => VictoryPage()));
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => VictoryPage( score)),
+              );
             }
           } else {
             setState(() {

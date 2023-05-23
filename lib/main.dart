@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:front/pages/game_quiz_page.dart';
 import 'package:front/pages/tutoriel_quiz_page.dart';
+import 'package:front/pages/victory_quiz_page.dart';
 
 
 
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: TutorialQuizPage(),
+      home: QuizScreen(),
     );
   }
 }
