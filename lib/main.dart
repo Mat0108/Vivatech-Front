@@ -10,7 +10,9 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+
   const MyApp({super.key});
+
 
   // This widget is the root of your application.
   @override
@@ -21,7 +23,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: QuizScreen(),
+      home: TutorialQuizPage(),
+      routes: {
+        '/home': (BuildContext context) => MyHomePage(title: 'Home Page'),
+        '/quizGame': (BuildContext context) => QuizScreen(),
+
+      },
     );
   }
 }
@@ -57,6 +64,8 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-    return Scaffold();
+    return Scaffold(
+      body: Text("hellooooooooooooooo"),
+    );
   }
 }

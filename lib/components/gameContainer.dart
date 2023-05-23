@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:front/components/textTyperAnimation.dart';
 
+import '../pages/game_quiz_page.dart';
+
 
 class GameContainerComponent extends StatefulWidget {
   final List<String> tutorial;
@@ -110,6 +112,13 @@ class _GameContainerComponentState extends State<GameContainerComponent> {
                             });
 
                             print(currentIndex);
+                          }
+                          if(currentIndex == widget.tutorial.length -1){
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                builder: (context) => QuizScreen(),
+                          ));
                           }
                         })
                   ],

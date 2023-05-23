@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:front/main.dart';
 import 'package:front/pages/victory_quiz_page.dart';
 
 import '../components/background.dart';
@@ -17,6 +18,7 @@ class _QuizScreenState extends State<QuizScreen> {
   int currentQuestionIndex = 0;
   int score = 0;
   Answer? selectedAnswer;
+  bool showCustomColumn = false;
 
   @override
   Widget build(BuildContext context) {
@@ -25,28 +27,27 @@ class _QuizScreenState extends State<QuizScreen> {
             content: Column(children: [
       TopNavigationComponent(currentPage: "quiz"),
       Container(
-        width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(
-          color: Color.fromRGBO(0, 0, 0, 0.7),
-        ),
-        child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              _questionWidget(),
-              _answerList(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  _nextButton(),
-                  _quitButton(),
-                ],
-              ),
-            ],
+          width: MediaQuery.of(context).size.width,
+          decoration: BoxDecoration(
+            color: Color.fromRGBO(0, 0, 0, 0.7),
           ),
-        )
-      )
+          child: Container(
+            margin: EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                _questionWidget(),
+                _answerList(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    _nextButton(),
+                    _quitButton(),
+                  ],
+                ),
+              ],
+            ),
+          ))
     ])));
   }
 
@@ -182,7 +183,139 @@ class _QuizScreenState extends State<QuizScreen> {
               shape: StadiumBorder(),
               primary: Colors.pink,
               onPrimary: Colors.white),
-          onPressed: () {}),
+          onPressed: () {
+            _showCustomColumn();
+          }),
     );
   }
+
+  void _showCustomColumn() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        bool showConfirmation = true;
+
+        return StatefulBuilder(
+          builder: (BuildContext context, setState) {
+            return AlertDialog(
+              backgroundColor: Colors.transparent,
+              content: Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(0, 100, 0, 0),
+                    child: Stack(
+                      children: <Widget>[
+                        Container(
+                          alignment: Alignment.topRight,
+                          child: Image.asset(
+                            "assets/pages/games/bubble-chat.png",
+                            width: 400,
+                            height: 300,
+                          ),
+                        ),
+                        Container(
+                          alignment: Alignment.topCenter,
+                          padding: EdgeInsets.fromLTRB(50, 50, 80, 60),
+                          child: Text(
+                            showConfirmation
+                                ? "Votre progression ne sera pas sauvegardée. Êtes-vous sûr de vouloir quitter le jeu ?"
+                                : "D’accord, à la prochaine fois !",
+                            textAlign: TextAlign.justify,
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontSize: 15.5,
+                              fontWeight: FontWeight.w900,
+                            ),
+                          ),
+                        ),
+                        if (showConfirmation)
+                          Positioned(
+                            top: 160,
+                            right: 80,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                GestureDetector(
+                                  child: Container(
+                                    width: 30,
+                                    height: 30,
+                                    alignment: Alignment.topRight,
+                                    child: Image.asset(
+                                      "assets/pages/games/next.png",
+                                    ),
+                                  ),
+                                  onTap: () {
+                                    setState(() {
+                                      showConfirmation = false;
+                                    });
+                                    Future.delayed(Duration(seconds: 3), () {
+                                      Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => MyHomePage(title: "hello"),
+                                        ),
+                                      );
+                                    });
+                                  },
+                                ),
+                                SizedBox(width: 4),
+                                Text(
+                                  'Oui',
+                                  style: TextStyle(color: Colors.black),
+                                ),
+                              ],
+                            ),
+                          ),
+                        if (showConfirmation)
+                          Positioned(
+                            top: 160,
+                            right: 160,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                GestureDetector(
+                                  child: Container(
+                                    width: 30,
+                                    height: 30,
+                                    alignment: Alignment.topRight,
+                                    child: Image.asset(
+                                      "assets/pages/games/next.png",
+                                    ),
+                                  ),
+                                  onTap: () {
+                                    setState(() {
+                                      showConfirmation = false;
+                                    });
+                                    Navigator.of(context).pop();
+                                  },
+                                ),
+                                SizedBox(width: 4),
+                                Text(
+                                  'Non',
+                                  style: TextStyle(color: Colors.black),
+                                ),
+                              ],
+                            ),
+                          ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                    alignment: Alignment.centerLeft,
+                    child: Image.asset(
+                      "assets/pages/games/characters/nihel.png",
+                      width: 180,
+                      height: 180,
+                    ),
+                  ),
+                ],
+              ),
+            );
+          },
+        );
+      },
+    );
+  }
+
 }
