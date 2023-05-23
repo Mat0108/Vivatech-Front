@@ -7,7 +7,7 @@ import '../components/topNavigation.dart';
 import '../components/tutorielQuizQuestion.dart';
 
 
-class GameLogic extends StatelessWidget {
+class GameQuiz extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
