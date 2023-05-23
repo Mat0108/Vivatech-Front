@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:front/components/textTyperAnimation.dart';
 
 
-class VictoryComponent extends StatefulWidget {
+class ResultComponent extends StatefulWidget {
   final String ruselt;
   final String gameName;
   final bool display;
 
 
-  const VictoryComponent(
+  const ResultComponent(
       {Key? key, required this.ruselt, required this.gameName, required this.display})
       : super(key: key);
 
   @override
-  State<VictoryComponent> createState() => _VictoryComponent();
+  State<ResultComponent> createState() => _ResultComponent();
 }
 
-class _VictoryComponent extends State<VictoryComponent> {
+class _ResultComponent extends State<ResultComponent> {
   bool showFullText = false;
   int currentIndex = 0;
   int tapCount = 0;

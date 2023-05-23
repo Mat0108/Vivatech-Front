@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../components/VictoryComponent.dart';
+import '../components/ResultComponent.dart';
 import '../components/background.dart';
 import '../components/topNavigation.dart';
 
@@ -14,7 +14,7 @@ class DefeatPage extends StatelessWidget {
         body: BackgroundComponent(
             content: Column(children: [
       TopNavigationComponent(currentPage: "quiz"),
-      VictoryComponent(
+      ResultComponent(
         ruselt:
             "Dommage que vous n’avez obtenu que  ${score} sur 10. Essayez encore votre chance la prochaine fois! ",
         gameName: 'quiz',
