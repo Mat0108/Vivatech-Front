@@ -135,9 +135,5 @@ class _QuizScreenState extends State<QuizScreen> {
     );
   }
 
-  _showScoreDialog() {
-    return AlertDialog(
-      title: Text(score.toString()),
-    );
-  }
+
 }

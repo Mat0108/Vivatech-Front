@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:front/pages/game.dart';
 import 'package:front/pages/game_quiz_page.dart';
 import 'package:front/pages/tutoriel_quiz_page.dart';
 
@@ -18,14 +19,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: QuizScreen(),
+      home: GameLogic(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
 
   final String title;
 
@@ -55,9 +55,6 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-    return Scaffold(
-
-
-    );
+    return Scaffold();
   }
 }
