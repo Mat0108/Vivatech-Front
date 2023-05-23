@@ -43,233 +43,14 @@ class _TresorEtape1 extends State<TresorEtape1> {
                       crossAxisCount: 4,
                       crossAxisSpacing: 10,
                       children: [
-                        Container(
-                          decoration: BoxDecoration(
-                              color: VivatechColor.white,
-                              border: Border.all(
-                                  color: VivatechColor.blue, width: 3),
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(15))),
-                          width: 80,
-                          height: 160,
-                          child: Container(
-                              width: 40,
-                              height: 40,
-                              decoration: const BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                      "assets/images/tresor/jeu1/logo.png"),
-                                  fit: BoxFit.scaleDown,
-                                ),
-                              )),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                              color: VivatechColor.white,
-                              border: Border.all(
-                                  color: VivatechColor.blue, width: 3),
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(15))),
-                          width: 80,
-                          height: 160,
-                          child: Container(
-                              width: 40,
-                              height: 40,
-                              decoration: const BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                      "assets/images/tresor/jeu1/bnp.png"),
-                                  fit: BoxFit.scaleDown,
-                                ),
-                              )),
-                        ),
-                        Container(
-                            decoration: BoxDecoration(
-                                color: VivatechColor.white,
-                                border: Border.all(
-                                    color: VivatechColor.blue, width: 3),
-                                borderRadius: const BorderRadius.all(
-                                    Radius.circular(15))),
-                            width: 80,
-                            height: 160,
-                            child: Container(
-                                width: 40,
-                                height: 40,
-                                decoration: const BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage(
-                                        "assets/images/tresor/jeu1/google.png"),
-                                    fit: BoxFit.scaleDown,
-                                  ),
-                                ))),
-                        Container(
-                          decoration: BoxDecoration(
-                              color: VivatechColor.white,
-                              border: Border.all(
-                                  color: VivatechColor.blue, width: 3),
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(15))),
-                          width: 80,
-                          height: 160,
-                          child: Container(
-                              width: 40,
-                              height: 40,
-                              decoration: const BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                      "assets/images/tresor/jeu1/poste.png"),
-                                  fit: BoxFit.scaleDown,
-                                ),
-                              )),
-                        ),
-                        Theme(
-                            data: Theme.of(context)
-                                .copyWith(canvasColor: VivatechColor.blue),
-                            child: Container(
-                              margin: const EdgeInsets.fromLTRB(0, 10, 0, 30),
-                              decoration: const BoxDecoration(
-                                  color: VivatechColor.blue,
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(15))),
-                              child: DropdownButton<double>(
-                                value: dropdown1,
-                                icon: const Icon(Icons.arrow_downward),
-                                elevation: 8,
-                                isExpanded: true,
-                                itemHeight: null,
-                                style: const TextStyle(
-                                  color: VivatechColor.white,
-                                ),
-                                underline: Container(
-                                  height: 2,
-                                  color: VivatechColor.black,
-                                ),
-                                onChanged: (double? value) {
-                                  setState(() {
-                                    dropdown1 = value!;
-                                  });
-                                },
-                                items: list.map<DropdownMenuItem<double>>(
-                                    (double value) {
-                                  return DropdownMenuItem<double>(
-                                    value: value,
-                                    child:
-                                        Center(child: Text(value.toString())),
-                                  );
-                                }).toList(),
-                              ),
-                            )),
-                        Theme(
-                            data: Theme.of(context)
-                                .copyWith(canvasColor: VivatechColor.blue),
-                            child: Container(
-                              margin: const EdgeInsets.fromLTRB(0, 10, 0, 30),
-                              decoration: const BoxDecoration(
-                                  color: VivatechColor.blue,
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(15))),
-                              child: DropdownButton<double>(
-                                value: dropdown2,
-                                icon: const Icon(Icons.arrow_downward),
-                                elevation: 8,
-                                isExpanded: true,
-                                itemHeight: null,
-                                style: const TextStyle(
-                                  color: VivatechColor.white,
-                                ),
-                                underline: Container(
-                                  height: 2,
-                                  color: VivatechColor.black,
-                                ),
-                                onChanged: (double? value) {
-                                  setState(() {
-                                    dropdown2 = value!;
-                                  });
-                                },
-                                items: list.map<DropdownMenuItem<double>>(
-                                    (double value) {
-                                  return DropdownMenuItem<double>(
-                                    value: value,
-                                    child:
-                                        Center(child: Text(value.toString())),
-                                  );
-                                }).toList(),
-                              ),
-                            )),
-                        Theme(
-                            data: Theme.of(context)
-                                .copyWith(canvasColor: VivatechColor.blue),
-                            child: Container(
-                              margin: const EdgeInsets.fromLTRB(0, 10, 0, 30),
-                              decoration: const BoxDecoration(
-                                  color: VivatechColor.blue,
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(15))),
-                              child: DropdownButton<double>(
-                                value: dropdown3,
-                                icon: const Icon(Icons.arrow_downward),
-                                elevation: 8,
-                                isExpanded: true,
-                                itemHeight: null,
-                                style: const TextStyle(
-                                  color: VivatechColor.white,
-                                ),
-                                underline: Container(
-                                  height: 2,
-                                  color: VivatechColor.black,
-                                ),
-                                onChanged: (double? value) {
-                                  setState(() {
-                                    dropdown3 = value!;
-                                  });
-                                },
-                                items: list.map<DropdownMenuItem<double>>(
-                                    (double value) {
-                                  return DropdownMenuItem<double>(
-                                    value: value,
-                                    child:
-                                        Center(child: Text(value.toString())),
-                                  );
-                                }).toList(),
-                              ),
-                            )),
-                        Theme(
-                            data: Theme.of(context)
-                                .copyWith(canvasColor: VivatechColor.blue),
-                            child: Container(
-                              margin: const EdgeInsets.fromLTRB(0, 10, 0, 30),
-                              decoration: const BoxDecoration(
-                                  color: VivatechColor.blue,
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(15))),
-                              child: DropdownButton<double>(
-                                value: dropdown4,
-                                icon: const Icon(Icons.arrow_downward),
-                                elevation: 8,
-                                isExpanded: true,
-                                itemHeight: null,
-                                style: const TextStyle(
-                                  color: VivatechColor.white,
-                                ),
-                                underline: Container(
-                                  height: 2,
-                                  color: VivatechColor.black,
-                                ),
-                                onChanged: (double? value) {
-                                  setState(() {
-                                    dropdown4 = value!;
-                                  });
-                                },
-                                items: list.map<DropdownMenuItem<double>>(
-                                    (double value) {
-                                  return DropdownMenuItem<double>(
-                                    value: value,
-                                    child:
-                                        Center(child: Text(value.toString())),
-                                  );
-                                }).toList(),
-                              ),
-                            )),
+                        Card("assets/images/tresor/jeu1/logo.png"),
+                        Card("assets/images/tresor/jeu1/bnp.png"),
+                        Card("assets/images/tresor/jeu1/google.png"),
+                        Card("assets/images/tresor/jeu1/poste.png"),
+                        Selector(dropdown1, "1"),
+                        Selector(dropdown2, "2"),
+                        Selector(dropdown3, "3"),
+                        Selector(dropdown4, "4"),
                       ])),
               Container(
                   width: 390,
@@ -329,4 +110,101 @@ class _TresorEtape1 extends State<TresorEtape1> {
                   ))
             ])));
   }
+
+  Widget Card(String url) {
+    return Container(
+      decoration: BoxDecoration(
+          color: VivatechColor.white,
+          border: Border.all(color: VivatechColor.blue, width: 3),
+          borderRadius: const BorderRadius.all(Radius.circular(15))),
+      width: 80,
+      height: 160,
+      child: Container(
+          width: 40,
+          height: 40,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(url),
+              fit: BoxFit.scaleDown,
+            ),
+          )),
+    );
+  }
+
+  Widget Selector(double val, String test) {
+    return Theme(
+        data: Theme.of(context).copyWith(canvasColor: VivatechColor.blue),
+        child: Container(
+          margin: const EdgeInsets.fromLTRB(0, 10, 0, 30),
+          decoration: const BoxDecoration(
+              color: VivatechColor.blue,
+              borderRadius: BorderRadius.all(Radius.circular(15))),
+          child: DropdownButton<double>(
+            value: val,
+            icon: const Icon(Icons.arrow_downward),
+            elevation: 8,
+            isExpanded: true,
+            itemHeight: null,
+            style: const TextStyle(
+              color: VivatechColor.white,
+            ),
+            underline: Container(
+              height: 2,
+              color: VivatechColor.black,
+            ),
+            onChanged: (double? value) {
+              setState(() {
+                switch (test) {
+                  case "1":
+                    dropdown1 = value!;
+                    break;
+                  case "2":
+                    dropdown2 = value!;
+                    break;
+                  case "3":
+                    dropdown3 = value!;
+                    break;
+                  case "4":
+                    dropdown4 = value!;
+                    break;
+                }
+              });
+            },
+            items: list.map<DropdownMenuItem<double>>((double value) {
+              return DropdownMenuItem<double>(
+                value: value,
+                child: Center(child: Text(value.toString())),
+              );
+            }).toList(),
+          ),
+        ));
+  }
 }
+
+// class Card extends StatelessWidget {
+//   const Card({super.key, required this.url});
+//   final String url;
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       decoration: BoxDecoration(
+//           color: VivatechColor.white,
+//           border: Border.all(color: VivatechColor.blue, width: 3),
+//           borderRadius: const BorderRadius.all(Radius.circular(15))),
+//       width: 80,
+//       height: 160,
+//       child: Container(
+//           width: 40,
+//           height: 40,
+//           decoration: BoxDecoration(
+//             image: DecorationImage(
+//               image: AssetImage(url),
+//               fit: BoxFit.scaleDown,
+//             ),
+//           )),
+//     );
+//   }
+// }
+
+

@@ -37,6 +37,7 @@ class TresorEtape2 extends StatefulWidget {
 class _TresorEtape2 extends State<TresorEtape2> {
   @override
   bool showmap = false;
+  String dropdown = list.first;
   Widget build(BuildContext context) {
     return Container(
         width: 400,
@@ -86,15 +87,16 @@ class _TresorEtape2 extends State<TresorEtape2> {
                   top: 0,
                   left: 30,
                   child: Container(
-                    width: 65,
-                    height: 65,
+                    width: 45,
+                    height: 45,
+                    alignment: Alignment.topLeft,
                     decoration: BoxDecoration(
                         color: VivatechColor.white,
                         border: Border.all(color: VivatechColor.blue, width: 3),
                         borderRadius: BorderRadius.all(Radius.circular(90))),
                     child: Ink(
                       child: IconButton(
-                          iconSize: 40,
+                          iconSize: 30,
                           icon: const Icon(Icons.close),
                           color: VivatechColor.blue,
                           onPressed: () {
@@ -103,7 +105,43 @@ class _TresorEtape2 extends State<TresorEtape2> {
                             });
                           }),
                     ),
-                  ))
+                  )),
+            Positioned(
+                child: Theme(
+                    data: Theme.of(context)
+                        .copyWith(canvasColor: VivatechColor.blue),
+                    child: Container(
+                      margin: const EdgeInsets.fromLTRB(0, 10, 0, 30),
+                      decoration: const BoxDecoration(
+                          color: VivatechColor.blue,
+                          borderRadius: BorderRadius.all(Radius.circular(15))),
+                      child: DropdownButton<String>(
+                        value: dropdown,
+                        icon: const Icon(Icons.arrow_downward),
+                        elevation: 8,
+                        isExpanded: true,
+                        itemHeight: null,
+                        style: const TextStyle(
+                          color: VivatechColor.white,
+                        ),
+                        underline: Container(
+                          height: 2,
+                          color: VivatechColor.black,
+                        ),
+                        onChanged: (String? value) {
+                          setState(() {
+                            dropdown = value!;
+                          });
+                        },
+                        items:
+                            list.map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Center(child: Text(value.toString())),
+                          );
+                        }).toList(),
+                      ),
+                    )))
           ],
         ));
   }
