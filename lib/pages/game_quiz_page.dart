@@ -3,6 +3,7 @@ import 'package:front/pages/victory_quiz_page.dart';
 
 import '../models/answer_model.dart';
 import '../models/question_model.dart';
+import 'defeat_quiz_page.dart';
 
 class QuizScreen extends StatefulWidget {
   @override
@@ -120,10 +121,15 @@ class _QuizScreenState extends State<QuizScreen> {
             onPrimary: Colors.white),
         onPressed: () {
           if (isLastQuestion) {
-            if (score > 1) {
+            if (score > 8) {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => VictoryPage( score)),
+                MaterialPageRoute(builder: (context) => VictoryPage(score)),
+              );
+            } else {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DefeatPage(score)),
               );
             }
           } else {
@@ -136,6 +142,4 @@ class _QuizScreenState extends State<QuizScreen> {
       ),
     );
   }
-
-
 }

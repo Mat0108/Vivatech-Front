@@ -5,10 +5,11 @@ import 'package:front/components/textTyperAnimation.dart';
 class VictoryComponent extends StatefulWidget {
   final String ruselt;
   final String gameName;
+  final bool display;
 
 
   const VictoryComponent(
-      {Key? key, required this.ruselt, required this.gameName})
+      {Key? key, required this.ruselt, required this.gameName, required this.display})
       : super(key: key);
 
   @override
@@ -20,6 +21,7 @@ class _VictoryComponent extends State<VictoryComponent> {
   int currentIndex = 0;
   int tapCount = 0;
   bool withContent = false;
+
 
   @override
   Widget build(BuildContext context) {
@@ -48,10 +50,10 @@ class _VictoryComponent extends State<VictoryComponent> {
                 .size
                 .width,
             decoration: BoxDecoration(
-              image: DecorationImage(
+              image:widget.display? DecorationImage(
                 image: AssetImage("assets/background/victoire.png"),
                 fit: BoxFit.fitWidth,
-              ),
+              ) : null,
               color: Color.fromRGBO(0, 0, 0, 0.7),
             ),
             child: Column(children: [
