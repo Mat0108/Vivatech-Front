@@ -180,31 +180,3 @@ class _TresorEtape1 extends State<TresorEtape1> {
         ));
   }
 }
-
-// class Card extends StatelessWidget {
-//   const Card({super.key, required this.url});
-//   final String url;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       decoration: BoxDecoration(
-//           color: VivatechColor.white,
-//           border: Border.all(color: VivatechColor.blue, width: 3),
-//           borderRadius: const BorderRadius.all(Radius.circular(15))),
-//       width: 80,
-//       height: 160,
-//       child: Container(
-//           width: 40,
-//           height: 40,
-//           decoration: BoxDecoration(
-//             image: DecorationImage(
-//               image: AssetImage(url),
-//               fit: BoxFit.scaleDown,
-//             ),
-//           )),
-//     );
-//   }
-// }
-
-

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:front/tresor/tresor.dart';
 import '../color.dart';
-import 'dart:developer';
-import 'package:flutter/foundation.dart';
+import 'etape3.dart';
 
 const List<String> list = <String>[
   "A",
@@ -12,6 +11,7 @@ const List<String> list = <String>[
   "E",
   "F",
   "G",
+  "H",
   "J",
   "K",
   "L",
@@ -74,7 +74,6 @@ class _TresorEtape2 extends State<TresorEtape2> {
                   child: Container(
                     width: 390,
                     height: 300,
-                    margin: EdgeInsets.fromLTRB(20, 20, 0, 0),
                     decoration: const BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage("assets/images/carte.png"),
@@ -85,10 +84,10 @@ class _TresorEtape2 extends State<TresorEtape2> {
             if (showmap)
               Positioned(
                   top: 0,
-                  left: 30,
+                  left: 0,
                   child: Container(
-                    width: 45,
-                    height: 45,
+                    width: 55,
+                    height: 55,
                     alignment: Alignment.topLeft,
                     decoration: BoxDecoration(
                         color: VivatechColor.white,
@@ -107,41 +106,101 @@ class _TresorEtape2 extends State<TresorEtape2> {
                     ),
                   )),
             Positioned(
-                child: Theme(
-                    data: Theme.of(context)
-                        .copyWith(canvasColor: VivatechColor.blue),
-                    child: Container(
-                      margin: const EdgeInsets.fromLTRB(0, 10, 0, 30),
-                      decoration: const BoxDecoration(
-                          color: VivatechColor.blue,
-                          borderRadius: BorderRadius.all(Radius.circular(15))),
-                      child: DropdownButton<String>(
-                        value: dropdown,
-                        icon: const Icon(Icons.arrow_downward),
-                        elevation: 8,
-                        isExpanded: true,
-                        itemHeight: null,
-                        style: const TextStyle(
-                          color: VivatechColor.white,
-                        ),
-                        underline: Container(
-                          height: 2,
-                          color: VivatechColor.black,
-                        ),
-                        onChanged: (String? value) {
-                          setState(() {
-                            dropdown = value!;
-                          });
-                        },
-                        items:
-                            list.map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Center(child: Text(value.toString())),
-                          );
-                        }).toList(),
-                      ),
-                    )))
+                top: 300,
+                child: Container(
+                    width: 400,
+                    height: 100,
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          Theme(
+                              data: Theme.of(context)
+                                  .copyWith(canvasColor: VivatechColor.blue),
+                              child: Container(
+                                width: 80,
+                                height: 50,
+                                decoration: const BoxDecoration(
+                                    color: VivatechColor.blue,
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(15))),
+                                child: DropdownButton<String>(
+                                  value: dropdown,
+                                  icon: const Icon(Icons.arrow_downward),
+                                  elevation: 8,
+                                  isExpanded: true,
+                                  itemHeight: null,
+                                  style: const TextStyle(
+                                    color: VivatechColor.white,
+                                  ),
+                                  underline: Container(
+                                    height: 2,
+                                    color: VivatechColor.black,
+                                  ),
+                                  onChanged: (String? value) {
+                                    setState(() {
+                                      dropdown = value!;
+                                    });
+                                  },
+                                  items: list.map<DropdownMenuItem<String>>(
+                                      (String value) {
+                                    return DropdownMenuItem<String>(
+                                      value: value,
+                                      child:
+                                          Center(child: Text(value.toString())),
+                                    );
+                                  }).toList(),
+                                ),
+                              )),
+                          Container(
+                            width: 110,
+                            height: 48,
+                            decoration: const BoxDecoration(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(15)),
+                                color: VivatechColor.purple),
+                            child: TextButton(
+                              onPressed: () {
+                                if (dropdown == "H" || dropdown == "J") {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const TresorPage(
+                                                  title: 'Chasse au trésor',
+                                                  type: "5",
+                                                  widget: TresorEtape3())));
+                                }
+                              },
+                              child: const Text("Valider",
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      color: VivatechColor.white)),
+                            ),
+                          ),
+                          Container(
+                            width: 110,
+                            height: 48,
+                            decoration: const BoxDecoration(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(15)),
+                                color: VivatechColor.pink),
+                            child: TextButton(
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => const TresorPage(
+                                              title: 'Chasse au trésor',
+                                              type: "1",
+                                            )));
+                              },
+                              child: const Text("Quitter",
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      color: VivatechColor.white)),
+                            ),
+                          )
+                        ])))
           ],
         ));
   }

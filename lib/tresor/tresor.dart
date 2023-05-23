@@ -73,8 +73,18 @@ class _TresorPageState extends State<TresorPage> {
         text1 = "Grace à la carte, nous savons  ";
         text2 = "où se trouve a peu pres la derniere";
         text3 = "étape. Serai tu capables de trouver ";
-        text4 = "le derniere indice permettant de ";
-        text5 = "trouver le tresor ! ";
+        text4 = "l'allée du stand La Poste Groupe ";
+        text5 = "";
+        text6 = "";
+        showbutton = false;
+        showwidget = true;
+        break;
+      case "5":
+        text1 = "Nous sommes devant le coffre,";
+        text2 = "mais celui ci est protégé par un ";
+        text3 = "cadenas. à coté du coffre ";
+        text4 = "nous avons trouvé ce papier ";
+        text5 = "";
         text6 = "";
         showbutton = false;
         showwidget = true;
