@@ -42,6 +42,8 @@ class _GameContainerComponentState extends State<GameContainerComponent> {
       image = "assets/pages/games/characters/matthieu.png";
     }
 
+
+
     return Expanded(child: SingleChildScrollView(
         child: Container(
             width: MediaQuery

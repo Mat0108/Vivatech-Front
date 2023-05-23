@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:front/pages/victory_quiz_page.dart';
 
+import '../components/background.dart';
+import '../components/topNavigation.dart';
 import '../models/answer_model.dart';
 import '../models/question_model.dart';
 import 'defeat_quiz_page.dart';
@@ -19,15 +21,33 @@ class _QuizScreenState extends State<QuizScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow,
-      body: Container(
-        margin: EdgeInsets.symmetric(horizontal: 10, vertical: 25),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [_questionWidget(), _answerList(), _nextButton()],
+        body: BackgroundComponent(
+            content: Column(children: [
+      TopNavigationComponent(currentPage: "quiz"),
+      Container(
+        width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(
+          color: Color.fromRGBO(0, 0, 0, 0.7),
         ),
-      ),
-    );
+        child: Container(
+          margin: EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _questionWidget(),
+              _answerList(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  _nextButton(),
+                  _quitButton(),
+                ],
+              ),
+            ],
+          ),
+        )
+      )
+    ])));
   }
 
   _questionWidget() {
@@ -36,13 +56,18 @@ class _QuizScreenState extends State<QuizScreen> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Center(
-          child: Text(
+          child: Container(
+            margin: EdgeInsets.only(top: 20), // Add margin top here
+            child: Text(
               "Question ${currentQuestionIndex + 1}/${questionList.length.toString()}"
                   .toUpperCase(),
               style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w900)),
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.w900,
+              ),
+            ),
+          ),
         ),
         SizedBox(
           height: 20,
@@ -107,7 +132,7 @@ class _QuizScreenState extends State<QuizScreen> {
     }
 
     return Container(
-      width: MediaQuery.of(context).size.width * 0.5,
+      width: MediaQuery.of(context).size.width * 0.35,
       margin: EdgeInsets.symmetric(vertical: 20),
       height: 48,
       child: ElevatedButton(
@@ -140,6 +165,24 @@ class _QuizScreenState extends State<QuizScreen> {
           }
         },
       ),
+    );
+  }
+
+  _quitButton() {
+    return Container(
+      width: MediaQuery.of(context).size.width * 0.35,
+      margin: EdgeInsets.symmetric(vertical: 20),
+      height: 48,
+      child: ElevatedButton(
+          child: Text(
+            "Quitter",
+            style: TextStyle(fontWeight: FontWeight.w600),
+          ),
+          style: ElevatedButton.styleFrom(
+              shape: StadiumBorder(),
+              primary: Colors.pink,
+              onPrimary: Colors.white),
+          onPressed: () {}),
     );
   }
 }
