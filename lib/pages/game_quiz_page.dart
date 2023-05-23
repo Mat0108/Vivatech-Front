@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:front/pages/victory_quiz_page.dart';
 
 import '../models/answer_model.dart';
 import '../models/question_model.dart';
@@ -33,12 +34,15 @@ class _QuizScreenState extends State<QuizScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-       Center(child: Text(
-           "Question ${currentQuestionIndex + 1}/${questionList.length.toString()}".toUpperCase(),
-           style: TextStyle(
-               color: Colors.black,
-               fontSize: 20,
-               fontWeight: FontWeight.w900)),) ,
+        Center(
+          child: Text(
+              "Question ${currentQuestionIndex + 1}/${questionList.length.toString()}"
+                  .toUpperCase(),
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w900)),
+        ),
         SizedBox(
           height: 20,
         ),
@@ -116,6 +120,10 @@ class _QuizScreenState extends State<QuizScreen> {
             onPrimary: Colors.white),
         onPressed: () {
           if (isLastQuestion) {
+            if (score > 1) {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => VictoryPage()));
+            }
           } else {
             setState(() {
               selectedAnswer = null;
@@ -124,6 +132,12 @@ class _QuizScreenState extends State<QuizScreen> {
           }
         },
       ),
+    );
+  }
+
+  _showScoreDialog() {
+    return AlertDialog(
+      title: Text(score.toString()),
     );
   }
 }

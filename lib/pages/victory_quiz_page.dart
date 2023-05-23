@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class TutorialPage extends StatelessWidget {
+class VictoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +17,7 @@ class TutorialPage extends StatelessWidget {
               onPressed: () {
                 Navigator.pushNamed(context, '/game');
               },
-              child: Text('tutorial jeu'),
+              child: Text('vectory jeu'),
             ),
           ],
         ),
