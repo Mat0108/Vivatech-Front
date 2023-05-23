@@ -16,8 +16,6 @@ final List<String> imgListStand = [
   "assets/images/accueil/rectangle-34.png"
 ];
 
-//void main() => runApp(CarouselDemo());
-
 final themeMode = ValueNotifier(2);
 
 class CarouselWithIndicatorDemo extends StatefulWidget {
