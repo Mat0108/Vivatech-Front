@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 import '../components/background.dart';
-import '../components/gameContainer.dart';
+import '../components/gameQuizContainer.dart';
 import '../components/topNavigation.dart';
 import '../components/tutorielQuizQuestion.dart';
 

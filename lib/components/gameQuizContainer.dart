@@ -28,20 +28,9 @@ class _GameContainerComponentState extends State<GameContainerComponent> {
   Widget build(BuildContext context) {
     var image = "";
 
-    if (widget.gameName == "game-logic") {
-      image = "assets/pages/games/characters/tania.png";
 
-      if (currentIndex != 0) {
-        setState(() {
-          withContent = true;
-        });
-      }
-    } else if (widget.gameName == "game-memory") {
-      image = "assets/pages/games/characters/coumba.png";
-    } else if (widget.gameName == "quiz") {
+    if (widget.gameName == "quiz") {
       image = "assets/pages/games/characters/nihel.png";
-    } else if (widget.gameName == "treasure") {
-      image = "assets/pages/games/characters/matthieu.png";
     }
 
 
