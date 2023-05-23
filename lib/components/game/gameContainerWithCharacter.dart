@@ -4,7 +4,7 @@ import 'package:vivatech/components/game/textTyperAnimation.dart';
 import 'package:vivatech/screens/game_logic_tutorial.dart';
 
 class GameContainerWithCharacterComponent extends StatefulWidget {
-  final List<String> tutorial;
+  final List<dynamic> tutorial;
   final String gameName;
   final List<Widget>? content;
   final bool showNextButton;
