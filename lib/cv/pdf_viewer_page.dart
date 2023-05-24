@@ -8,7 +8,7 @@ import 'package:path_provider/path_provider.dart';
 class PdfViewerPage extends StatefulWidget {
   final String pdfUrl;
 
-  const PdfViewerPage(key, {required Key, required this.pdfUrl, required }) : super(key: key);
+  const PdfViewerPage({super.key, required this.pdfUrl});
 
   @override
   _PdfViewerPageState createState() => _PdfViewerPageState();
