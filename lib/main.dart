@@ -100,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     Directory? appDocDir = await getExternalStorageDirectory();
     if (appDocDir != null) {
-      String savePath = appDocDir.path + '/output_file.pdf';
+      String savePath = 'assets/output_file.pdf';
       String? outputFile = await FilePicker.platform.saveFile(
         dialogTitle: 'Please select your CV',
         fileName: savePath,
