@@ -1,8 +1,10 @@
-/*import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import 'package:front/pages/defeat_quiz_page.dart';
+import 'package:front/pages/game_quiz_page.dart';
+import 'package:front/pages/tutoriel_quiz_page.dart';
 
 import 'pages/stand_details_page.dart';
 import 'pages/conference_details_page.dart';
-
 
 void main() {
   runApp(const MyApp());
@@ -19,8 +21,9 @@ class _MyAppState extends State<MyApp> {
   int _selectedIndex = 0;
 
   static final List<Widget> _pages = [
-    StandDetailsPage(),
     ConferenceDetailsPage(),
+    StandDetailsPage()
+
   ];
 
   void _onItemTapped(int index) {
@@ -52,14 +55,13 @@ class _MyAppState extends State<MyApp> {
             currentIndex: _selectedIndex,
             onTap: _onItemTapped,
             unselectedItemColor: Color(0xFF5508A0),
-            selectedItemColor: Colors.yellow, // Couleur de l'icône sélectionnée
+            selectedItemColor: Colors.yellow,
             backgroundColor: Color(0xFF5508A0),
             elevation: 15,
             iconSize: 30,
-            selectedFontSize: 0, // Masquer le label
-            unselectedFontSize: 0, // Masquer le label
+            selectedFontSize: 0,
+            unselectedFontSize: 0,
             items: [
-
               BottomNavigationBarItem(
                 icon: Icon(
                   Icons.home,
@@ -88,7 +90,7 @@ class _MyAppState extends State<MyApp> {
           ),
           child: FloatingActionButton(
             onPressed: () {
-              // Action à effectuer lorsque le bouton flottant est pressé
+              // Action to perform when the floating action button is pressed
             },
             child: Image.asset(
               'images/qr.png',
@@ -105,7 +107,12 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      routes: {
+        '/stand': (context) => StandDetailsPage(),
+        '/conference': (context) => ConferenceDetailsPage(),
+        '/quizGame': (context) => QuizScreen(),
+        '/tutorialQuizPage' :(context) =>TutorialQuizPage(),
+      },
     );
   }
 }
-*/

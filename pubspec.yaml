@@ -39,6 +39,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  animated_text_kit: ^4.2.2
+  carousel_slider: ^4.0.0
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -58,15 +60,24 @@ flutter:
   # the material Icons class.
     uses-material-design: true
 
-    # To add assets to your application, add an assets section, like this:
+
+
+
+  # To add assets to your application, add an assets section, like this:
     assets:
-      - images/background.png
-      - images/futur.png
-      - images/pres1.png
-      - images/pres2.png
-      - images/pres3.png
-      - images/map.png
-      - images/qr.png
+    - assets/pages/games/
+    - assets/background/bg-gradient-vivatech.png
+    - assets/background/bg-gradient-vivatech-2.png
+    - assets/background/victoire.png
+    - assets/pages/games/characters/
+    - images/background.png
+    - images/futur.png
+    - assets/pages/games/
+    - images/pres1.png
+    - images/pres2.png
+    - images/pres3.png
+    - images/map.png
+    - images/qr.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
