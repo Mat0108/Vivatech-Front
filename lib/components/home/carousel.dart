@@ -1,19 +1,19 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:front/color.dart';
+import 'package:vivatech/color.dart';
 
 final List<String> imgList = [
-  "assets/images/accueil/futur.png",
-  "assets/images/accueil/web3.png",
-  "assets/images/accueil/rectangle-33.png",
-  "assets/images/accueil/rectangle-34.png"
+  "assets/pages/home/ConferenceFutur.png",
+  "assets/pages/home/ConferenceWeb.png",
+  "assets/pages/home/ConferenceFutur.png",
+  "assets/pages/home/ConferenceWeb.png"
 ];
 
 final List<String> imgListStand = [
-  "assets/images/accueil/futur.png",
-  "assets/images/accueil/rectangle-33.png",
-  "assets/images/accueil/web3.png",
-  "assets/images/accueil/rectangle-34.png"
+  "assets/pages/home/StandGoogle.png",
+  "assets/pages/home/StandOrange.png",
+  "assets/pages/home/StandGoogle.png",
+  "assets/pages/home/StandOrange.png"
 ];
 
 final themeMode = ValueNotifier(2);
@@ -61,7 +61,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
                         child: Text(
                           imageList[i]
                               .toString()
-                              .split("/Home/")[1]
+                              .split("/home/")[1]
                               .split(".")[0],
                           style: const TextStyle(
                             color: Colors.white,
@@ -95,7 +95,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
                               child: Text(
                                 imageList[i + 1]
                                     .toString()
-                                    .split("/Home/")[1]
+                                    .split("/home/")[1]
                                     .split(".")[0],
                                 style: const TextStyle(
                                   color: Colors.white,

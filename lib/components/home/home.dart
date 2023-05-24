@@ -1,13 +1,6 @@
 import 'package:flutter/material.dart';
-// ignore: unnecessary_import
-import 'package:flutter/gestures.dart';
-import 'package:front/color.dart';
-// ignore: unnecessary_import
-import 'dart:ui';
-// ignore: unused_import
-import 'package:google_fonts/google_fonts.dart';
-import 'package:front/utils.dart';
-import 'package:front/Home/carousel.dart';
+import 'package:vivatech/color.dart';
+import 'package:vivatech/components/home/carousel.dart';
 
 class Scene extends StatefulWidget {
   const Scene({super.key});
@@ -27,7 +20,7 @@ class _Scene extends State<Scene> {
         width: 480,
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/Home/fond.png"),
+            image: AssetImage("assets/background/bg-gradient-vivatech-2.png"),
             fit: BoxFit.cover,
           ),
         ),
@@ -38,13 +31,13 @@ class _Scene extends State<Scene> {
               Container(
                 width: 400,
                 height: 160,
-                margin: EdgeInsets.fromLTRB(0, 40, 0, 0),
+                margin: const EdgeInsets.fromLTRB(0, 40, 0, 0),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10 * fem),
                   border: Border.all(color: const Color(0x33ffffff)),
                   color: const Color(0xa5ffffff),
                   image: const DecorationImage(
-                    image: AssetImage("assets/images/Home/vivatech.png"),
+                    image: AssetImage("assets/background/pages/home/VivatechTitre.png"),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -56,13 +49,13 @@ class _Scene extends State<Scene> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    ButtonAccueil('assets/images/Home/buttonPass.png',
+                    ButtonAccueil('assets/pages/home/buttonPass.png',
                         'Mon pass', const Color(0xff00ffff), fem, ffem),
-                    ButtonAccueil('assets/images/Home/buttonGame.png', 'Jeux',
+                    ButtonAccueil('assets/pages/home/buttonGame.png', 'Jeux',
                         const Color(0xff00ff00), fem, ffem),
-                    ButtonAccueil('assets/images/Home/buttonAR.png', 'Plan',
+                    ButtonAccueil('assets/pages/home/buttonAR.png', 'Plan',
                         const Color(0xffffff00), fem, ffem),
-                    ButtonAccueil('assets/images/Home/buttonCV.png', 'CV',
+                    ButtonAccueil('assets/pages/home/buttonCV.png', 'CV',
                         const Color(0xfff15700), fem, ffem),
                   ],
                 ),

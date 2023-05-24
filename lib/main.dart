@@ -1,25 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:front/utils.dart';
-import 'package:front/accueil/accueil.dart';
+import 'package:vivatech/components/home/home.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter',
-      debugShowCheckedModeBanner: false,
-      scrollBehavior: MyCustomScrollBehavior(),
-      theme: ThemeData(
-        fontFamily: "MuseoSans",
-        primarySwatch: Colors.blue,
-      ),
-      home: const Scene(),
-    );
+        title: 'VivaTech',
+        theme: ThemeData(
+            brightness: Brightness.light,
+            primaryColor: Colors.white,
+            fontFamily: 'MuseoSans'),
+        home: const Scene(),
+        initialRoute: '/',
+        routes: {
+          // '/pass': (context) => Pass(),
+          // '/scanner-qrcode': (context) => ScanQrCode(),
+          // '/jeux': (context) => Games(),
+          // '/jeux/jeu-logique/tutoriel': (context) => GameLogicTutorial(),
+          // '/jeux/jeu-logique': (context) => GameLogic(),
+        });
   }
 }
