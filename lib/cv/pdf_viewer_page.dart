@@ -1,89 +1,71 @@
-// import 'dart:io';
+import 'dart:io';
+import 'package:file_picker/file_picker.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_pdfview/flutter_pdfview.dart';
+import 'package:path_provider/path_provider.dart';
 
-// import 'package:dio/dio.dart';
-// import 'package:flutter/material.dart';
-// import 'package:flutter_pdfview/flutter_pdfview.dart';
-// import 'package:front/main.dart';
-// import 'package:path/path.dart';
-// import 'package:path_provider/path_provider.dart';
+class PdfUploaderPage extends StatefulWidget {
+  const PdfUploaderPage({super.key});
 
-// // class PdfViewerPage extends StatefulWidget {
-// //   final String pdfUrl;
+  @override
+  _PdfUploaderPageState createState() => _PdfUploaderPageState();
+}
 
-// //   const PdfViewerPage({super.key, required this.pdfUrl,});
+class _PdfUploaderPageState extends State<PdfUploaderPage> {
+  String? pdfPath;
 
-// //   @override
-// //   _PdfViewerPageState createState() => _PdfViewerPageState();
-// // }
+  Future<void> uploadPDF() async {
+    try {
+      FilePickerResult? result = await FilePicker.platform.pickFiles(
+        type: FileType.custom,
+        allowedExtensions: ['pdf'],
+      );
 
-// // class _PdfViewerPageState extends State<PdfViewerPage> {
-// //   late String localFilePath;
-// //   bool downloading = false;
-// //   bool fileExists = false;
+      if (result != null) {
+        File file = File(result.files.single.path!);
+        String fileName = result.files.single.name;
 
-// //   @override
-// //   void initState() {
-// //     super.initState();
-// //     checkFileExists().then((exists) {
-// //       setState(() {
-// //         fileExists = exists;
-// //       });
-// //     });
-// //   }
+        Directory? appDocumentsDirectory =
+            await getApplicationDocumentsDirectory();
+        String newPath = '${appDocumentsDirectory.path}/$fileName';
 
-// //   Future<bool> checkFileExists() async {
-// //     Directory appDocDir = await getApplicationDocumentsDirectory();
-// //     String filePath = '${appDocDir.path}/myFile.pdf';
-// //     return File(filePath).exists();
-// //   }
+        await file.copy(newPath);
 
-// //   Future<void> downloadFile() async {
-// //     setState(() {
-// //       downloading = true;
-// //     });
+        setState(() {
+          pdfPath = newPath;
+        });
 
-// //     Directory appDocDir = await getApplicationDocumentsDirectory();
-// //     String appDocPath = appDocDir.path;
-// //     String filePath = '$appDocPath/myFile.pdf';
+        print('PDF file uploaded successfully.');
+      } else {
+        print('File picking canceled.');
+      }
+    } catch (e) {
+      print('Error: $e');
+    }
+  }
 
-// //     Dio dio = Dio();
-// //     await dio.download(widget.pdfUrl, filePath);
-
-// //     setState(() {
-// //       localFilePath = filePath;
-// //       downloading = false;
-// //       fileExists = true;
-// //     });
-// //   }
-
-// //   @override
-// //   Widget build(BuildContext context) {
-// //     return Scaffold(
-// //       appBar: AppBar(
-// //         title: const Text('PDF Viewer'),
-// //       ),
-// //       body: Center(
-// //         child: fileExists
-// //             ? PDFView(
-// //                 filePath: localFilePath,
-// //               )
-// //             : downloading
-// //                 ? const CircularProgressIndicator()
-// //                 : ElevatedButton(
-// //                     onPressed: downloadFile,
-// //                     child: const Text('Télécharger PDF'),
-// //                   ),
-// //       ),
-// //     );
-// //   }
-// // }
-
-// void main() {
-//   runApp(MyApp());
-// }
-
-// class MyApp extends StatelessWidget {
-//   const MyApp({super.key});
-
-
-// }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('PDF Uploader'),
+      ),
+      body: Column(
+        children: [
+          ElevatedButton(
+            onPressed: uploadPDF,
+            child: Text('Upload PDF'),
+          ),
+          if (pdfPath != null) ...[
+            SizedBox(height: 20),
+            Expanded(
+              child: PDFView(
+                filePath: pdfPath!,
+              ),
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+}
