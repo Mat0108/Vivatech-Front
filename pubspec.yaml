@@ -69,6 +69,7 @@ flutter:
     - assets/images/tresor/jeu1/poste.png
     - assets/images/tresor/jeu1/google.png
     - assets/images/tresor/tresor.png
+    - assets/images/tresor/tresorbig.png
     - assets/images/tresor/captain.png
     - assets/images/tresor/textbox.png
     - assets/images/carte.png

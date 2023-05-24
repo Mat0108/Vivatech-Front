@@ -37,7 +37,7 @@ class TresorEtape2 extends StatefulWidget {
 class _TresorEtape2 extends State<TresorEtape2> {
   @override
   bool showmap = false;
-  String dropdown = list.first;
+  String dropdown = "J"; //list.first;
   Widget build(BuildContext context) {
     return Container(
         width: 400,

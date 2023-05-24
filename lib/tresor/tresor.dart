@@ -89,11 +89,21 @@ class _TresorPageState extends State<TresorPage> {
         showbutton = false;
         showwidget = true;
         break;
+      case "6":
+        text1 = "Bravo, vous avez trouvé le ";
+        text2 = "trésor ! ";
+        text3 = "";
+        text4 = "";
+        text5 = "";
+        text6 = "";
+        showbutton = false;
+        showwidget = true;
+        break;
     }
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
-    // The Flutter framework has been optimized to make rerunning build methods
+    // The Flutter framework has been optimized to make rerunni ng build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
