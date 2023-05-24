@@ -61,7 +61,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
                         child: Text(
                           imageList[i]
                               .toString()
-                              .split("/accueil/")[1]
+                              .split("/Home/")[1]
                               .split(".")[0],
                           style: const TextStyle(
                             color: Colors.white,
@@ -95,7 +95,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
                               child: Text(
                                 imageList[i + 1]
                                     .toString()
-                                    .split("/accueil/")[1]
+                                    .split("/Home/")[1]
                                     .split(".")[0],
                                 style: const TextStyle(
                                   color: Colors.white,

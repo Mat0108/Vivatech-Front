@@ -65,25 +65,8 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
-    - assets/images/accueil/image-5.png
-    - assets/images/accueil/image-20.png
-    - assets/images/accueil/image-19.png
-    - assets/images/accueil/frame-11.png
-    - assets/images/accueil/frame-13.png
-    - assets/images/accueil/icon-magnifying-glass.png
-    - assets/images/accueil/icon-arrow-circle-left.png
-    - assets/images/accueil/image-10.png
-    - assets/images/accueil/icon-arrow-circle-right.png
-    - assets/images/accueil/image-8.png
-    - assets/images/accueil/image-11.png
-    - assets/images/accueil/futur.png
-    - assets/images/accueil/web3.png
-    - assets/images/accueil/rectangle-33.png
-    - assets/images/accueil/rectangle-34.png
-    - assets/images/accueil/fond.png
-    - assets/images/accueil/vivatech.png
-  #  - assets/images/accueil/vt23-gradients-rvb-1080x19202x-2-bg.png
-
+    - assets/images/Home/
+    
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
