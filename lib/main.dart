@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
+import 'package:vivatech/components/game/quitGameContainer.dart';
+import 'package:vivatech/components/game/winLoseContainer.dart';
 import 'package:vivatech/screens/game_logic.dart';
 import 'package:vivatech/screens/games.dart';
 import 'package:vivatech/screens/pass.dart';
@@ -26,7 +28,7 @@ class MyApp extends StatelessWidget {
           '/scanner-qrcode': (context) => ScanQrCode(),
           '/jeux': (context) => Games(),
           '/jeux/jeu-logique/tutoriel': (context) => GameLogicTutorial(),
-          '/jeux/jeu-logique': (context) => GameLogic()
+          '/jeux/jeu-logique': (context) => GameLogic(),
         });
   }
 }
