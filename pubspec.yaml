@@ -53,9 +53,7 @@ flutter:
      - assets/pages/home/
      - assets/pages/games/
      - assets/pages/games/characters/
-     - assets/pages/games/logic/
-     - assets/pages/conferences/
-     - assets/pages/stands/
+     - assets/pages/games/memory/
      - assets/pages/pass/
   fonts:
      - family: MuseoSans

@@ -3,21 +3,21 @@ import 'package:flutter/material.dart';
 import 'package:vivatech/components/background.dart';
 import 'package:vivatech/components/game/gameContainerWithCharacter.dart';
 import 'package:vivatech/components/topNavigation.dart';
-import 'package:vivatech/screens/game_logic.dart';
+import 'package:vivatech/screens/game_memory.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart';
 
-class GameLogicTutorial extends StatefulWidget {
+class GameMemoryTutorial extends StatefulWidget {
   @override
-  State<GameLogicTutorial> createState() => _GameLogicTutorialState();
+  State<GameMemoryTutorial> createState() => _GameMemoryTutorialState();
 }
 
-class _GameLogicTutorialState extends State<GameLogicTutorial> {
+class _GameMemoryTutorialState extends State<GameMemoryTutorial> {
   Map<String, dynamic> _gameData = {};
 
   Future<void> readJson() async {
     final String response =
-        await rootBundle.loadString('assets/pages/games/logic/game-logic.json');
+        await rootBundle.loadString('assets/pages/games/memory/game-memory.json');
     final data = await json.decode(response);
 
     setState(() {
@@ -37,10 +37,10 @@ class _GameLogicTutorialState extends State<GameLogicTutorial> {
     return Scaffold(
         body: BackgroundComponent(
             content: Column(children: [
-      TopNavigationComponent(currentPage: "game-logic"),
+      TopNavigationComponent(currentPage: "game-memory"),
       Expanded(
           child: GameContainerWithCharacterComponent(
-              gameName: "game-logic",
+              gameName: "game-memory",
               tutorial: _gameData["explanations"],
               showNextButton: true,
               game: GameLogic(),
