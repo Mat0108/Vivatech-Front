@@ -164,8 +164,6 @@ class _GameLogicState extends State<GameLogic> {
                   style: TextStyle(fontSize: 15, color: Colors.white),
                 )),
             onTap: () => {
-              print(selectedChoice),
-              print(_gameData[currentIndex]["correct-responses"]),
               if (listEquals(
                   selectedChoice, _gameData[currentIndex]["correct-responses"]))
                 {
