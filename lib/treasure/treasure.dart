@@ -20,8 +20,7 @@ class _TreasurePageState extends State<TreasurePage> {
         "Arghhh ! Bienvenue au jeu de chasse au trésor. Je suis le Captaine Matthieu. Je suis ici pour vous guider pendant la chasse au trésor";
     String text2 =
         "Lors de mon dernier voyage, j'ai transporté vers un lieu inconnu mon trésor. Seriez vous capable de retrouver mon trésor ?";
-    return Scaffold(
-        body: Container(
+    return Container(
       height: 800,
       width: 480,
       decoration: const BoxDecoration(
@@ -60,6 +59,6 @@ class _TreasurePageState extends State<TreasurePage> {
         ),
       ),
       // This trailing comma makes auto-formatting nicer for build methods.
-    ));
+    );
   }
 }
