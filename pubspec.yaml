@@ -45,33 +45,45 @@ dev_dependencies:
   onboarding_animation: any
   animated_text_kit: ^4.2.2
 
+# The following section is specific to Flutter packages.
 flutter:
   uses-material-design: true
   assets:
-    - assets/background/
-    - assets/pages/home/
-    - assets/background/
-    - assets/icons/
-    - assets/pages/home/
-    - assets/pages/games/
-    - assets/pages/games/characters/
-  #  - assets/pages/games/logic/
-  #  - assets/pages/conferences/
-  #  - assets/pages/stands/
-  #  - assets/pages/pass/
-    
+     - assets/background/
+     - assets/icons/
+     - assets/pages/home/
+     - assets/pages/games/
+     - assets/pages/games/characters/
+     - assets/pages/conferences/
+     - assets/pages/stands/
+     - assets/pages/pass/
   fonts:
      - family: MuseoSans
        fonts:
-        - asset: assets/fonts/MuseoSans-100.otf
-          weight: 100
-        - asset: assets/fonts/MuseoSans-300.otf
-          weight: 300
-        - asset: assets/fonts/MuseoSans-500.otf
-          weight: 500
-        - asset: assets/fonts/MuseoSans-700.otf
-          weight: 700
-        - asset: assets/fonts/MuseoSans-900.otf
-          weight: 900
+         - asset: assets/fonts/MuseoSans-100.otf
+           weight: 100
+         - asset: assets/fonts/MuseoSans-300.otf
+           weight: 300
+         - asset: assets/fonts/MuseoSans-500.otf
+           weight: 500
+         - asset: assets/fonts/MuseoSans-700.otf
+           weight: 700
+         - asset: assets/fonts/MuseoSans-900.otf
+           weight: 900
 
-  
+
+#custom splash screen
+flutter_native_splash:
+  image: assets/splashscreen/icon.png
+  background_image: assets/background/bg-gradient-vivatech.png
+  ios: true
+  android: true
+
+
+#custom launch icon
+flutter_icons:
+  android: launcher_icon
+  ios: true
+  remove_alpha_ios: true
+  image_path: assets/icons/icon.png
+  min_sdk_android: 21

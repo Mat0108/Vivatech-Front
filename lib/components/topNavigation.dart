@@ -47,7 +47,11 @@ class TopNavigationComponent extends StatelessWidget {
       imageNav = "assets/pages/games/logic.png";
     } else if (currentPage == "game-memory") {
       textNav = "Jeu de mémoire";
+<<<<<<< HEAD
       imageNav = "assets/pages/games/memory.png";
+=======
+      imageNav = "assets/pages/games/memoru.png";
+>>>>>>> games
     } else if (currentPage == "quiz") {
       textNav = "Quiz";
       imageNav = "assets/pages/games/quiz.png";
@@ -63,6 +67,7 @@ class TopNavigationComponent extends StatelessWidget {
                   height: 70,
                   width: 70,
                   decoration: BoxDecoration(
+<<<<<<< HEAD
                       shape: BoxShape.circle,
                       color: Color.fromRGBO(0, 255, 255, 1),
                       border: Border.all(
@@ -79,6 +84,18 @@ class TopNavigationComponent extends StatelessWidget {
                               ? EdgeInsets.all(2)
                               : EdgeInsets.all(8),
                           child: Image.asset(imageNav))),
+=======
+                    shape: BoxShape.circle,
+                    color: Color.fromRGBO(0, 255, 255, 1),
+                    border: Border.all(
+                        color: Color.fromRGBO(85, 8, 160, 0.3),
+                        width: 3,
+                        style: BorderStyle.solid),
+                  ),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(100),
+                      child: Image.asset(imageNav, fit: BoxFit.contain))),
+>>>>>>> games
               Container(
                 width: MediaQuery.of(context).size.width * 0.7,
                 margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
@@ -102,4 +119,8 @@ class TopNavigationComponent extends StatelessWidget {
       if (content != null) content!
     ]);
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> games
