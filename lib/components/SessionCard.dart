@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:front/widgets/presenters_image.dart';
+import 'package:vivatech/widgets/presenters_image.dart';
 import '../models/conference.dart';
 
 class SessionCard extends StatelessWidget {

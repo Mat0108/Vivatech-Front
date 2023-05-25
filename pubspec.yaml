@@ -67,10 +67,10 @@ flutter:
      - assets/pages/home/
      - assets/pages/games/
      - assets/pages/games/characters/
-     - assets/pages/conferences/
-     - assets/pages/stands/
+     - assets/conference/
+     - assets/stand/
      - assets/pages/pass/
-     - ar/
+     - assets/ar/
      - assets/pages/games/
      - assets/background/bg-gradient-vivatech.png
      - assets/background/bg-gradient-vivatech-2.png
