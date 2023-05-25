@@ -54,10 +54,10 @@ class _PdfUploaderPageState extends State<PdfUploaderPage> {
         children: [
           ElevatedButton(
             onPressed: uploadPDF,
-            child: Text('Upload PDF'),
+            child: const Text('Télécharger votre CV'),
           ),
           if (pdfPath != null) ...[
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Expanded(
               child: PDFView(
                 filePath: pdfPath!,
