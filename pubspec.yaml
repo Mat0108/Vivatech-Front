@@ -73,7 +73,7 @@ flutter:
     - assets/pages/games/characters/
     - assets/background.png
     - assets/futur.png
-    - assets/pages/games/
+    - assets/pages/games/!
     - assets/map.png
     - assets/qr.png
     - assets/conference/FoodTech/
