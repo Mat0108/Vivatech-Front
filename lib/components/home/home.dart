@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vivatech/color.dart';
+import 'package:vivatech/components/color.dart';
 import 'package:vivatech/components/home/carousel.dart';
 
 class Scene extends StatefulWidget {
