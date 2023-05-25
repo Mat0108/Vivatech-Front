@@ -15,7 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter test Demo',
       theme: ThemeData(fontFamily: "MuseoSans"),
-      home: const AR(latitude: 48.858370, longitude: 2.294481),
+      home: const AR(
+          latitude: 48.8738, longitude: 2.295), //Longitude=Y, Latitude=X
     );
   }
 }
