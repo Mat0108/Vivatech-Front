@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:front/widgets/presenters_image.dart';
 import '../models/conference.dart';
 
 class SessionCard extends StatelessWidget {
@@ -8,6 +9,7 @@ class SessionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return Container(
       decoration: BoxDecoration(
         border: Border.all(
@@ -17,7 +19,6 @@ class SessionCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(8.0),
       ),
       child: Card(
-
         child: Padding(
           padding: const EdgeInsets.all(15),
           child: Column(
@@ -32,27 +33,63 @@ class SessionCard extends StatelessWidget {
               ),
               SizedBox(height: 10),
               Text(
-                'Presenters:',
+                'Présentateurs:',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
               ),
               SizedBox(height: 5),
-              Row(
-                children: [
-                  for (Presenter presenter in session.presenters)
-                    Column(
-                      children: [
-                        CircleAvatar(
-                          backgroundImage: AssetImage(presenter.imageURL),
-                          radius: 25,
-                        ),
-                        SizedBox(height: 5),
-                        Text(presenter.name),
-                      ],
-                    ),
-                ],
-              ),
+              Container(
+                margin: EdgeInsets.only(top: 10),
+                child: Column(
+                  children: [
+                    for (var i = 0; i < session.presenters.length; i += 3)
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          for (var j = i;
+                              j < i + 3 && j < session.presenters.length;
+                              j++)
+                            Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Container(
+                                      margin: EdgeInsets.all(5),
+                                      width: width/6,
+                                      height: width/6,
+                                      child: myPic(5, session.presenters[j].imageURL),
+                                    ),
+                                  ],
+                                ),
+
+                                Row(
+                                  children: [
+                                    Container(
+                                      margin: EdgeInsets.only(top: 5),
+                                      width: width/6,
+                                      height: width/6,
+                                      child: Text(
+                                        session.presenters[j].name,
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                )
+
+                              ],
+                            ),
+
+
+
+
+                        ],
+                      )
+                  ],
+                ),
+              )
             ],
           ),
         ),

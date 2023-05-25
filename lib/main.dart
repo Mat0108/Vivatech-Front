@@ -7,6 +7,7 @@ import 'pages/stand_details_page.dart';
 import 'pages/conference_details_page.dart';
 
 void main() {
+
   runApp(const MyApp());
 }
 
@@ -40,7 +41,7 @@ class _MyAppState extends State<MyApp> {
         body: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('images/background.png'),
+              image: AssetImage('assets/background.png'),
               fit: BoxFit.cover,
             ),
           ),
@@ -72,7 +73,7 @@ class _MyAppState extends State<MyApp> {
               ),
               BottomNavigationBarItem(
                 icon: Image.asset(
-                  'images/map.png',
+                  'assets/map.png',
                   width: 40,
                   height: 40,
                 ),
@@ -93,7 +94,7 @@ class _MyAppState extends State<MyApp> {
               // Action to perform when the floating action button is pressed
             },
             child: Image.asset(
-              'images/qr.png',
+              'assets/qr.png',
               width: 40,
               height: 40,
             ),

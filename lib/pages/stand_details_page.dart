@@ -6,12 +6,13 @@ import '../models/stand.dart';
 
 class StandDetailsPage extends StatelessWidget {
   // Instanciation de la conférence avec des valeurs spécifiques
-  Stand stand = Stand(
-      lieu: "lieu hiiiiiiiiihhhhhhhhhhhhhhhhhhhhhiiiiii",
-      description: '"heloooooooooooù'
-          'oooooohhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh'
-          'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh'
-          'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhoooo"');
+
+  Stand Oreal = Stand(
+      name: "L'Oreal",
+      description:
+      "L'Oréal Groupe s'attache à répondre aux aspirations beauté des consommateurs. Notre objectif, créer la beauté qui fait bouger le monde, définit notre approche de la beauté comme inclusive, éthique et engagée envers la durabilité sociale et environnementale.",
+      lieu: "BOOTH E11");
+
 
   StandDetailsPage({super.key});
 
@@ -27,7 +28,7 @@ class StandDetailsPage extends StatelessWidget {
                 padding: const EdgeInsets.all(3),
                 decoration:
                 BoxDecoration(borderRadius: BorderRadius.circular(30)),
-                child: RoundedImage(30, Color(0xFFFFFF00),AssetImage("images/qr.png")),
+                child: RoundedImage(30, Color(0xFFFFFF00),AssetImage("assets/qr.png")),
               ),
               Expanded(
                   child: Container(
@@ -46,7 +47,7 @@ class StandDetailsPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "stands".toUpperCase(),
+                          Oreal.name.toUpperCase(),
                           style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
@@ -73,9 +74,19 @@ class StandDetailsPage extends StatelessWidget {
                     child: Column(
                       children: [
                         RowPink('Description'),
-                        PadDescription(stand.description),
-                        RowPink('Présenteurs'),
-                        PadDescription(stand.lieu)
+                        PadDescription(Oreal.description),
+                        RowPink('Lieu'),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.location_on,
+                              color: Colors.pink,
+                            ),
+                            PadDescription(Oreal.lieu)
+                          ],
+                        )
+
                       ],
                     ))),
           )

@@ -1,9 +1,8 @@
 class Conference {
   final String name;
-  final String description;
   final List<Day> program;
 
-  Conference(this.name, this.description, this.program);
+  Conference(this.name,  this.program);
 }
 
 class Day {

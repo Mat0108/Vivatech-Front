@@ -41,6 +41,7 @@ dev_dependencies:
     sdk: flutter
   animated_text_kit: ^4.2.2
   carousel_slider: ^4.0.0
+  flutter_icons: ^1.1.0
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -70,14 +71,15 @@ flutter:
     - assets/background/bg-gradient-vivatech-2.png
     - assets/background/victoire.png
     - assets/pages/games/characters/
-    - images/background.png
-    - images/futur.png
+    - assets/background.png
+    - assets/futur.png
     - assets/pages/games/
-    - images/pres1.png
-    - images/pres2.png
-    - images/pres3.png
-    - images/map.png
-    - images/qr.png
+    - assets/map.png
+    - assets/qr.png
+    - assets/conference/FoodTech/
+    - assets/conference/Cybersecurity/
+    - assets/conference/DeepTech/
+    - assets/conference/Metaverse/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
