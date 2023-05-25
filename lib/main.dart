@@ -5,6 +5,7 @@ import 'package:vivatech/components/game/winLoseContainer.dart';
 import 'package:vivatech/screens/game_memory.dart';
 import 'package:vivatech/screens/games.dart';
 import 'package:vivatech/screens/niveaux.dart';
+import 'screens/pdf_viewer_page.dart';
 
 
 import 'package:vivatech/screens/game_memory_tutorial.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
             brightness: Brightness.light,
             primaryColor: Colors.white,
             fontFamily: 'MuseoSans'),
-        home: GameMemoryTutorial(),
+        home: const PdfUploaderPage(),
         // initialRoute: '/',
         // routes: {
         //   '/pass': (context) => Pass(),
