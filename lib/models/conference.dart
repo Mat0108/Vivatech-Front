@@ -1,8 +1,10 @@
 class Conference {
+  final String imageURL;
+  final String theme;
   final String name;
   final List<Day> program;
 
-  Conference(this.name,  this.program);
+  Conference(this.name,  this.program, this.theme, this.imageURL);
 }
 
 class Day {

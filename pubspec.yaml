@@ -80,6 +80,8 @@ flutter:
     - assets/conference/Cybersecurity/
     - assets/conference/DeepTech/
     - assets/conference/Metaverse/
+    - assets/conference/IA/
+    - assets/stand/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
