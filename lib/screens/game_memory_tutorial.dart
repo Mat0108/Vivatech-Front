@@ -43,7 +43,7 @@ class _GameMemoryTutorialState extends State<GameMemoryTutorial> {
               gameName: "game-memory",
               tutorial: _gameData["explanations"],
               showNextButton: true,
-              game: GameLogic(),
+              game: GameMemory(),
               content: [
             Column(children: [
               Padding(
@@ -151,4 +151,6 @@ class _GameMemoryTutorialState extends State<GameMemoryTutorial> {
           ]))
     ])));
   }
+  
+  GameMemory() {}
 }

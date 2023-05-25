@@ -13,6 +13,8 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,14 +23,15 @@ class MyApp extends StatelessWidget {
             brightness: Brightness.light,
             primaryColor: Colors.white,
             fontFamily: 'MuseoSans'),
-        home: Games(),
-        initialRoute: '/',
-        routes: {
-          '/pass': (context) => Pass(),
-          '/scanner-qrcode': (context) => ScanQrCode(),
-          '/jeux': (context) => Games(),
-          '/jeux/jeu-logique/tutoriel': (context) => GameMemoryTutorial(),
-          '/jeux/jeu-logique': (context) => GameLogic(),
-        });
+        home: GameMemoryTutorial(),
+        // initialRoute: '/',
+        // routes: {
+        //   '/pass': (context) => Pass(),
+        //   '/scanner-qrcode': (context) => ScanQrCode(),
+        //   '/jeux': (context) => Games(),
+        //   '/jeux/jeu-logique/tutoriel': (context) => GameMemoryTutorial(),
+        //   '/jeux/jeu-logique': (context) => GameMemory(),
+        // }
+      );
   }
 }

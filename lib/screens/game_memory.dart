@@ -1,235 +1,333 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors, prefer_final_fields, avoid_print
-import 'package:flutter/foundation.dart';
+import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:vivatech/components/background.dart';
-import 'package:vivatech/components/game/gameContainer.dart';
-import 'package:vivatech/components/game/quitGameContainer.dart';
-import 'package:vivatech/components/game/winLoseContainer.dart';
-import 'package:vivatech/components/topNavigation.dart';
-import 'dart:convert';
-import 'package:flutter/services.dart';
+import 'package:vivatech/components/color.dart';
 
-class GameLogic extends StatefulWidget {
-  @override
-  State<GameLogic> createState() => _GameLogicState();
+import 'package:vivatech/screens/niveaux.dart';
+
+class ListImage {
+  String url;
+  bool cond;
+  bool globalcond;
+  int? index;
+  // AnimationController? controller;
+  // Animation? animation ;
+  // AnimationStatus status = AnimationStatus.dismissed;
+  ListImage({
+    required this.url,
+    required this.cond,
+    required this.globalcond,
+    this.index,
+    // this.controller,
+    // this.animation
+  });
 }
 
-class _GameLogicState extends State<GameLogic> {
-  bool clickedAnswer = false;
-  List<dynamic> _gameData = [];
-  int currentIndex = 0;
-  int resultGame = 0;
-  List<dynamic> selectedChoice = [];
-
-  Future<void> readJson() async {
-    final String response =
-        await rootBundle.loadString('assets/pages/games/logic/game-logic.json');
-    final data = await json.decode(response);
-
-    setState(() {
-      _gameData = data["game"];
-    });
-  }
+class Memoire extends StatefulWidget {
+  const Memoire({super.key, required this.niveau});
+  final double niveau;
 
   @override
-  void initState() {
-    super.initState();
+  State<Memoire> createState() => _MemoireState();
+}
 
-    readJson();
-  }
+class _MemoireState extends State<Memoire> with TickerProviderStateMixin {
+  late AnimationController _controller;
 
+// 8 cartes
+  List<ListImage> listCardFacile = [
+    ListImage(
+        url: "assets/pages/games/memory/cnrs.png", cond: false, globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/cnrs.png", cond: false, globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/axa.png", cond: false, globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/axa.png", cond: false, globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/edf.png", cond: false, globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/edf.png", cond: false, globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/huawei.png",
+        cond: false,
+        globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/huawei.png",
+        cond: false,
+        globalcond: false),
+  ];
+
+// 16 cartes
+  List<ListImage> listCardMoyen = [
+    ListImage(
+        url: "assets/pages/games/memory/africa-news.png",
+        cond: false,
+        globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/africa-news.png",
+        cond: false,
+        globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/audi.png", cond: false, globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/audi.png", cond: false, globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/edf.png", cond: false, globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/edf.png", cond: false, globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/huawei.png",
+        cond: false,
+        globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/huawei.png",
+        cond: false,
+        globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/coss.png", cond: false, globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/coss.png", cond: false, globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/engie.png", cond: false, globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/engie.png", cond: false, globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/bbf.png", cond: false, globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/bbf.png", cond: false, globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/avomo.png", cond: false, globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/avomo.png", cond: false, globalcond: false),
+  ];
+
+  // 24 cartes
+  List<ListImage> listCarddifficile = [
+    ListImage(
+        url: "assets/pages/games/memory/adreil.png",
+        cond: false,
+        globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/adreil.png",
+        cond: false,
+        globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/amazon.png",
+        cond: false,
+        globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/amazon.png",
+        cond: false,
+        globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/bloomin.png",
+        cond: false,
+        globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/bloomin.png",
+        cond: false,
+        globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/bugali.png",
+        cond: false,
+        globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/bugali.png",
+        cond: false,
+        globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/driveco.png",
+        cond: false,
+        globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/driveco.png",
+        cond: false,
+        globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/engie.png", cond: false, globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/engie.png", cond: false, globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/gaya.png", cond: false, globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/gaya.png", cond: false, globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/avomo.png", cond: false, globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/avomo.png", cond: false, globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/cilkoa.png",
+        cond: false,
+        globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/cilkoa.png",
+        cond: false,
+        globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/capvert.png",
+        cond: false,
+        globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/capvert.png",
+        cond: false,
+        globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/capgemini.png",
+        cond: false,
+        globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/capgemini.png",
+        cond: false,
+        globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/damocles.png",
+        cond: false,
+        globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/damocles.png",
+        cond: false,
+        globalcond: false),
+  ];
+
+  ListImage card1 = ListImage(url: "", cond: false, globalcond: false);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: BackgroundComponent(
-            content: Column(children: [
-      TopNavigationComponent(currentPage: "game-logic"),
-      Expanded(
-          child: GameContainerComponent(
-              content: Column(
-        children: [
-          Padding(
-              padding: currentIndex > 2
-                  ? EdgeInsets.fromLTRB(0, 50, 0, 50)
-                  : EdgeInsets.fromLTRB(0, 50, 0, 70),
-              child: Text(_gameData[currentIndex]["questionNum"],
-                  style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white))),
-          Container(
-              color: Colors.white,
-              padding: EdgeInsets.all(10),
-              width: MediaQuery.of(context).size.width,
-              height: currentIndex > 2 ? 160 : 90,
-              child: Wrap(
-                  spacing: 8.0,
-                  alignment: currentIndex > 2
-                      ? WrapAlignment.start
-                      : WrapAlignment.spaceBetween,
-                  children: List.generate(
-                      _gameData[currentIndex]["images"].length, (indexImages) {
-                    return Image.asset(
-                      _gameData[currentIndex]["images"][indexImages],
-                      width: 70,
-                      height: 70,
-                    );
-                  }))),
-          Padding(
-              padding: currentIndex > 2
-                  ? EdgeInsets.fromLTRB(20, 40, 20, 10)
-                  : EdgeInsets.fromLTRB(20, 70, 20, 10),
-              child: Text(_gameData[currentIndex]["question"],
-                  textAlign: TextAlign.justify,
-                  style: TextStyle(fontSize: 15, color: Colors.white))),
-          Container(
-              width: MediaQuery.of(context).size.width,
-              height: currentIndex > 7 ? 145 : 160,
-              padding: EdgeInsets.fromLTRB(20, 40, 20, 40),
+    Iterable<Widget> listWidget = (widget.niveau == 1
+            ? listCardFacile
+            : (widget.niveau == 2 ? listCardMoyen : listCarddifficile))
+        .mapIndexed((index, element) => buildCard(
+                element.url,
+                "assets/images/memoire/vivatech.png",
+                element.cond,
+                element.globalcond, () {
+              setState(() {
+                element.cond = true;
+              });
+              if (card1.url == "") {
+                setState(() {
+                  card1.url = element.url;
+                  card1.index = index;
+                });
+              } else {
+                if (identical(card1.url, element.url)) {
+                  setState(() {
+                    element.globalcond = true;
+                    listCardFacile[card1.index!].globalcond = true;
+                    card1.url = "";
+                    card1.index = -1;
+                  });
+                } else {
+                  Future.delayed(const Duration(milliseconds: 500), () {
+                    setState(() {
+                      listCardFacile[card1.index!].cond = false;
+                      element.cond = false;
+                      card1.url = "";
+                      card1.index = -1;
+                    });
+                  });
+                }
+              }
+            }));
+
+    return Positioned(
+      width: 390,
+      height: 400,
+      top: 80,
+      child: SizedBox(
+        width: 390,
+        height: 400,
+        child: Column(
+          children: <Widget>[
+            Container(
+                width: 390,
+                height: 600,
+                margin: const EdgeInsets.fromLTRB(0, 25, 0, 0),
+                child: GridView.count(
+                    crossAxisCount: 4,
+                    crossAxisSpacing: 10,
+                    children: listWidget.toList())),
+            Container(
+              width: 390,
+              height: 50,
+              margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
               child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: List.generate(
-                      _gameData[currentIndex]["multiple-choice"].length,
-                      (indexChoice) {
-                    return GestureDetector(
-                      child: Container(
-                          decoration: BoxDecoration(
-                              border: clickedAnswer &&
-                                      selectedChoice.contains(indexChoice)
-                                  ? Border.all(
-                                      color: Color.fromRGBO(255, 0, 129, 1),
-                                      width: 3,
-                                      style: BorderStyle.solid,
-                                    )
-                                  : null,
-                              borderRadius: clickedAnswer &&
-                                      selectedChoice.contains(indexChoice)
-                                  ? BorderRadius.circular(23)
-                                  : null),
-                          child: Stack(children: <Widget>[
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Image.asset(_gameData[currentIndex]
-                                  ["multiple-choice"][indexChoice]),
-                            ),
-                            if (clickedAnswer &&
-                                selectedChoice.contains(indexChoice))
-                              Padding(
-                                  padding: currentIndex > 7
-                                      ? EdgeInsets.all(18)
-                                      : EdgeInsets.all(20),
-                                  child: Container(
-                                      width: currentIndex > 7 ? 20 : 30,
-                                      height: currentIndex > 7 ? 20 : 30,
-                                      alignment: Alignment.center,
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(100),
-                                          color:
-                                              Color.fromRGBO(255, 0, 129, 1)),
-                                      child: Text(
-                                        (selectedChoice.indexOf(indexChoice) +
-                                                1)
-                                            .toString(),
-                                        style: TextStyle(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white),
-                                      )))
-                          ])),
-                      onTap: () => {
-                        setState(() => {
-                              if (clickedAnswer &&
-                                  selectedChoice.contains(indexChoice))
-                                {selectedChoice.remove(indexChoice)}
-                              else
-                                {
-                                  clickedAnswer = true,
-                                  selectedChoice.add(indexChoice)
-                                }
-                            })
-                      },
-                    );
-                  }))),
-          GestureDetector(
-            child: Container(
-                width: 100,
-                height: 40,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                    color: Color.fromRGBO(161, 0, 155, 1),
-                    borderRadius: BorderRadius.circular(10)),
-                child: Text(
-                  "Valider",
-                  style: TextStyle(fontSize: 15, color: Colors.white),
-                )),
-            onTap: () => {
-              if (listEquals(
-                  selectedChoice, _gameData[currentIndex]["correct-responses"]))
-                {
-                  setState(() => {
-                        clickedAnswer = false,
-                        selectedChoice.clear(),
-                        currentIndex++,
-                        resultGame++
-                      })
-                }
-              else
-                {
-                  setState(() => {
-                        clickedAnswer = false,
-                        selectedChoice.clear(),
-                        currentIndex++,
-                      })
-                },
-              if (currentIndex == 9)
-                {
-                  Navigator.push(
-                    context,
-                    PageRouteBuilder(
-                      pageBuilder: (BuildContext context,
-                          Animation<double> animation1,
-                          Animation<double> animation2) {
-                        return WinLoseContainerComponent(
-                            resultGame: resultGame, image: "game-logic");
-                      },
-                      transitionDuration: Duration.zero,
-                      reverseTransitionDuration: Duration.zero,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Container(
+                    width: 110,
+                    height: 48,
+                    decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                      color: VivatechColor.pink,
                     ),
-                  )
-                }
-            },
-          ),
-          Padding(
-              padding: EdgeInsets.fromLTRB(300, 50, 20, 20),
-              child: GestureDetector(
-                  child: Container(
-                      width: 100,
-                      height: 40,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                          color: Color.fromRGBO(255, 0, 129, 1),
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Text(
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Scene()));
+                      },
+                      child: const Text(
                         "Quitter",
-                        style: TextStyle(fontSize: 15, color: Colors.white),
-                      )),
-                  onTap: () => {
-                        showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return Dialog.fullscreen(
-                              backgroundColor: Colors.transparent,
-                              child: QuitGameContainerComponent(
-                                gameName:
-                                    'game-logic', // Provide the game name here
-                              ),
-                            );
-                          },
-                        )
-                      }))
-        ],
-      ))),
-    ])));
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: VivatechColor.white,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget card(String url, bool cond, VoidCallback callback) {
+    return Container(
+      decoration: BoxDecoration(
+        color: VivatechColor.white,
+        border: Border.all(color: VivatechColor.blue, width: 3),
+        borderRadius: const BorderRadius.all(Radius.circular(15)),
+      ),
+      width: 80,
+      height: 160,
+      margin: EdgeInsets.fromLTRB(0, 5, 0, 0),
+      child: Container(
+          width: 40,
+          height: 40,
+          child: Material(
+              borderRadius: const BorderRadius.all(Radius.circular(15)),
+              child: IconButton(
+                  iconSize: 30, icon: Image.asset(url), onPressed: callback))),
+    );
+  }
+
+  Widget __transitionBuilder(Widget widget, Animation<double> animation) {
+    final rotateAnim = Tween(begin: pi, end: 0.0).animate(animation);
+    return AnimatedBuilder(
+      animation: rotateAnim,
+      child: widget,
+      builder: (context, widget) {
+        final isUnder = false;
+        final value = rotateAnim.value;
+        return Transform(
+          transform: Matrix4.rotationY(value),
+          child: widget,
+          alignment: Alignment.center,
+        );
+      },
+    );
+  }
+
+  Widget buildCard(String url, String defaulturl, bool cond, bool globalcond,
+      VoidCallback callback) {
+    return AnimatedSwitcher(
+        duration: const Duration(milliseconds: 4600),
+        transitionBuilder: __transitionBuilder,
+        layoutBuilder: (widget, list) => Stack(children: [widget!, ...list]),
+        child: globalcond
+            ? card(url, cond, callback)
+            : card((cond ? url : defaulturl), cond, callback));
   }
 }
