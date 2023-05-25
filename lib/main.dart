@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'cv/pdf_viewer_page.dart';
+import 'screens/pdf_viewer_page.dart';
 
 void main() {
   runApp(const MyApp());
