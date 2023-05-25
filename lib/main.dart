@@ -4,8 +4,9 @@ import 'package:vivatech/components/game/quitGameContainer.dart';
 import 'package:vivatech/components/game/winLoseContainer.dart';
 import 'package:vivatech/screens/game_memory.dart';
 import 'package:vivatech/screens/games.dart';
-import 'package:vivatech/screens/pass.dart';
-import 'package:vivatech/screens/scanQrCode.dart';
+import 'package:vivatech/screens/niveaux.dart';
+
+
 import 'package:vivatech/screens/game_memory_tutorial.dart';
 
 void main() {

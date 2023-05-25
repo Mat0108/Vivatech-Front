@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:vivatech/components/background.dart';
 import 'package:vivatech/components/game/gameContainerWithCharacter.dart';
 import 'package:vivatech/components/topNavigation.dart';
-import 'package:vivatech/screens/game_memory.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart';
 

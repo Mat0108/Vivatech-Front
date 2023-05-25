@@ -1,8 +1,10 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:vivatech/components/color.dart';
-
+import 'package:collection/collection.dart';
 import 'package:vivatech/screens/niveaux.dart';
+
+import '../components/game/quitGameContainer.dart';
 
 class ListImage {
   String url;
@@ -36,17 +38,29 @@ class _MemoireState extends State<Memoire> with TickerProviderStateMixin {
 // 8 cartes
   List<ListImage> listCardFacile = [
     ListImage(
-        url: "assets/pages/games/memory/cnrs.png", cond: false, globalcond: false),
+        url: "assets/pages/games/memory/cnrs.png",
+        cond: false,
+        globalcond: false),
     ListImage(
-        url: "assets/pages/games/memory/cnrs.png", cond: false, globalcond: false),
+        url: "assets/pages/games/memory/cnrs.png",
+        cond: false,
+        globalcond: false),
     ListImage(
-        url: "assets/pages/games/memory/axa.png", cond: false, globalcond: false),
+        url: "assets/pages/games/memory/axa.png",
+        cond: false,
+        globalcond: false),
     ListImage(
-        url: "assets/pages/games/memory/axa.png", cond: false, globalcond: false),
+        url: "assets/pages/games/memory/axa.png",
+        cond: false,
+        globalcond: false),
     ListImage(
-        url: "assets/pages/games/memory/edf.png", cond: false, globalcond: false),
+        url: "assets/pages/games/memory/edf.png",
+        cond: false,
+        globalcond: false),
     ListImage(
-        url: "assets/pages/games/memory/edf.png", cond: false, globalcond: false),
+        url: "assets/pages/games/memory/edf.png",
+        cond: false,
+        globalcond: false),
     ListImage(
         url: "assets/pages/games/memory/huawei.png",
         cond: false,
@@ -68,15 +82,19 @@ class _MemoireState extends State<Memoire> with TickerProviderStateMixin {
         cond: false,
         globalcond: false),
     ListImage(
-        url: "assets/pages/games/memory/audi.png", cond: false, globalcond: false),
+        url: "assets/pages/games/memory/audi.png",
+        cond: false,
+        globalcond: false),
     ListImage(
-        url: "assets/pages/games/memory/audi.png", cond: false, globalcond: false),
+        url: "assets/pages/games/memory/audi.png",
+        cond: false,
+        globalcond: false),
     ListImage(
-        url: "assets/pages/games/memory/edf.png", cond: false, globalcond: false),
+        url: "assets/pages/games/memory/edf.png",
+        cond: false,
+        globalcond: false),
     ListImage(
-        url: "assets/pages/games/memory/edf.png", cond: false, globalcond: false),
-    ListImage(
-        url: "assets/pages/games/memory/huawei.png",
+        url: "assets/pages/games/memory/edf.png",
         cond: false,
         globalcond: false),
     ListImage(
@@ -84,21 +102,41 @@ class _MemoireState extends State<Memoire> with TickerProviderStateMixin {
         cond: false,
         globalcond: false),
     ListImage(
-        url: "assets/pages/games/memory/coss.png", cond: false, globalcond: false),
+        url: "assets/pages/games/memory/huawei.png",
+        cond: false,
+        globalcond: false),
     ListImage(
-        url: "assets/pages/games/memory/coss.png", cond: false, globalcond: false),
+        url: "assets/pages/games/memory/coss.png",
+        cond: false,
+        globalcond: false),
     ListImage(
-        url: "assets/pages/games/memory/engie.png", cond: false, globalcond: false),
+        url: "assets/pages/games/memory/coss.png",
+        cond: false,
+        globalcond: false),
     ListImage(
-        url: "assets/pages/games/memory/engie.png", cond: false, globalcond: false),
+        url: "assets/pages/games/memory/engie.png",
+        cond: false,
+        globalcond: false),
     ListImage(
-        url: "assets/pages/games/memory/bbf.png", cond: false, globalcond: false),
+        url: "assets/pages/games/memory/engie.png",
+        cond: false,
+        globalcond: false),
     ListImage(
-        url: "assets/pages/games/memory/bbf.png", cond: false, globalcond: false),
+        url: "assets/pages/games/memory/bbf.png",
+        cond: false,
+        globalcond: false),
     ListImage(
-        url: "assets/pages/games/memory/avomo.png", cond: false, globalcond: false),
+        url: "assets/pages/games/memory/bbf.png",
+        cond: false,
+        globalcond: false),
     ListImage(
-        url: "assets/pages/games/memory/avomo.png", cond: false, globalcond: false),
+        url: "assets/pages/games/memory/avomo.png",
+        cond: false,
+        globalcond: false),
+    ListImage(
+        url: "assets/pages/games/memory/avomo.png",
+        cond: false,
+        globalcond: false),
   ];
 
   // 24 cartes
@@ -144,17 +182,29 @@ class _MemoireState extends State<Memoire> with TickerProviderStateMixin {
         cond: false,
         globalcond: false),
     ListImage(
-        url: "assets/pages/games/memory/engie.png", cond: false, globalcond: false),
+        url: "assets/pages/games/memory/engie.png",
+        cond: false,
+        globalcond: false),
     ListImage(
-        url: "assets/pages/games/memory/engie.png", cond: false, globalcond: false),
+        url: "assets/pages/games/memory/engie.png",
+        cond: false,
+        globalcond: false),
     ListImage(
-        url: "assets/pages/games/memory/gaya.png", cond: false, globalcond: false),
+        url: "assets/pages/games/memory/gaya.png",
+        cond: false,
+        globalcond: false),
     ListImage(
-        url: "assets/pages/games/memory/gaya.png", cond: false, globalcond: false),
+        url: "assets/pages/games/memory/gaya.png",
+        cond: false,
+        globalcond: false),
     ListImage(
-        url: "assets/pages/games/memory/avomo.png", cond: false, globalcond: false),
+        url: "assets/pages/games/memory/avomo.png",
+        cond: false,
+        globalcond: false),
     ListImage(
-        url: "assets/pages/games/memory/avomo.png", cond: false, globalcond: false),
+        url: "assets/pages/games/memory/avomo.png",
+        cond: false,
+        globalcond: false),
     ListImage(
         url: "assets/pages/games/memory/cilkoa.png",
         cond: false,
@@ -195,11 +245,8 @@ class _MemoireState extends State<Memoire> with TickerProviderStateMixin {
     Iterable<Widget> listWidget = (widget.niveau == 1
             ? listCardFacile
             : (widget.niveau == 2 ? listCardMoyen : listCarddifficile))
-        .mapIndexed((index, element) => buildCard(
-                element.url,
-                "assets/images/memoire/vivatech.png",
-                element.cond,
-                element.globalcond, () {
+        .mapIndexed((index, element) => buildCard(element.url,
+                "assets/icons/icon.png", element.cond, element.globalcond, () {
               setState(() {
                 element.cond = true;
               });
@@ -217,7 +264,7 @@ class _MemoireState extends State<Memoire> with TickerProviderStateMixin {
                     card1.index = -1;
                   });
                 } else {
-                  Future.delayed(const Duration(milliseconds: 500), () {
+                  Future.delayed(const Duration(milliseconds: 300), () {
                     setState(() {
                       listCardFacile[card1.index!].cond = false;
                       element.cond = false;
@@ -262,8 +309,13 @@ class _MemoireState extends State<Memoire> with TickerProviderStateMixin {
                     ),
                     child: TextButton(
                       onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Scene()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const QuitGameContainerComponent(
+                                      gameName: 'game-memory',
+                                    )));
                       },
                       child: const Text(
                         "Quitter",

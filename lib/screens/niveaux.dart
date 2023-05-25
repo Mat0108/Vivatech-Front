@@ -97,7 +97,7 @@ class _Scene extends State<Scene> {
               child: Text(
                 titre,
                 style:
-                    const TextStyle(fontSize: 20, color: VivatechColor.white),
+                    const TextStyle(fontSize: 15, color: VivatechColor.white),
               ),
               onPressed: () {
                 Navigator.push(
