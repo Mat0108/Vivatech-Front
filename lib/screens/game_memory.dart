@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:vivatech/components/color.dart';
 import 'package:collection/collection.dart';
+import 'package:vivatech/components/game/gameContainer.dart';
 import 'package:vivatech/screens/niveaux.dart';
 
 import '../components/game/quitGameContainer.dart';
@@ -276,7 +277,10 @@ class _MemoireState extends State<Memoire> with TickerProviderStateMixin {
               }
             }));
 
-    return Positioned(
+    return GameContainerComponent(
+        content: Container(
+            child: Text(
+                "test")) /*Positioned(
       width: 390,
       height: 400,
       top: 80,
@@ -332,7 +336,8 @@ class _MemoireState extends State<Memoire> with TickerProviderStateMixin {
           ],
         ),
       ),
-    );
+    )*/
+        );
   }
 
   Widget card(String url, bool cond, VoidCallback callback) {
