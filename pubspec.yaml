@@ -41,6 +41,17 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  animated_text_kit: ^4.2.2
+  carousel_slider: ^4.0.0
+  flutter_icons: ^1.1.0
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+
   flutter_lints: ^2.0.0
   flutter_native_splash: ^2.0.1+1
   flutter_launcher_icons: ^0.13.1
@@ -48,6 +59,7 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+
   uses-material-design: true
   assets:
      - assets/background/
@@ -59,6 +71,23 @@ flutter:
      - assets/pages/stands/
      - assets/pages/pass/
      - ar/
+     - assets/pages/games/
+     - assets/background/bg-gradient-vivatech.png
+     - assets/background/bg-gradient-vivatech-2.png
+     - assets/background/victoire.png
+     - assets/pages/games/characters/
+     - assets/background.png
+     - assets/futur.png
+     - assets/pages/games/
+     - assets/map.png
+     - assets/qr.png
+     - assets/conference/FoodTech/
+     - assets/conference/Cybersecurity/
+     - assets/conference/DeepTech/
+     - assets/conference/Metaverse/
+     - assets/conference/IA/
+     - assets/stand/
+   
   fonts:
      - family: MuseoSans
        fonts:
@@ -72,6 +101,7 @@ flutter:
            weight: 700
          - asset: assets/fonts/MuseoSans-900.otf
            weight: 900
+
 
 
 #custom splash screen
