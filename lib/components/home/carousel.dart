@@ -35,7 +35,8 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
 
   @override
   Widget build(BuildContext context) {
-    List<List<String>> imageLists = widget.type == "1" ? [imgList] : [imgListStand];
+    List<List<String>> imageLists =
+        widget.type == "1" ? [imgList] : [imgListStand];
     List<Widget> carouselItems = [];
 
     for (List<String> imageList in imageLists) {
@@ -49,7 +50,8 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
                   children: <Widget>[
                     Container(
                       decoration: BoxDecoration(
-                        borderRadius: const BorderRadius.all(Radius.circular(15)),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(15)),
                         image: DecorationImage(
                           image: AssetImage(imageList[i]),
                           fit: BoxFit.cover,
@@ -65,7 +67,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
                               .split(".")[0],
                           style: const TextStyle(
                             color: Colors.white,
-                            fontSize: 30.0,
+                            fontSize: 20.0,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -83,7 +85,8 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
                         children: <Widget>[
                           Container(
                             decoration: BoxDecoration(
-                              borderRadius: const BorderRadius.all(Radius.circular(15)),
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(15)),
                               image: DecorationImage(
                                 image: AssetImage(imageList[i + 1]),
                                 fit: BoxFit.cover,
@@ -99,7 +102,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
                                     .split(".")[0],
                                 style: const TextStyle(
                                   color: Colors.white,
-                                  fontSize: 30.0,
+                                  fontSize: 20.0,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -139,16 +142,14 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: imageLists[0]
-                .asMap()
-                .entries
-                .map((entry) {
+            children: imageLists[0].asMap().entries.map((entry) {
               return GestureDetector(
                 onTap: () => _controller.animateToPage(entry.key),
                 child: Container(
                   width: 12.0,
                   height: 12.0,
-                  margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+                  margin: const EdgeInsets.symmetric(
+                      vertical: 8.0, horizontal: 4.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: (Theme.of(context).brightness == Brightness.dark

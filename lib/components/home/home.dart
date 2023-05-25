@@ -37,7 +37,7 @@ class _Scene extends State<Scene> {
                   border: Border.all(color: const Color(0x33ffffff)),
                   color: const Color(0xa5ffffff),
                   image: const DecorationImage(
-                    image: AssetImage("assets/background/pages/home/VivatechTitre.png"),
+                    image: AssetImage("assets/pages/home/VivatechTitre.png"),
                     fit: BoxFit.cover,
                   ),
                 ),
