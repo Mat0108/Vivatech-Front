@@ -2,4 +2,8 @@
 .dart_tool
 build/*
 /.idea/*
+# Logs
+*.log
+*.log.*
+*.txt
 
