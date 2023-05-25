@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:front/widgets/rounded_image.dart';
+import 'package:vivatech/widgets/rounded_image.dart';
 import '../components/SessionCard.dart';
 import '../models/conference.dart';
 import '../widgets/pink_row.dart';

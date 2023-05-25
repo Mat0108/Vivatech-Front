@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:front/components/textTyperAnimation.dart';
+import 'package:vivatech/components/textTyperAnimation.dart';
 
 
 class ResultComponent extends StatefulWidget {

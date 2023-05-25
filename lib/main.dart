@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:front/pages/defeat_quiz_page.dart';
-import 'package:front/pages/game_quiz_page.dart';
-import 'package:front/pages/tutoriel_quiz_page.dart';
+import 'package:vivatech/pages/defeat_quiz_page.dart';
+import 'package:vivatech/pages/game_quiz_page.dart';
+import 'package:vivatech/pages/tutoriel_quiz_page.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:vivatech/screens/games.dart';
 import 'package:vivatech/screens/pass.dart';
@@ -13,7 +13,6 @@ import 'pages/stand_details_page.dart';
 import 'pages/conference_details_page.dart';
 
 void main() {
-
   runApp(const MyApp());
 }
 
@@ -30,7 +29,6 @@ class _MyAppState extends State<MyApp> {
   static final List<Widget> _pages = [
     ConferenceDetailsPage(),
     StandDetailsPage()
-
   ];
 
   void _onItemTapped(int index) {
@@ -111,21 +109,22 @@ class _MyAppState extends State<MyApp> {
       ),
       debugShowCheckedModeBanner: false,
       title: 'VivaTech',
-        theme: ThemeData(
-            brightness: Brightness.light,
-            primaryColor: Colors.white,
-            fontFamily: 'MuseoSans'),
-        home: const Scene(),
-        initialRoute: '/',
+      theme: ThemeData(
+          brightness: Brightness.light,
+          primaryColor: Colors.white,
+          fontFamily: 'MuseoSans'),
+      initialRoute: '/',
       routes: {
         '/stand': (context) => StandDetailsPage(),
         '/conference': (context) => ConferenceDetailsPage(),
         '/quizGame': (context) => QuizScreen(),
-        '/tutorialQuizPage' :(context) =>TutorialQuizPage(),
+        '/tutorialQuizPage': (context) => TutorialQuizPage(),
         '/pass': (context) => Pass(),
-          '/scanner-qrcode': (context) => ScanQrCode(),
-          '/jeux': (context) => Games(),
-          // '/jeux/jeu-logique/tutoriel': (context) => GameLogicTutorial(),
-          // '/jeux/jeu-logique': (context) => GameLogic(),
+        '/scanner-qrcode': (context) => ScanQrCode(),
+        '/jeux': (context) => Games(),
+        // '/jeux/jeu-logique/tutoriel': (context) => GameLogicTutorial(),
+        // '/jeux/jeu-logique': (context) => GameLogic(),
       },
     );
+  }
+}
