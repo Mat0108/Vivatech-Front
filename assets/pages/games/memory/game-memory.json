@@ -11,6 +11,15 @@
             "Comme indiqué ci-dessous.",
             "Lorsque toutes les cartes ont été appariées avec succès, cela signifie que vous avez gagné le jeu.",
             "Alors maintenant, vous pouvez commencer le jeu et vous souhaiter tout le meilleur!"
+        ],
+        "images": [
+            "assets/pages/games/memory/tuto1.png",
+            "assets/pages/games/memory/tuto2.png",
+            "assets/pages/games/memory/tuto3.png",
+            "assets/pages/games/memory/tuto4.png",
+            "assets/pages/games/memory/tuto5.png",
+            "assets/pages/games/memory/tuto6.png",
+            "assets/pages/games/memory/tuto7.png"
         ]
 
         
