@@ -8,6 +8,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:ar_flutter_plugin/ar_flutter_plugin.dart';
 import 'package:ar_flutter_plugin/datatypes/config_planedetection.dart';
+import 'package:front/color.dart';
 import 'dart:math';
 import 'package:vector_math/vector_math_64.dart';
 import 'package:geolocator/geolocator.dart';
@@ -28,9 +29,10 @@ class _AR extends State<AR> with TickerProviderStateMixin {
   bool _showFeaturePoints = false;
   bool _showPlanes = false;
   bool _showWorldOrigin = false;
-  bool _showAnimatedGuide = true;
+  bool _showAnimatedGuide = false;
   String _planeTexturePath = "/assets/images/unlock.png";
   bool _handleTaps = false;
+  double anglet = 0;
 
   Position position = Position(
       longitude: 2.294481,
@@ -82,7 +84,7 @@ class _AR extends State<AR> with TickerProviderStateMixin {
     getPos().then((value) => setState(() => position = value!));
   }
 
-  double calculCord() {
+  void calculCord() {
     double angle = atan((widget.latitude - position.latitude) /
             (widget.longitude - position.longitude)) *
         (180 / pi);
@@ -96,7 +98,9 @@ class _AR extends State<AR> with TickerProviderStateMixin {
     if (widget.latitude < 0 && widget.longitude > 0) {
       angle = 360 + angle;
     }
-    return angle;
+    setState(() {
+      anglet = angle;
+    });
   }
 
   @override
@@ -108,60 +112,38 @@ class _AR extends State<AR> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Debug Options'),
-        ),
         body: Container(
-            child: Stack(children: [
-          ARView(
-            onARViewCreated: onARViewCreated,
-            planeDetectionConfig: PlaneDetectionConfig.horizontalAndVertical,
-            showPlatformType: true,
-          ),
-          Align(
-            alignment: FractionalOffset.bottomRight,
-            child: Container(
-              width: MediaQuery.of(context).size.width * 0.5,
-              color: Color(0xFFFFFFF).withOpacity(0.5),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  SwitchListTile(
-                    title: Text(calculCord().toString()),
-                    value: _showFeaturePoints,
-                    onChanged: (bool value) {
-                      setState(() {
-                        _showFeaturePoints = value;
-                        onLocalObjectAtOriginButtonPressed();
-                      });
-                    },
-                  ),
-                  SwitchListTile(
-                    title: const Text('Planes'),
-                    value: _showPlanes,
-                    onChanged: (bool value) {
-                      setState(() {
-                        _showPlanes = value;
-                        updateSessionSettings();
-                      });
-                    },
-                  ),
-                  SwitchListTile(
-                    title: const Text('World Origin'),
-                    value: _showWorldOrigin,
-                    onChanged: (bool value) {
-                      setState(() {
-                        _showWorldOrigin = value;
-                        updateSessionSettings();
-                      });
-                    },
-                  ),
-                ],
+            height: 800,
+            width: 480,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/images/fond.png"),
+                fit: BoxFit.cover,
               ),
             ),
-          ),
-        ])));
+            child: Center(
+                child: Stack(children: [
+              Container(
+                  height: 600,
+                  width: 350,
+                  decoration: const BoxDecoration(
+                    color: VivatechColor.white,
+                    borderRadius: BorderRadius.all(Radius.circular(15)),
+                  ),
+                  child: ARView(
+                    onARViewCreated: onARViewCreated,
+                    planeDetectionConfig:
+                        PlaneDetectionConfig.horizontalAndVertical,
+                    showPlatformType: false,
+                  )),
+              Text("Angle: $anglet")
+            ]))));
+  }
+
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance
+        .addPostFrameCallback((_) => onLocalObjectAtOriginButtonPressed());
   }
 
   void onARViewCreated(
@@ -200,10 +182,10 @@ class _AR extends State<AR> with TickerProviderStateMixin {
       var newNode = ARNode(
           type: NodeType.webGLB,
           uri:
-              "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Duck/glTF-Binary/Duck.glb",
-          scale: Vector3(0.2, 0.2, 0.2),
+              "https://github.com/Mat0108/Vivatech-Front/raw/assets/ar/ar/ar.glb",
+          scale: Vector3(0.008, 0.008, 0.008),
           position: Vector3(0.0, 0.0, 0.0),
-          rotation: Vector4(1.0, 0.0, 0.0, 0.0));
+          rotation: Vector4(10.0, 0.0, 0.0, 0.0));
       bool? didAddLocalNode = await this.arObjectManager!.addNode(newNode);
       this.localObjectNode = (didAddLocalNode!) ? newNode : null;
     }
