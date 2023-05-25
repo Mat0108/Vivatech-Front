@@ -18,7 +18,8 @@ class GameContainerWithCharacterComponent extends StatefulWidget {
       this.content,
       required this.showNextButton,
       this.game,
-      this.currentIndexTutorial})
+      this.currentIndexTutorial,
+      required void Function() onNextPressed})
       : super(key: key);
 
   @override
@@ -58,9 +59,19 @@ class _GameContainerWithCharacterComponentState
     } else if (widget.gameName == "game-memory") {
       image = "assets/pages/games/characters/coumba.png";
 
-      if (currentIndex != 0 && currentIndex != 1 && currentIndex != 9) {
+      if (currentIndex == 0 && currentIndex == 1 && currentIndex == 9) {
+        setState(() {
+          withContent = false;
+        });
+      } else if (currentIndex == 2) {
         setState(() {
           withContent = true;
+          currentIndexContent = 0;
+        });
+      } else if (currentIndex == 3) {
+        setState(() {
+          withContent = true;
+          currentIndexContent = 1;
         });
       }
     } else if (widget.gameName == "quiz") {
@@ -81,6 +92,10 @@ class _GameContainerWithCharacterComponentState
       }
     }
 
+    print("index content");
+    print(currentIndexContent);
+    print("index");
+    print(currentIndex);
     return Container(
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(

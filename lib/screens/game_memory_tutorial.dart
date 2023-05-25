@@ -16,6 +16,18 @@ class GameMemoryTutorial extends StatefulWidget {
 class _GameMemoryTutorialState extends State<GameMemoryTutorial> {
   Map<String, dynamic> _gameData = {};
 
+  late int _currentImageIndex = 0;
+  final List<String> _imagePaths = [
+    'assets/pages/games/memory/tuto1.png',
+    'assets/pages/games/memory/tuto2.png',
+    'assets/pages/games/memory/tuto3.png',
+    'assets/pages/games/memory/tuto4.png',
+    'assets/pages/games/memory/tuto5.png',
+    'assets/pages/games/memory/tuto6.png',
+    'assets/pages/games/memory/tuto7.png',
+    // Ajoutez ici d'autres chemins d'images
+  ];
+
   Future<void> readJson() async {
     final String response = await rootBundle
         .loadString('assets/pages/games/memory/game-memory.json');
@@ -44,14 +56,17 @@ class _GameMemoryTutorialState extends State<GameMemoryTutorial> {
                 gameName: "game-memory",
                 tutorial: _gameData["explanations"],
                 showNextButton: true,
+                onNextPressed:
+                    _nextImage, // Appelle la méthode _nextImage() lorsque le bouton "Next" est pressé
                 game: Scene(),
                 content: [
-                  Column(
-                    children: [
-                      Image.asset('assets/pages/games/memory/tuto1.png'),
-                      // Other widgets...
-                    ],
-                  ),
+                  Image.asset("assets/pages/games/memory/tuto1.png"),
+                  Image.asset("assets/pages/games/memory/tuto2.png"),
+                  Image.asset("assets/pages/games/memory/tuto3.png"),
+                  Image.asset("assets/pages/games/memory/tuto4.png"),
+                  Image.asset("assets/pages/games/memory/tuto5.png"),
+                  Image.asset("assets/pages/games/memory/tuto6.png"),
+                  Image.asset("assets/pages/games/memory/tuto7.png"),
                 ],
               ),
             ),
@@ -59,5 +74,11 @@ class _GameMemoryTutorialState extends State<GameMemoryTutorial> {
         ),
       ),
     );
+  }
+
+  void _nextImage() {
+    setState(() {
+      _currentImageIndex = (_currentImageIndex + 1) % _imagePaths.length;
+    });
   }
 }
