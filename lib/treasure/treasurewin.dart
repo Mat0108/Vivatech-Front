@@ -17,8 +17,7 @@ class TreasureWinPage extends StatelessWidget {
     // The Flutter framework has been optimized to make rerunni ng build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-    return Scaffold(
-        body: Container(
+    return Container(
       height: 800,
       width: 480,
       decoration: const BoxDecoration(
@@ -51,6 +50,6 @@ class TreasureWinPage extends StatelessWidget {
         ),
       ),
       // This trailing comma makes auto-formatting nicer for build methods.
-    ));
+    );
   }
 }

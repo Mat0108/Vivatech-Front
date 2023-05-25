@@ -24,127 +24,125 @@ class _TreasureStage1State extends State<TreasureStage1> {
   bool showquit = false;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Container(
-            height: 800,
-            width: 480,
-            decoration: const BoxDecoration(
-              color: VivatechColor.white,
-              image: DecorationImage(
-                image: AssetImage("assets/background/fond.png"),
-                fit: BoxFit.cover,
-              ),
-            ),
-            child: Center(
-              child: Stack(children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    const TopNavigationComponent(currentPage: "treasure"),
-                    GameContainerWithCharacterComponent(
-                        tutorial: [text],
-                        showNextButton: false,
-                        gameName: "treasure1",
-                        game: const TreasureStage2()),
-                    Container(
-                      height: 80,
-                      width: 390,
-                      margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            card("assets/pages/treasure/jeu1/logo.png"),
-                            card("assets/pages/treasure/jeu1/bnp.png"),
-                            card("assets/pages/treasure/jeu1/google.png"),
-                            card("assets/pages/treasure/jeu1/poste.png")
-                          ]),
-                    ),
-                    SizedBox(
-                      height: 80,
-                      width: 390,
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Selector(dropdown1, "1"),
-                            Selector(dropdown2, "2"),
-                            Selector(dropdown3, "3"),
-                            Selector(dropdown4, "4")
-                          ]),
-                    ),
-                    Container(
-                        width: 390,
-                        height: 80,
-                        child: Column(children: <Widget>[
-                          Container(
-                              width: 390,
-                              height: 60,
-                              margin: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: <Widget>[
-                                  Container(
-                                    width: 110,
-                                    height: 48,
-                                    decoration: const BoxDecoration(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(15)),
-                                        color: VivatechColor.purple),
-                                    child: TextButton(
-                                      onPressed: () {
-                                        if (dropdown1 == 1 &&
-                                            dropdown2 == 1 &&
-                                            dropdown3 == 1 &&
-                                            dropdown4 == 1) {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      const TreasureStage2()));
-                                        }
-                                      },
-                                      child: const Text("Valider",
-                                          style: TextStyle(
-                                              fontSize: 18,
-                                              color: VivatechColor.white)),
-                                    ),
-                                  ),
-                                  Container(
-                                    width: 110,
-                                    height: 48,
-                                    decoration: const BoxDecoration(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(15)),
-                                        color: VivatechColor.pink),
-                                    child: TextButton(
-                                      onPressed: () {
-                                        setState(() {
-                                          showquit = true;
-                                        });
-                                      },
-                                      child: const Text("Quitter",
-                                          style: TextStyle(
-                                              fontSize: 18,
-                                              color: VivatechColor.white)),
-                                    ),
-                                  ),
-                                ],
-                              ))
-                        ]))
-                  ],
+    return Container(
+        height: 800,
+        width: 480,
+        decoration: const BoxDecoration(
+          color: VivatechColor.white,
+          image: DecorationImage(
+            image: AssetImage("assets/background/fond.png"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Center(
+          child: Stack(children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                const TopNavigationComponent(currentPage: "treasure"),
+                GameContainerWithCharacterComponent(
+                    tutorial: [text],
+                    showNextButton: false,
+                    gameName: "treasure1",
+                    game: const TreasureStage2()),
+                Container(
+                  height: 80,
+                  width: 390,
+                  margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        card("assets/pages/treasure/jeu1/logo.png"),
+                        card("assets/pages/treasure/jeu1/bnp.png"),
+                        card("assets/pages/treasure/jeu1/google.png"),
+                        card("assets/pages/treasure/jeu1/poste.png")
+                      ]),
                 ),
-                if (showquit)
-                  Positioned(
-                      bottom: 0,
-                      child: Container(
-                          decoration: const BoxDecoration(
-                            color: Color.fromRGBO(0, 0, 0, 0.7),
-                          ),
-                          child: const QuitGameContainerComponent(
-                              gameName: "treasure")))
-              ]),
-              // This trailing comma makes auto-formatting nicer for build methods.
-            )));
+                SizedBox(
+                  height: 80,
+                  width: 390,
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Selector(dropdown1, "1"),
+                        Selector(dropdown2, "2"),
+                        Selector(dropdown3, "3"),
+                        Selector(dropdown4, "4")
+                      ]),
+                ),
+                Container(
+                    width: 390,
+                    height: 80,
+                    child: Column(children: <Widget>[
+                      Container(
+                          width: 390,
+                          height: 60,
+                          margin: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Container(
+                                width: 110,
+                                height: 48,
+                                decoration: const BoxDecoration(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(15)),
+                                    color: VivatechColor.purple),
+                                child: TextButton(
+                                  onPressed: () {
+                                    if (dropdown1 == 1 &&
+                                        dropdown2 == 1 &&
+                                        dropdown3 == 1 &&
+                                        dropdown4 == 1) {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const TreasureStage2()));
+                                    }
+                                  },
+                                  child: const Text("Valider",
+                                      style: TextStyle(
+                                          fontSize: 18,
+                                          color: VivatechColor.white)),
+                                ),
+                              ),
+                              Container(
+                                width: 110,
+                                height: 48,
+                                decoration: const BoxDecoration(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(15)),
+                                    color: VivatechColor.pink),
+                                child: TextButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      showquit = true;
+                                    });
+                                  },
+                                  child: const Text("Quitter",
+                                      style: TextStyle(
+                                          fontSize: 18,
+                                          color: VivatechColor.white)),
+                                ),
+                              ),
+                            ],
+                          ))
+                    ]))
+              ],
+            ),
+            if (showquit)
+              Positioned(
+                  bottom: 0,
+                  child: Container(
+                      decoration: const BoxDecoration(
+                        color: Color.fromRGBO(0, 0, 0, 0.7),
+                      ),
+                      child: const QuitGameContainerComponent(
+                          gameName: "treasure")))
+          ]),
+          // This trailing comma makes auto-formatting nicer for build methods.
+        ));
   }
 
   Widget card(String url) {

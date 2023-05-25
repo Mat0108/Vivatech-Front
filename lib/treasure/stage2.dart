@@ -45,8 +45,7 @@ class _TreasureStage2State extends State<TreasureStage2> {
   String text =
       "Grace à la carte, nous savons où se trouve a peu pres la derniere étape. Serai tu capables de trouver l'allée du stand La Poste Groupe";
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Container(
+    return Container(
       height: 800,
       width: 480,
       decoration: const BoxDecoration(
@@ -269,6 +268,6 @@ class _TreasureStage2State extends State<TreasureStage2> {
                       const QuitGameContainerComponent(gameName: "treasure")))
       ])),
       // This trailing comma makes auto-formatting nicer for build methods.
-    ));
+    );
   }
 }
