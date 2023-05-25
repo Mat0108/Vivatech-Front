@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:front/main.dart';
-import 'package:front/pages/victory_quiz_page.dart';
+import 'package:vivatech/main.dart';
+import 'package:vivatech/pages/victory_quiz_page.dart';
 
 import '../components/background.dart';
 import '../components/topNavigation.dart';

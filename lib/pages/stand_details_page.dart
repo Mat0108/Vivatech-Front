@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:front/widgets/padding_description.dart';
-import 'package:front/widgets/pink_row.dart';
-import 'package:front/widgets/rounded_image.dart';
+import 'package:vivatech/widgets/padding_description.dart';
+import 'package:vivatech/widgets/pink_row.dart';
+import 'package:vivatech/widgets/rounded_image.dart';
 import '../models/stand.dart';
 
 class StandDetailsPage extends StatelessWidget {
