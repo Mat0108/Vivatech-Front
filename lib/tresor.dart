@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'color.dart';
+import 'components/color.dart';
 
 class TresorPage extends StatefulWidget {
   const TresorPage({super.key, required this.title, required this.progress});
