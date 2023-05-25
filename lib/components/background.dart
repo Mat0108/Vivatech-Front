@@ -21,8 +21,4 @@ class BackgroundComponent extends StatelessWidget {
             ),
             child: content));
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> games

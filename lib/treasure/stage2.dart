@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:front/treasure/treasure.dart';
+import 'package:vivatech/treasure/treasure.dart';
 import '../color.dart';
 import 'stage3.dart';
 

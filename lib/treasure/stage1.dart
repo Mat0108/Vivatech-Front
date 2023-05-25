@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:front/treasure/stage2.dart';
-import 'package:front/treasure/treasure.dart';
+import 'package:vivatech/treasure/stage2.dart';
+import 'package:vivatech/treasure/treasure.dart';
 import '../color.dart';
 
 const List<double> list = <double>[1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
