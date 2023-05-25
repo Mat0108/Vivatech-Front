@@ -65,8 +65,8 @@ class _PdfUploaderPageState extends State<PdfUploaderPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
-                    width: 100,
-                    height: 100,
+                    width: 350,
+                    height: 520,
                     alignment: Alignment.center,
                     child: RawMaterialButton(
                       onPressed: () {
@@ -86,8 +86,8 @@ class _PdfUploaderPageState extends State<PdfUploaderPage> {
                     ),
                   ),
                   Container(
-                    width: 100,
-                    height: 100,
+                    width: 350,
+                    height: 520,
                     alignment: Alignment.center,
                     child: RawMaterialButton(
                       onPressed: uploadPDF,
