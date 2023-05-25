@@ -22,9 +22,9 @@ class MyApp extends StatelessWidget {
         home: const Scene(),
         initialRoute: '/',
         routes: {
-          // '/pass': (context) => Pass(),
-          // '/scanner-qrcode': (context) => ScanQrCode(),
-          // '/jeux': (context) => Games(),
+          '/pass': (context) => Pass(),
+          '/scanner-qrcode': (context) => ScanQrCode(),
+          '/jeux': (context) => Games(),
           // '/jeux/jeu-logique/tutoriel': (context) => GameLogicTutorial(),
           // '/jeux/jeu-logique': (context) => GameLogic(),
         });
