@@ -27,8 +27,7 @@ class _PdfUploaderPageState extends State<PdfUploaderPage> {
         File file = File(result.files.single.path!);
         String fileName = result.files.single.name;
 
-        Directory? appDocumentsDirectory =
-            await getApplicationDocumentsDirectory();
+        Directory appDocumentsDirectory = await getApplicationDocumentsDirectory();
         String newPath = '${appDocumentsDirectory.path}/$fileName';
 
         await file.copy(newPath);
@@ -47,40 +46,38 @@ class _PdfUploaderPageState extends State<PdfUploaderPage> {
   }
 
   @override
-  @override
-Widget build(BuildContext context) {
-  return Scaffold(
-    appBar: const TopNavigationComponent(currentPage: "cv")
-    body: Container(
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('assets/background/bg-gradient-vivatech-2.png'),
-          fit: BoxFit.cover,
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/background/bg-gradient-vivatech-2.png'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Column(
+          children: [
+            const TopNavigationComponent(currentPage: "cv"),
+            Expanded(
+              child: Align(
+                alignment: Alignment.center,
+                child: ElevatedButton(
+                  onPressed: uploadPDF,
+                  child: Text('Télécharger votre CV'),
+                ),
+              ),
+            ),
+            if (pdfPath != null) ...[
+              SizedBox(height: 20),
+              Expanded(
+                child: PDFView(
+                  filePath: pdfPath!,
+                ),
+              ),
+            ],
+          ],
         ),
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center, // Centrer les éléments verticalement
-        children: [
-          Expanded(
-            child: Align(
-              alignment: Alignment.center,
-              child: ElevatedButton(
-                onPressed: uploadPDF,
-                child: const Text('Télécharger votre CV'),
-              ),
-            ),
-          ),
-          if (pdfPath != null) ...[
-            const SizedBox(height: 20),
-            Expanded(
-              child: PDFView(
-                filePath: pdfPath!,
-              ),
-            ),
-          ],
-        ],
-      ),
-    ),
-  );
-}
+    );
+  }
 }
