@@ -58,44 +58,39 @@ class _GameContainerWithCharacterComponentState
     } else if (widget.gameName == "game-memory") {
       image = "assets/pages/games/characters/coumba.png";
 
-      if (currentIndex == 0 && currentIndex == 1 && currentIndex == 9) {
-        setState(() {
-          withContent = false;
-        });
-      } else if (currentIndex == 2) {
+      if (currentIndex == 2) {
         setState(() {
           withContent = true;
           currentIndexContent = 0;
         });
-      } else if (currentIndex == 3) {
+      } else if (currentIndex == 3 || currentIndex == 4) {
         setState(() {
           withContent = true;
           currentIndexContent = 1;
         });
-      } else if (currentIndex == 4) {
+      } else if (currentIndex == 5) {
         setState(() {
           withContent = true;
           currentIndexContent = 2;
         });
-      } else if (currentIndex == 5) {
+      } else if (currentIndex == 6) {
         setState(() {
           withContent = true;
           currentIndexContent = 3;
         });
-      } else if (currentIndex == 6) {
+      } else if (currentIndex == 7) {
         setState(() {
           withContent = true;
           currentIndexContent = 4;
         });
-      } else if (currentIndex == 7) {
+      } else if (currentIndex == 8) {
         setState(() {
           withContent = true;
           currentIndexContent = 5;
         });
-      } else if (currentIndex == 8) {
+      } else {
         setState(() {
-          withContent = true;
-          currentIndexContent = 6;
+          withContent = false;
         });
       }
     } else if (widget.gameName == "quiz") {
