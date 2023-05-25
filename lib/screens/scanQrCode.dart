@@ -25,7 +25,7 @@ class _ScanQrCodeState extends State<ScanQrCode> {
     return Scaffold(
         body: BackgroundComponent(
             content: TopNavigationComponent(
-                currentPage: "game-logic",
+                currentPage: "scan-qrcode",
                 content: Expanded(
                     child: Column(
                   children: <Widget>[
