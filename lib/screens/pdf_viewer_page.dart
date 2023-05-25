@@ -65,8 +65,8 @@ class _PdfUploaderPageState extends State<PdfUploaderPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
-                    width: 350,
-                    height: 520,
+                    width: 70,
+                    height: 70,
                     alignment: Alignment.center,
                     child: RawMaterialButton(
                       onPressed: () {
@@ -77,7 +77,7 @@ class _PdfUploaderPageState extends State<PdfUploaderPage> {
                       shape: CircleBorder(),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
+                        children: const [
                           Icon(Icons.share, color: Colors.white, size: 24),
                           SizedBox(height: 4),
                           Text("Share", style: TextStyle(color: Colors.white, fontSize: 12)),
@@ -86,8 +86,8 @@ class _PdfUploaderPageState extends State<PdfUploaderPage> {
                     ),
                   ),
                   Container(
-                    width: 350,
-                    height: 520,
+                    width: 70,
+                    height: 70,
                     alignment: Alignment.center,
                     child: RawMaterialButton(
                       onPressed: uploadPDF,
@@ -96,7 +96,7 @@ class _PdfUploaderPageState extends State<PdfUploaderPage> {
                       shape: CircleBorder(),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
+                        children: const [
                           Icon(Icons.download, color: Colors.white, size: 24),
                           SizedBox(height: 4),
                           Text('Upload', style: TextStyle(color: Colors.white, fontSize: 12)),
@@ -108,8 +108,8 @@ class _PdfUploaderPageState extends State<PdfUploaderPage> {
               ),
               if (pdfPath != null)
                 Container(
-                  width: 100,
-                  height: 100,
+                  width: 350,
+                  height: 520,
                   child: PDFView(
                     filePath: pdfPath!,
                   ),
