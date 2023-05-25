@@ -35,7 +35,7 @@ class TopNavigationComponent extends StatelessWidget {
       imageNav = "assets/pages/home/pass.png";
     } else if (currentPage == "cv") {
       textNav = "CV";
-      imageNav = "assets/pages/home/cv.png";
+      imageNav = "assets/pages/cv/cv.png";
     } else if (currentPage == "games") {
       textNav = "Jeux";
       imageNav = "assets/pages/home/game.png";
