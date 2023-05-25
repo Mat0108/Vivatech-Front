@@ -50,9 +50,7 @@ class _PdfUploaderPageState extends State<PdfUploaderPage> {
   @override
 Widget build(BuildContext context) {
   return Scaffold(
-    appBar: AppBar(
-      title: Text('PDF Uploader'),
-    ),
+    appBar: const TopNavigationComponent(currentPage: "cv")
     body: Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
