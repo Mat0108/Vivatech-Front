@@ -4,6 +4,7 @@ import 'package:ar_flutter_plugin/managers/ar_session_manager.dart';
 import 'package:ar_flutter_plugin/managers/ar_object_manager.dart';
 import 'package:ar_flutter_plugin/managers/ar_anchor_manager.dart';
 import 'package:ar_flutter_plugin/models/ar_node.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:ar_flutter_plugin/ar_flutter_plugin.dart';
 import 'package:ar_flutter_plugin/datatypes/config_planedetection.dart';
@@ -30,6 +31,7 @@ class _AR extends State<AR> with TickerProviderStateMixin {
   bool _showAnimatedGuide = true;
   String _planeTexturePath = "/assets/images/unlock.png";
   bool _handleTaps = false;
+
   Position position = Position(
       longitude: 2.294481,
       latitude: 48.85837,
@@ -196,8 +198,9 @@ class _AR extends State<AR> with TickerProviderStateMixin {
       this.localObjectNode = null;
     } else {
       var newNode = ARNode(
-          type: NodeType.localGLTF2,
-          uri: "ar/Chicken_01.gltf",
+          type: NodeType.webGLB,
+          uri:
+              "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Duck/glTF-Binary/Duck.glb",
           scale: Vector3(0.2, 0.2, 0.2),
           position: Vector3(0.0, 0.0, 0.0),
           rotation: Vector4(1.0, 0.0, 0.0, 0.0));
