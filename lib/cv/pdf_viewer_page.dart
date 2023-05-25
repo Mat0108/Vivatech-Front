@@ -3,6 +3,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_pdfview/flutter_pdfview.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:vivatech/components/topNavigation.dart';
 
 class PdfUploaderPage extends StatefulWidget {
   const PdfUploaderPage({super.key});
@@ -57,7 +58,7 @@ class _PdfUploaderPageState extends State<PdfUploaderPage> {
             child: const Text('Télécharger votre CV'),
           ),
           if (pdfPath != null) ...[
-            const SizedBox(height: 20),
+            SizedBox(height: 20),
             Expanded(
               child: PDFView(
                 filePath: pdfPath!,
