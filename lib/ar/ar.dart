@@ -8,7 +8,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:ar_flutter_plugin/ar_flutter_plugin.dart';
 import 'package:ar_flutter_plugin/datatypes/config_planedetection.dart';
-import 'package:front/color.dart';
+import 'package:vivatech/color.dart';
 import 'dart:math';
 import 'package:vector_math/vector_math_64.dart';
 import 'package:geolocator/geolocator.dart';
