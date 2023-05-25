@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:front/tresor/etape2.dart';
-import 'package:front/tresor/tresor.dart';
+import 'package:front/treasure/stage2.dart';
+import 'package:front/treasure/treasure.dart';
 import '../color.dart';
 
 const List<double> list = <double>[1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
-class TresorEtape1 extends StatefulWidget {
-  const TresorEtape1({super.key});
+class TreasureStage1 extends StatefulWidget {
+  const TreasureStage1({super.key});
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
   // how it looks.
@@ -17,10 +17,10 @@ class TresorEtape1 extends StatefulWidget {
   // always marked "final".
 
   @override
-  State<TresorEtape1> createState() => _TresorEtape1();
+  State<TreasureStage1> createState() => _TreasureStage1State();
 }
 
-class _TresorEtape1 extends State<TresorEtape1> {
+class _TreasureStage1State extends State<TreasureStage1> {
   double dropdown1 = list.first;
   double dropdown2 = list.first;
   double dropdown3 = list.first;
@@ -67,17 +67,16 @@ class _TresorEtape1 extends State<TresorEtape1> {
                             color: VivatechColor.purple),
                         child: TextButton(
                           onPressed: () {
-                            if (dropdown1 == 1 &&
+                            if (dropdown1 == 5 &&
                                 dropdown2 == 1 &&
-                                dropdown3 == 1 &&
-                                dropdown4 == 1) {
+                                dropdown3 == 7 &&
+                                dropdown4 == 4) {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const TresorPage(
-                                          title: 'Chasse au trésor',
+                                      builder: (context) => const TreasurePage(
                                           type: "4",
-                                          widget: TresorEtape2())));
+                                          widget: TreasureStage2())));
                             }
                           },
                           child: const Text("Valider",
@@ -96,8 +95,7 @@ class _TresorEtape1 extends State<TresorEtape1> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const TresorPage(
-                                          title: 'Chasse au trésor',
+                                    builder: (context) => const TreasurePage(
                                           type: "1",
                                         )));
                           },

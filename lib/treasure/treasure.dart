@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:front/tresor/etape1.dart';
-import 'package:front/tresor/etape2.dart';
+import 'package:front/treasure/stage1.dart';
+import 'package:front/treasure/stage2.dart';
 import '../color.dart';
 import 'dart:developer';
 import 'package:flutter/foundation.dart';
 
-class TresorPage extends StatefulWidget {
-  const TresorPage(
-      {super.key, required this.title, required this.type, this.widget});
+class TreasurePage extends StatefulWidget {
+  const TreasurePage({super.key, required this.type, this.widget});
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -17,16 +16,14 @@ class TresorPage extends StatefulWidget {
   // case the title) provided by the parent (in this case the App widget) and
   // used by the build method of the State. Fields in a Widget subclass are
   // always marked "final".
-
-  final String title;
   final String type;
   final Widget? widget;
 
   @override
-  State<TresorPage> createState() => _TresorPageState();
+  State<TreasurePage> createState() => _TreasurePageState();
 }
 
-class _TresorPageState extends State<TresorPage> {
+class _TreasurePageState extends State<TreasurePage> {
   @override
   Widget build(BuildContext context) {
     String text1 = "";
@@ -57,7 +54,7 @@ class _TresorPageState extends State<TresorPage> {
         text5 = "mon trésor ?";
         showbutton = true;
         nexttype = "3";
-        localwidget = const TresorEtape1();
+        localwidget = const TreasureStage1();
         break;
       case "3":
         text1 = "Pour proteger ma carte  ";
@@ -165,9 +162,9 @@ class _TresorPageState extends State<TresorPage> {
                                     bottomRight: Radius.circular(45)),
                                 border: Border.all(
                                     color: VivatechColor.pink, width: 3)),
-                            child: Center(
-                                child: Text(widget.title,
-                                    style: const TextStyle(
+                            child: const Center(
+                                child: Text('Chasse au trésor',
+                                    style: TextStyle(
                                         fontSize: 28,
                                         color: VivatechColor.purple))))),
                   ],
@@ -224,8 +221,7 @@ class _TresorPageState extends State<TresorPage> {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => TresorPage(
-                                                title: 'Chasse au trésor',
+                                          builder: (context) => TreasurePage(
                                                 type: nexttype,
                                                 widget: localwidget,
                                               )));
