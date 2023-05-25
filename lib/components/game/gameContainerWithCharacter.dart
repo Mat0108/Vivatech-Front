@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:vivatech/components/game/textTyperAnimation.dart';
 
-
 class GameContainerWithCharacterComponent extends StatefulWidget {
   final List<dynamic> tutorial;
   final String gameName;
@@ -74,11 +73,16 @@ class _GameContainerWithCharacterComponentState
     } else if (widget.gameName == "treasure") {
       image = "assets/pages/games/characters/matthieu.png";
 
-      if (currentIndex != 0 && currentIndex != 1 && currentIndex != 5) {
+      if (currentIndex != 0 && currentIndex != 1 && currentIndex != 3) {
         setState(() {
           withContent = true;
         });
       }
+    } else if (widget.gameName == "treasure1") {
+      image = "assets/pages/games/characters/matthieu.png";
+      setState(() {
+        withContent = true;
+      });
     }
 
     return Container(
@@ -104,8 +108,8 @@ class _GameContainerWithCharacterComponentState
                 Container(
                     alignment: Alignment.topCenter,
                     padding: withContent
-                        ? EdgeInsets.fromLTRB(140, 50, 80, 75)
-                        : EdgeInsets.fromLTRB(90, 75, 90, 75),
+                        ? EdgeInsets.fromLTRB(190, 50, 80, 75)
+                        : EdgeInsets.fromLTRB(120, 75, 90, 75),
                     child: showFullText
                         ? Text(widget.tutorial[currentIndex],
                             textAlign: TextAlign.justify,

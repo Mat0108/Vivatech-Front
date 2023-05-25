@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors, prefer_final_fields, avoid_print
 import 'package:flutter/material.dart';
 
-
 class QuitGameContainerComponent extends StatefulWidget {
   final String gameName;
 
@@ -55,7 +54,7 @@ class _QuitGameContainerComponentState
                   ),
                   Container(
                       alignment: Alignment.topCenter,
-                      padding: EdgeInsets.fromLTRB(90, 75, 90, 75),
+                      padding: EdgeInsets.fromLTRB(140, 75, 90, 75),
                       child: Text(text[currentIndex],
                           textAlign: TextAlign.justify,
                           style: const TextStyle(
@@ -67,7 +66,7 @@ class _QuitGameContainerComponentState
                     children: [
                       GestureDetector(
                           child: Padding(
-                              padding: EdgeInsets.fromLTRB(100, 160, 0, 0),
+                              padding: EdgeInsets.fromLTRB(160, 160, 0, 0),
                               child: Container(
                                   width: 100,
                                   height: 40,

@@ -19,7 +19,8 @@ class MyApp extends StatelessWidget {
             brightness: Brightness.light,
             primaryColor: Colors.white,
             fontFamily: 'MuseoSans'),
-        home: const Scene(),
+        home: Scene(),
+        // const Scene(),
         initialRoute: '/',
         routes: {
           '/pass': (context) => Pass(),

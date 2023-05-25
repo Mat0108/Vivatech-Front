@@ -55,10 +55,12 @@ flutter:
      - assets/pages/home/
      - assets/pages/games/
      - assets/pages/games/characters/
-     - assets/pages/conferences/
-     - assets/pages/stands/
+    #  - assets/pages/conferences/
+    #  - assets/pages/stands/
      - assets/pages/pass/
-     - ar/
+     - assets/pages/treasure/
+     - assets/pages/treasure/jeu1/
+     - assets/ar/
   fonts:
      - family: MuseoSans
        fonts:
