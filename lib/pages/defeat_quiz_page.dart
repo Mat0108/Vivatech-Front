@@ -10,8 +10,7 @@ class DefeatPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: BackgroundComponent(
+    return BackgroundComponent(
             content: Column(children: [
       TopNavigationComponent(currentPage: "quiz"),
       ResultComponent(
@@ -20,6 +19,6 @@ class DefeatPage extends StatelessWidget {
         gameName: 'quiz',
         display: false,
       )
-    ])));
+    ]));
   }
 }

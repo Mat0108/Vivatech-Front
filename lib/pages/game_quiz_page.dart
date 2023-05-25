@@ -22,8 +22,7 @@ class _QuizScreenState extends State<QuizScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: BackgroundComponent(
+    return BackgroundComponent(
             content: Column(children: [
       TopNavigationComponent(currentPage: "quiz"),
       Container(
@@ -48,7 +47,7 @@ class _QuizScreenState extends State<QuizScreen> {
               ],
             ),
           ))
-    ])));
+    ]));
   }
 
   _questionWidget() {

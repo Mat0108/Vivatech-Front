@@ -10,8 +10,7 @@ import '../components/tutorielQuizQuestion.dart';
 class TutorialQuizPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: BackgroundComponent(
+    return BackgroundComponent(
             content: Column(children: [
               TopNavigationComponent(currentPage: "quiz"),
               Expanded(
@@ -28,7 +27,7 @@ class TutorialQuizPage extends StatelessWidget {
                     "Après avoir répondu à une question, cliquez sur le bouton suivant pour passer à la question suivante.",
                     "Êtes-vous prêt à relever le défi ? Alors, commençons le quiz de VivaTech !"
                   ],content: TutorialQuizWidget(questionText: "Quelle entreprise est connue pour ses logiciels de gestion des performances et de l'expérience utilisateur mobile ?", answerOptions: ["Accuver","Amazon","Bnp"],)),)
-            ])));
+            ]));
   }
 }
 
