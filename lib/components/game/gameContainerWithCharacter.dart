@@ -18,8 +18,7 @@ class GameContainerWithCharacterComponent extends StatefulWidget {
       this.content,
       required this.showNextButton,
       this.game,
-      this.currentIndexTutorial,
-      required void Function() onNextPressed})
+      this.currentIndexTutorial})
       : super(key: key);
 
   @override
@@ -72,6 +71,31 @@ class _GameContainerWithCharacterComponentState
         setState(() {
           withContent = true;
           currentIndexContent = 1;
+        });
+      } else if (currentIndex == 4) {
+        setState(() {
+          withContent = true;
+          currentIndexContent = 2;
+        });
+      } else if (currentIndex == 5) {
+        setState(() {
+          withContent = true;
+          currentIndexContent = 3;
+        });
+      } else if (currentIndex == 6) {
+        setState(() {
+          withContent = true;
+          currentIndexContent = 4;
+        });
+      } else if (currentIndex == 7) {
+        setState(() {
+          withContent = true;
+          currentIndexContent = 5;
+        });
+      } else if (currentIndex == 8) {
+        setState(() {
+          withContent = true;
+          currentIndexContent = 6;
         });
       }
     } else if (widget.gameName == "quiz") {
