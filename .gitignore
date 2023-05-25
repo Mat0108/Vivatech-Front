@@ -6,4 +6,7 @@ build/*
 *.log
 *.log.*
 *.txt
+.flutter-plugins
+.flutter-plugins-dependencies
+.vscode
 

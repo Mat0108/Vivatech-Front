@@ -1,4 +1,4 @@
-package com.example.front
+package com.example.vivatech
 
 import io.flutter.embedding.android.FlutterActivity
 

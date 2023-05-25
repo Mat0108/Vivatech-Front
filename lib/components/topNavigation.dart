@@ -72,13 +72,13 @@ class TopNavigationComponent extends StatelessWidget {
                       )),
                   child: currentPage == "conferences" || currentPage == "stands"
                       ? ClipRRect(
-                      borderRadius: BorderRadius.circular(100),
-                      child: Image.asset(imageNav, fit: BoxFit.contain))
+                          borderRadius: BorderRadius.circular(100),
+                          child: Image.asset(imageNav, fit: BoxFit.contain))
                       : Padding(
-                      padding: currentPage == "pass"
-                          ? EdgeInsets.all(2)
-                          : EdgeInsets.all(8),
-                      child: Image.asset(imageNav))),
+                          padding: currentPage == "pass"
+                              ? EdgeInsets.all(2)
+                              : EdgeInsets.all(8),
+                          child: Image.asset(imageNav))),
               Container(
                 width: MediaQuery.of(context).size.width * 0.7,
                 margin: EdgeInsets.fromLTRB(10, 0, 0, 0),

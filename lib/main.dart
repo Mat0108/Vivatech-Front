@@ -2,6 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:front/pages/defeat_quiz_page.dart';
 import 'package:front/pages/game_quiz_page.dart';
 import 'package:front/pages/tutoriel_quiz_page.dart';
+import 'package:qr_flutter/qr_flutter.dart';
+import 'package:vivatech/screens/games.dart';
+import 'package:vivatech/screens/pass.dart';
+import 'package:vivatech/screens/scanQrCode.dart';
+
+import 'package:vivatech/components/home/home.dart';
 
 import 'pages/stand_details_page.dart';
 import 'pages/conference_details_page.dart';
@@ -104,16 +110,22 @@ class _MyAppState extends State<MyApp> {
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      title: 'VivaTech',
+        theme: ThemeData(
+            brightness: Brightness.light,
+            primaryColor: Colors.white,
+            fontFamily: 'MuseoSans'),
+        home: const Scene(),
+        initialRoute: '/',
       routes: {
         '/stand': (context) => StandDetailsPage(),
         '/conference': (context) => ConferenceDetailsPage(),
         '/quizGame': (context) => QuizScreen(),
         '/tutorialQuizPage' :(context) =>TutorialQuizPage(),
+        '/pass': (context) => Pass(),
+          '/scanner-qrcode': (context) => ScanQrCode(),
+          '/jeux': (context) => Games(),
+          // '/jeux/jeu-logique/tutoriel': (context) => GameLogicTutorial(),
+          // '/jeux/jeu-logique': (context) => GameLogic(),
       },
     );
-  }
-}

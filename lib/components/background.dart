@@ -15,7 +15,7 @@ class BackgroundComponent extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                 image:
-                AssetImage("assets/background/bg-gradient-vivatech-2.png"),
+                    AssetImage("assets/background/bg-gradient-vivatech-2.png"),
                 fit: BoxFit.cover,
               ),
             ),
