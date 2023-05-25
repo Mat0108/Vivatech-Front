@@ -47,35 +47,42 @@ class _PdfUploaderPageState extends State<PdfUploaderPage> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('PDF Uploader'),
-      ),
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/background/bg-gradient-vivatech-2.png'),
-            fit: BoxFit.cover,
-          ),
+  @override
+Widget build(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(
+      title: Text('PDF Uploader'),
+    ),
+    body: Container(
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/background/bg-gradient-vivatech-2.png'),
+          fit: BoxFit.cover,
         ),
-        child: Column(
-          children: [
-            ElevatedButton(
-              onPressed: uploadPDF,
-              child: const Text('Télécharger votre CV'),
-            ),
-            if (pdfPath != null) ...[
-              const SizedBox(height: 20),
-              Expanded(
-                child: PDFView(
-                  filePath: pdfPath!,
-                ),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center, // Centrer les éléments verticalement
+        children: [
+          Expanded(
+            child: Align(
+              alignment: Alignment.center,
+              child: ElevatedButton(
+                onPressed: uploadPDF,
+                child: const Text('Télécharger votre CV'),
               ),
-            ],
+            ),
+          ),
+          if (pdfPath != null) ...[
+            const SizedBox(height: 20),
+            Expanded(
+              child: PDFView(
+                filePath: pdfPath!,
+              ),
+            ),
           ],
-        ),
+        ],
       ),
-    );
-  }
+    ),
+  );
+}
 }
