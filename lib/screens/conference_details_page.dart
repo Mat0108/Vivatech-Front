@@ -14,7 +14,7 @@ class ConferenceDetailsPage extends StatefulWidget {
 
 class _ConferenceDetailsPageState extends State<ConferenceDetailsPage> {
   int _currentPage = 0;
-  CarouselController _carouselController = CarouselController();
+  final CarouselController _carouselController = CarouselController();
 
   @override
   Widget build(BuildContext context) {
@@ -104,7 +104,7 @@ class _ConferenceDetailsPageState extends State<ConferenceDetailsPage> {
                 ),
                 child: RoundedImage(
                   30,
-                  Color(0xFF00FF00),
+                  const Color(0xFF00FF00),
                   AssetImage(conferenceMetaverse.imageURL),
                 ),
               ),
@@ -125,7 +125,7 @@ class _ConferenceDetailsPageState extends State<ConferenceDetailsPage> {
                   ),
                   child: Text(
                     conferenceMetaverse.name.toUpperCase(),
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: Colors.purple,
@@ -170,7 +170,7 @@ class _ConferenceDetailsPageState extends State<ConferenceDetailsPage> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   IconButton(
-                                    icon: Icon(
+                                    icon: const Icon(
                                       Icons.arrow_back,
                                       color: Color(0xFF00FF00),
                                     ),
@@ -180,7 +180,7 @@ class _ConferenceDetailsPageState extends State<ConferenceDetailsPage> {
                                   ),
                                   RowPink(day.title),
                                   IconButton(
-                                    icon: Icon(
+                                    icon: const Icon(
                                       Icons.arrow_forward,
                                       color: Color(0xFF00FF00),
                                     ),
@@ -197,7 +197,7 @@ class _ConferenceDetailsPageState extends State<ConferenceDetailsPage> {
                                     Wrap(
                                       children: day.sessions.map((session) {
                                         return Padding(
-                                          padding: EdgeInsets.all(10),
+                                          padding: const EdgeInsets.all(10),
                                           child: SessionCard(session: session),
                                         );
                                       }).toList(),
