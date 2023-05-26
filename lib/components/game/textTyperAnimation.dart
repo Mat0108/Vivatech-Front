@@ -23,5 +23,4 @@ class TextTyperAnimationComponent extends StatelessWidget {
       ),
     ], totalRepeatCount: 1, displayFullTextOnTap: true);
   }
-  
 }

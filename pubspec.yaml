@@ -33,6 +33,7 @@ dev_dependencies:
   flutter_launcher_icons: ^0.13.1
   flutter_shake_animated: ^0.0.5
   onboarding_animation: any
+  animated_text_kit: ^4.2.2
 
 
 
@@ -43,10 +44,12 @@ flutter:
      - assets/
      - assets/background/
      - assets/icons/
+     - assets/pages/
      - assets/images/
      - assets/pages/home/
      - assets/pages/games/
      - assets/pages/games/characters/
+     - assets/pages/games/logic/
      - assets/pages/conferences/
      - assets/pages/conferences/FoodTech/
      - assets/pages/conferences/Cybersecurity/

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'dart:convert';
+import 'package:flutter/services.dart';
 
-class TopNavigationComponent extends StatelessWidget {
+class TopNavigationComponent extends StatefulWidget {
   final String currentPage;
   final String? image;
   final Widget? content;
@@ -10,46 +12,72 @@ class TopNavigationComponent extends StatelessWidget {
       : super(key: key);
 
   @override
+  State<TopNavigationComponent> createState() => _TopNavigationComponentState();
+}
+
+class _TopNavigationComponentState extends State<TopNavigationComponent> {
+  String textNav = "";
+  String baseImagePath = "";
+  String imageNav = "";
+  Map<String, dynamic> datas = {};
+  Map<String, dynamic> datasPage = {};
+  List<dynamic> color = [];
+
+  Future<void> readJson() async {
+    final String response =
+        await rootBundle.loadString('assets/pages/global.json');
+    final data = await json.decode(response);
+
+    setState(() {
+      datas = data;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+
+    readJson();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    String textNav = "";
-    String baseImagePath = "";
-    String imageNav = baseImagePath;
-
-    if (currentPage == "conferences") {
-      textNav = "Conférences";
-      baseImagePath = "assets/pages/conferences/";
-
-      if (image != null) {
-        imageNav = baseImagePath + image!;
-      }
-    } else if (currentPage == "stands") {
-      textNav = "Stands";
-      baseImagePath = "assets/pages/stands/";
-
-      if (image != null) {
-        imageNav = baseImagePath + image!;
-      }
-    } else if (currentPage == "pass") {
-      textNav = "Mon Pass";
-      imageNav = "assets/pages/home/pass.png";
-    } else if (currentPage == "cv") {
-      textNav = "CV";
-      imageNav = "assets/pages/home/cv.png";
-    } else if (currentPage == "games") {
-      textNav = "Jeux";
-      imageNav = "assets/pages/home/game.png";
-    } else if (currentPage == "treasure") {
-      textNav = "Chasse au trésor";
-      imageNav = "assets/pages/games/treasure.png";
-    } else if (currentPage == "game-logic") {
-      textNav = "Jeu de logique";
-      imageNav = "assets/pages/games/logic.png";
-    } else if (currentPage == "game-memory") {
-      textNav = "Jeu de mémoire";
-      imageNav = "assets/pages/games/memory.png";
-    } else if (currentPage == "quiz") {
-      textNav = "Quiz";
-      imageNav = "assets/pages/games/quiz.png";
+    if (widget.currentPage == "conferences") {
+      setState(() {
+        datasPage = datas['conferences'];
+      });
+    } else if (widget.currentPage == "stands") {
+      setState(() {
+        datasPage = datas['stands'];
+      });
+    } else if (widget.currentPage == "pass") {
+      setState(() {
+        datasPage = datas['pass'];
+      });
+    } else if (widget.currentPage == "cv") {
+      setState(() {
+        datasPage = datas['cv'];
+      });
+    } else if (widget.currentPage == "games") {
+      setState(() {
+        datasPage = datas['games'];
+      });
+    } else if (widget.currentPage == "treasure") {
+      setState(() {
+        datasPage = datas["games"]["game"][0]['treasure'];
+      });
+    } else if (widget.currentPage == "game-logic") {
+      setState(() {
+        datasPage = datas["games"]["game"][0]["game-logic"];
+      });
+    } else if (widget.currentPage == "game-memory") {
+      setState(() {
+        datasPage = datas["games"]["game"][0]['game-memory'];
+      });
+    } else if (widget.currentPage == "quiz") {
+      setState(() {
+        datasPage = datas["games"]["game"][0]['quiz'];
+      });
     }
 
     return Column(children: [
@@ -63,21 +91,30 @@ class TopNavigationComponent extends StatelessWidget {
                   width: 70,
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: const Color.fromRGBO(0, 255, 255, 1),
+                      color: Color.fromRGBO(
+                          int.parse(datasPage["color"][0]),
+                          int.parse(datasPage["color"][1]),
+                          int.parse(datasPage["color"][2]),
+                          double.parse(datasPage["color"][3])),
                       border: Border.all(
-                        color: const Color.fromRGBO(85, 8, 160, 0.3),
+                        color: Color.fromRGBO(
+                            int.parse(datasPage["border-color"][0]),
+                            int.parse(datasPage["border-color"][1]),
+                            int.parse(datasPage["border-color"][2]),
+                            double.parse(datasPage["border-color"][3])),
                         width: 3,
                         style: BorderStyle.solid,
                       )),
-                  child: currentPage == "conferences" || currentPage == "stands"
+                  child: widget.currentPage == "conferences" ||
+                          widget.currentPage == "stands"
                       ? ClipRRect(
                           borderRadius: BorderRadius.circular(100),
                           child: Image.asset(imageNav, fit: BoxFit.contain))
                       : Padding(
-                          padding: currentPage == "pass"
+                          padding: widget.currentPage == "pass"
                               ? const EdgeInsets.all(2)
                               : const EdgeInsets.all(8),
-                          child: Image.asset(imageNav))),
+                          child: Image.asset(datasPage["image"]))),
               Container(
                 width: MediaQuery.of(context).size.width * 0.7,
                 margin: const EdgeInsets.fromLTRB(10, 0, 0, 0),
@@ -85,10 +122,14 @@ class TopNavigationComponent extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: const Color.fromRGBO(255, 255, 255, 0.7),
                     border: Border.all(
-                        color: const Color.fromRGBO(0, 255, 255, 1),
+                        color: Color.fromRGBO(
+                            int.parse(datasPage["border-color"][0]),
+                            int.parse(datasPage["border-color"][1]),
+                            int.parse(datasPage["border-color"][2]),
+                            double.parse(datasPage["border-color"][3])),
                         width: 3,
                         style: BorderStyle.solid)),
-                child: Text(textNav,
+                child: Text(datasPage["title"].toUpperCase(),
                     style: const TextStyle(
                         color: Color.fromRGBO(85, 8, 160, 0.7),
                         fontSize: 22,
@@ -98,7 +139,7 @@ class TopNavigationComponent extends StatelessWidget {
               )
             ]))
       ]),
-      if (content != null) content!
+      if (widget.content != null) widget.content!
     ]);
   }
 }

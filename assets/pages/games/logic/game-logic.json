@@ -1,0 +1,231 @@
+{
+    "tutorial" : {
+        "explanations" :[
+            "Bonjour! Bienvenue au jeu de la mémoire. Je suis Tania. Je suis ici pour vous guider avant commencer de jouer le jeu",
+            "Tout d’abord, vous verrez une question similaire à la question ci-dessous avec quelques images et une ou plusieurs cases manquantes.",
+            "Votre mission est de remplir cette case manquante en choisissant l’une des options.",
+            "Comme vous pouvez le voir la première boîte est Google, suivie par La Poste et un autre La Poste.",
+            "Logiquement, la première option, Orange n’est pas la bonne réponse parce que dans la question il n’y a pas Orange qui est utilisé.",
+            "La réponse est donc la deuxième ou la troisième option. Pour savoir quelle est la bonne réponse, nous devrons voir l’ordre des images.",
+            "Comme vous pouvez le voir, Google est la première commande.",
+            "Puis nous avons La Poste sur la deuxième et la troisième commande et il va continuer en boucle avec la même commande à chaque fois.",
+            "Cela signifie que la réponse appropriée à cette question est Google. Pour simplifier, nous dirons Google est 1 et La Poste, 2.",
+            "Ainsi, l’ordre sera : 1 - 2 - 2 - 1",
+            "Il y aura 10 questions par jeu et le niveau de difficulté pour chaque question sera plus élevé que la question précédente.",
+            "Donc, puisque j’ai déjà tout expliqué. Vous pouvez maintenant commencer votre mission. Bonne chance!"
+        ],
+        "example": {
+            "questionNum": "Question 1",
+            "question": "Choisissez l’une de ces options pour remplir la case manquante en fonction de l’ordre de la case manquante :",
+            "images": [
+                "assets/pages/games/logic/amazon.png",
+                "assets/pages/games/logic/amazon.png",
+                "assets/pages/games/logic/ikubator.png",
+                "assets/pages/games/logic/question.png"
+            ],
+            "multiple-choice": [
+                "assets/pages/games/logic/amazon.png",
+                "assets/pages/games/logic/ayming.png",
+                "assets/pages/games/logic/ikubator.png"
+            ],
+            "correct-responses": [2]
+        }
+    },
+    "game": [
+        {
+            "questionNum": "Question 1",
+            "question": "Choisissez l’une de ces options pour remplir la case manquante en fonction de l’ordre de la case manquante :",
+            "images": [
+                "assets/pages/games/logic/ikubator.png",
+                "assets/pages/games/logic/question.png",
+                "assets/pages/games/logic/ikubator.png",
+                "assets/pages/games/logic/ayming.png"
+            ],
+            "multiple-choice": [
+                "assets/pages/games/logic/amazon.png",
+                "assets/pages/games/logic/ayming.png",
+                "assets/pages/games/logic/ikubator.png"
+            ],
+            "correct-responses": [1]
+        },
+        {
+            "questionNum": "Question 2",
+            "question": "Choisissez l’une de ces options pour remplir la case manquante en fonction de l’ordre de la case manquante :",
+            "images": [
+                "assets/pages/games/logic/africa-news.png",
+                "assets/pages/games/logic/audi.png",
+                "assets/pages/games/logic/audi.png",
+                "assets/pages/games/logic/africa-news.png",
+                "assets/pages/games/logic/question.png"
+            ],
+            "multiple-choice": [
+                "assets/pages/games/logic/bearing-point.png",
+                "assets/pages/games/logic/africa-news.png",
+                "assets/pages/games/logic/audi.png"
+            ],
+            "correct-responses": [2]
+        },
+        {
+            "questionNum": "Question 3",
+            "question": "Choisissez l’une de ces options pour remplir la case manquante en fonction de l’ordre de la case manquante :",
+            "images": [
+                "assets/pages/games/logic/bresil.png",
+                "assets/pages/games/logic/question.png",
+                "assets/pages/games/logic/bearing-point.png",
+                "assets/pages/games/logic/bresil.png",
+                "assets/pages/games/logic/bresil.png"
+            ],
+            "multiple-choice": [
+                "assets/pages/games/logic/bresil.png",
+                "assets/pages/games/logic/bearing-point.png",
+                "assets/pages/games/logic/capgemini.png"
+            ],
+            "correct-responses": [0]
+        },
+        {
+            "questionNum": "Question 4",
+            "question": "Choisissez l’une de ces options pour remplir la case manquante en fonction de l’ordre de la case manquante :",
+            "images": [
+                "assets/pages/games/logic/capgemini.png",
+                "assets/pages/games/logic/cnrs.png",
+                "assets/pages/games/logic/dfk.png",
+                "assets/pages/games/logic/capgemini.png",
+                "assets/pages/games/logic/question.png",
+                "assets/pages/games/logic/dfk.png"
+            ],
+            "multiple-choice": [
+                "assets/pages/games/logic/capgemini.png",
+                "assets/pages/games/logic/cnrs.png",
+                "assets/pages/games/logic/dfk.png"
+            ],
+            "correct-responses": [1]
+        },
+        {
+            "questionNum": "Question 5",
+            "question": "Choisissez l’une de ces options pour remplir la case manquante en fonction de l’ordre de la case manquante :",
+            "images": [
+                "assets/pages/games/logic/question.png",
+                "assets/pages/games/logic/driveco.png",
+                "assets/pages/games/logic/edf.png",
+                "assets/pages/games/logic/engie.png",
+                "assets/pages/games/logic/dfk.png",
+                "assets/pages/games/logic/driveco.png"
+            ],
+            "multiple-choice": [
+                "assets/pages/games/logic/engie.png",
+                "assets/pages/games/logic/driveco.png",
+                "assets/pages/games/logic/edf.png",
+                "assets/pages/games/logic/dfk.png"
+            ],
+            "correct-responses": [3]
+        },
+        {
+            "questionNum": "Question 6",
+            "question": "Choisissez l’une de ces options pour remplir la case manquante en fonction de l’ordre de la case manquante :",
+            "images": [
+                "assets/pages/games/logic/4sm.png",
+                "assets/pages/games/logic/question.png",
+                "assets/pages/games/logic/bloomin.png",
+                "assets/pages/games/logic/billet-facile.png",
+                "assets/pages/games/logic/4sm.png",
+                "assets/pages/games/logic/adjemin.png",
+                "assets/pages/games/logic/question.png"
+            ],
+            "multiple-choice": [
+                "assets/pages/games/logic/bloomin.png",
+                "assets/pages/games/logic/adjemin.png",
+                "assets/pages/games/logic/billet-facile.png",
+                "assets/pages/games/logic/4sm.png"
+            ],
+            "correct-responses": [1, 0]
+        },
+        {
+            "questionNum": "Question 7",
+            "question": "Choisissez l’une de ces options pour remplir la case manquante en fonction de l’ordre de la case manquante :",
+            "images": [
+                "assets/pages/games/logic/question.png",
+                "assets/pages/games/logic/bokyong.png",
+                "assets/pages/games/logic/bugali.png",
+                "assets/pages/games/logic/edf.png",
+                "assets/pages/games/logic/bokyong.png",
+                "assets/pages/games/logic/question.png",
+                "assets/pages/games/logic/edf.png"
+            ],
+            "multiple-choice": [
+                "assets/pages/games/logic/bokyong.png",
+                "assets/pages/games/logic/bugali.png",
+                "assets/pages/games/logic/edf.png"
+            ],
+            "correct-responses": [2, 1]
+        },
+        {
+            "questionNum": "Question 8",
+            "question": "Choisissez l’une de ces options pour remplir la case manquante en fonction de l’ordre de la case manquante :",
+            "images": [
+                "assets/pages/games/logic/capvert.png",
+                "assets/pages/games/logic/driveco.png",
+                "assets/pages/games/logic/question.png",
+                "assets/pages/games/logic/question.png",
+                "assets/pages/games/logic/capvert.png",
+                "assets/pages/games/logic/driveco.png",
+                "assets/pages/games/logic/damocles.png",
+                "assets/pages/games/logic/bbf.png"
+            ],
+            "multiple-choice": [
+                "assets/pages/games/logic/capvert.png",
+                "assets/pages/games/logic/driveco.png",
+                "assets/pages/games/logic/damocles.png",
+                "assets/pages/games/logic/bbf.png"
+            ],
+            "correct-responses": [2, 3]
+        },
+        {
+            "questionNum": "Question 9",
+            "question": "Choisissez l’une de ces options pour remplir la case manquante en fonction de l’ordre de la case manquante :",
+            "images": [
+                "assets/pages/games/logic/question.png",
+                "assets/pages/games/logic/bimy.png",
+                "assets/pages/games/logic/engie.png",
+                "assets/pages/games/logic/question.png",
+                "assets/pages/games/logic/axokit.png",
+                "assets/pages/games/logic/cilkoa.png",
+                "assets/pages/games/logic/question.png",
+                "assets/pages/games/logic/engie.png",
+                "assets/pages/games/logic/coss.png",
+                "assets/pages/games/logic/axokit.png"
+            ],
+            "multiple-choice": [
+                "assets/pages/games/logic/engie.png",
+                "assets/pages/games/logic/coss.png",
+                "assets/pages/games/logic/axokit.png",
+                "assets/pages/games/logic/bimy.png",
+                "assets/pages/games/logic/cilkoa.png"
+            ],
+            "correct-responses": [4, 1, 3]
+        },
+        {
+            "questionNum": "Question 10",
+            "question": "Choisissez l’une de ces options pour remplir la case manquante en fonction de l’ordre de la case manquante :",
+            "images": [
+                "assets/pages/games/logic/365talents.png",
+                "assets/pages/games/logic/akito.png",
+                "assets/pages/games/logic/4401.png",
+                "assets/pages/games/logic/question.png",
+                "assets/pages/games/logic/akidaia.png",
+                "assets/pages/games/logic/question.png",
+                "assets/pages/games/logic/akito.png",
+                "assets/pages/games/logic/question.png",
+                "assets/pages/games/logic/clic-moi.png",
+                "assets/pages/games/logic/akidaia.png"
+            ],
+            "multiple-choice": [
+                "assets/pages/games/logic/clic-moi.png",
+                "assets/pages/games/logic/akidaia.png",
+                "assets/pages/games/logic/akito.png",
+                "assets/pages/games/logic/4401.png",
+                "assets/pages/games/logic/365talents.png"
+            ],
+            "correct-responses": [0, 4, 3]
+        }
+    ]
+}

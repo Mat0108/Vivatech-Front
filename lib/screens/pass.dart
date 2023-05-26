@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_shake_animated/flutter_shake_animated.dart';
 import 'package:vivatech/components/background.dart';
-import 'package:vivatech/components/qrCodeGenerator.dart';
+import 'package:vivatech/components/pass/qrCodeGenerator.dart';
 import 'package:vivatech/components/topNavigation.dart';
 
 class Pass extends StatefulWidget {
