@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:vivatech/components/color.dart';
 import 'package:vivatech/components/game/gameContainer.dart';
 import 'package:vivatech/components/game/quitGameContainer.dart';
+import 'package:collection/collection.dart';
 
 class ListImage {
   String url;
