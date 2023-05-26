@@ -20,6 +20,7 @@ dependencies:
   cv: ^0.2.12
   provider: ^6.0.5
   qr_flutter: ^4.0.1
+  share_plus: ^7.0.1
   qr_code_scanner: ^1.0.1
   carousel_slider: ^4.2.1
   animated_text_kit: ^4.2.2
@@ -33,8 +34,6 @@ dev_dependencies:
   flutter_launcher_icons: ^0.13.1
   flutter_shake_animated: ^0.0.5
   onboarding_animation: any
-  animated_text_kit: ^4.2.2
-
 
 
 # The following section is specific to Flutter packages.
@@ -49,6 +48,7 @@ flutter:
      - assets/pages/home/
      - assets/pages/games/
      - assets/pages/games/characters/
+     - assets/pages/games/memory/
      - assets/pages/games/logic/
      - assets/pages/conferences/
      - assets/pages/conferences/FoodTech/

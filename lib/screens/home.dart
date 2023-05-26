@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:vivatech/components/color.dart';
 import 'package:vivatech/components/home/carousel.dart';
 
-class Scene extends StatefulWidget {
-  const Scene({super.key});
+class Home extends StatefulWidget {
+  const Home({super.key});
+
   @override
-  State<Scene> createState() => _Scene();
+  State<Home> createState() => _HomeState();
 }
 
-class _Scene extends State<Scene> {
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;

@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors, prefer_final_fields, avoid_print
 import 'package:flutter/material.dart';
 import 'package:vivatech/components/game/textTyperAnimation.dart';
-import 'package:vivatech/screens/game_logic_tutorial.dart';
 
 class GameContainerWithCharacterComponent extends StatefulWidget {
   final List<dynamic> tutorial;
@@ -59,9 +58,39 @@ class _GameContainerWithCharacterComponentState
     } else if (widget.gameName == "game-memory") {
       image = "assets/pages/games/characters/coumba.png";
 
-      if (currentIndex != 0 && currentIndex != 1 && currentIndex != 9) {
+      if (currentIndex == 2) {
         setState(() {
           withContent = true;
+          currentIndexContent = 0;
+        });
+      } else if (currentIndex == 3 || currentIndex == 4) {
+        setState(() {
+          withContent = true;
+          currentIndexContent = 1;
+        });
+      } else if (currentIndex == 5) {
+        setState(() {
+          withContent = true;
+          currentIndexContent = 2;
+        });
+      } else if (currentIndex == 6) {
+        setState(() {
+          withContent = true;
+          currentIndexContent = 3;
+        });
+      } else if (currentIndex == 7) {
+        setState(() {
+          withContent = true;
+          currentIndexContent = 4;
+        });
+      } else if (currentIndex == 8) {
+        setState(() {
+          withContent = true;
+          currentIndexContent = 5;
+        });
+      } else {
+        setState(() {
+          withContent = false;
         });
       }
     } else if (widget.gameName == "quiz") {
@@ -135,7 +164,6 @@ class _GameContainerWithCharacterComponentState
 
                             if (tapCount == 2) {
                               if (currentIndex + 1 == widget.tutorial.length) {
-                                isClicked = true;
                                 Navigator.push(
                                   context,
                                   PageRouteBuilder(
@@ -150,9 +178,11 @@ class _GameContainerWithCharacterComponentState
                                 );
                               } else if (currentIndex <
                                   widget.tutorial.length) {
+                                currentIndex++;
+                                tapCount = 0;
+
+                                print(currentIndex);
                                 setState(() {
-                                  currentIndex++;
-                                  tapCount = 0;
                                   showFullText = false;
                                 });
                               }
