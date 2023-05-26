@@ -11,7 +11,7 @@ class VictoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BackgroundComponent(
-            content: Column(children: [
+        content: Column(children: [
       TopNavigationComponent(currentPage: "quiz"),
       ResultComponent(
         ruselt:
