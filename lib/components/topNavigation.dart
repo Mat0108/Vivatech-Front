@@ -1,4 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors, prefer_final_fields, avoid_print
 import 'package:flutter/material.dart';
 
 class TopNavigationComponent extends StatelessWidget {
@@ -35,7 +34,7 @@ class TopNavigationComponent extends StatelessWidget {
       imageNav = "assets/pages/home/pass.png";
     } else if (currentPage == "cv") {
       textNav = "CV";
-      imageNav = "assets/pages/cv/cv.png";
+      imageNav = "assets/pages/home/cv.png";
     } else if (currentPage == "games") {
       textNav = "Jeux";
       imageNav = "assets/pages/home/game.png";
@@ -57,16 +56,16 @@ class TopNavigationComponent extends StatelessWidget {
       Row(children: [
         Container(
             alignment: Alignment.topCenter,
-            margin: EdgeInsets.fromLTRB(20, 40, 20, 40),
+            margin: const EdgeInsets.fromLTRB(20, 40, 20, 40),
             child: Row(children: [
               Container(
                   height: 70,
                   width: 70,
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Color.fromRGBO(0, 255, 255, 1),
+                      color: const Color.fromRGBO(0, 255, 255, 1),
                       border: Border.all(
-                        color: Color.fromRGBO(85, 8, 160, 0.3),
+                        color: const Color.fromRGBO(85, 8, 160, 0.3),
                         width: 3,
                         style: BorderStyle.solid,
                       )),
@@ -76,21 +75,21 @@ class TopNavigationComponent extends StatelessWidget {
                           child: Image.asset(imageNav, fit: BoxFit.contain))
                       : Padding(
                           padding: currentPage == "pass"
-                              ? EdgeInsets.all(2)
-                              : EdgeInsets.all(8),
+                              ? const EdgeInsets.all(2)
+                              : const EdgeInsets.all(8),
                           child: Image.asset(imageNav))),
               Container(
                 width: MediaQuery.of(context).size.width * 0.7,
-                margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                padding: EdgeInsets.all(12),
+                margin: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                    color: Color.fromRGBO(255, 255, 255, 0.7),
+                    color: const Color.fromRGBO(255, 255, 255, 0.7),
                     border: Border.all(
-                        color: Color.fromRGBO(0, 255, 255, 1),
+                        color: const Color.fromRGBO(0, 255, 255, 1),
                         width: 3,
                         style: BorderStyle.solid)),
                 child: Text(textNav,
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Color.fromRGBO(85, 8, 160, 0.7),
                         fontSize: 22,
                         fontFamily: "MuseoSans",
