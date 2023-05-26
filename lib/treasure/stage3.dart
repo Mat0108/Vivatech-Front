@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:vivatech/components/color.dart';
+import 'package:vivatech/components/game/gameContainerWithCharacter.dart';
+import 'package:vivatech/components/game/quitGameContainer.dart';
+import 'package:vivatech/components/topNavigation.dart';
 import 'package:vivatech/treasure/treasure.dart';
+import 'package:vivatech/treasure/treasurewin.dart';
 
 const List<String> listA = <String>[
   "A",
@@ -30,22 +34,38 @@ class _TreasureStage3State extends State<TreasureStage3> {
   String text2 = "Dans quel allée nous a mené la carte ?";
   double dropdowndouble = list.first;
   String dropdownstring = listA.first;
-
-  @override
+  String text3 =
+      "Nous sommes devant le coffre mais celui ci est protégé par un cadenas. à coté du coffre nous avons trouvé ce papier ";
+  bool showquit = false;
   Widget build(BuildContext context) {
-    return Positioned(
-        top: 140,
-        child: Container(
-          width: 400,
-          height: 400,
-          child: Column(children: [
+    return Container(
+        height: 800,
+        width: 480,
+        decoration: const BoxDecoration(
+          color: VivatechColor.white,
+          image: DecorationImage(
+            image: AssetImage("assets/background/fond.png"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Center(
+            child: Stack(children: [
+          Column(mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[
+            const TopNavigationComponent(currentPage: "treasure"),
+            GameContainerWithCharacterComponent(
+              tutorial: [text3],
+              showNextButton: false,
+              gameName: "treasure1",
+              // game: const TreasureStage2()
+            ),
             Container(
               width: 400,
               height: 100,
+              margin: const EdgeInsets.fromLTRB(0, 30, 0, 0),
               decoration: const BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(30)),
                   image: DecorationImage(
-                      image: AssetImage("assets/images/tresor/papier.png"),
+                      image: AssetImage("assets/pages/treasure/papier.png"),
                       fit: BoxFit.cover)),
               child: Container(
                   margin: const EdgeInsets.fromLTRB(0, 25, 0, 0),
@@ -147,20 +167,7 @@ class _TreasureStage3State extends State<TreasureStage3> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => TreasurePage(
-                                  type: "6",
-                                  widget: Positioned(
-                                      top: 40,
-                                      right: 30,
-                                      child: Container(
-                                        width: 170,
-                                        height: 170,
-                                        decoration: const BoxDecoration(
-                                            image: DecorationImage(
-                                                image: AssetImage(
-                                                    "assets/images/tresor/tresorbig.png"),
-                                                fit: BoxFit.cover)),
-                                      )))));
+                              builder: (context) => const TreasureWinPage()));
                     }
                   },
                   child: const Text("Valider",
@@ -177,12 +184,9 @@ class _TreasureStage3State extends State<TreasureStage3> {
                     color: VivatechColor.pink),
                 child: TextButton(
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const TreasurePage(
-                                  type: "1",
-                                )));
+                    setState(() {
+                      showquit = true;
+                    });
                   },
                   child: const Text("Quitter",
                       style:
@@ -191,6 +195,15 @@ class _TreasureStage3State extends State<TreasureStage3> {
               )
             ])
           ]),
-        ));
+          if (showquit)
+            Positioned(
+                bottom: 0,
+                child: Container(
+                    decoration: const BoxDecoration(
+                      color: Color.fromRGBO(0, 0, 0, 0.7),
+                    ),
+                    child:
+                        const QuitGameContainerComponent(gameName: "treasure")))
+        ])));
   }
 }

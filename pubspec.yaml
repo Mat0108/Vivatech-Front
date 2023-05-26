@@ -48,6 +48,9 @@ flutter:
      - assets/pages/home/
      - assets/pages/games/
      - assets/pages/games/characters/
+     - assets/pages/pass/
+     - assets/pages/treasure/
+     - assets/pages/treasure/jeu1/
      - assets/pages/games/memory/
      - assets/pages/games/logic/
      - assets/pages/conferences/

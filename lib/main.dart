@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:vivatech/screens/game_memory.dart';
 import 'package:vivatech/screens/games.dart';
+import 'package:vivatech/treasure/treasure.dart';
 import 'screens/pdf_viewer_page.dart';
 import 'package:vivatech/screens/game_memory_tutorial.dart';
 import 'package:vivatech/screens/game_logic.dart';
@@ -43,6 +43,7 @@ class MyApp extends StatelessWidget {
         '/jeux/jeu-logique/tutoriel': (context) => GameLogicTutorial(),
         '/jeux/jeu-logique': (context) => GameLogic(),
         '/jeux/jeu-memoire/tutoriel': (context) => const GameMemoryTutorial(),
+        '/jeux/chasse-au-tresor': (context) => const TreasurePage()
       },
     );
   }

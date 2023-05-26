@@ -104,7 +104,7 @@ class _GameContainerWithCharacterComponentState
     } else if (widget.gameName == "treasure") {
       image = "assets/pages/games/characters/matthieu.png";
 
-      if (currentIndex != 0 && currentIndex != 1 && currentIndex != 5) {
+      if (currentIndex != 0 && currentIndex != 1 && currentIndex != 3) {
         setState(() {
           withContent = true;
         });
