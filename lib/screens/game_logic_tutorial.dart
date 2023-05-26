@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:vivatech/components/background.dart';
 import 'package:vivatech/components/game/gameContainerWithCharacter.dart';
+import 'package:vivatech/components/menuComponent.dart';
 import 'package:vivatech/components/topNavigation.dart';
 import 'package:vivatech/screens/game_logic.dart';
 import 'dart:convert';
@@ -40,57 +41,56 @@ class _GameLogicTutorialState extends State<GameLogicTutorial> {
       TopNavigationComponent(currentPage: "game-logic"),
       Expanded(
           child: GameContainerWithCharacterComponent(
-              gameName: "game-logic",
-              tutorial: _gameData["explanations"],
-              showNextButton: true,
-              game: GameLogic(),
-              content: [
-            Column(children: [
-              Padding(
-                  padding: EdgeInsets.fromLTRB(0, 20, 0, 20),
-                  child: Text(_gameData["example"]["questionNum"].toUpperCase(),
-                      style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white))),
-              Container(
-                color: Colors.white,
-                padding: EdgeInsets.all(5),
+        gameName: "game-logic",
+        tutorial: _gameData["explanations"],
+        showNextButton: true,
+        game: GameLogic(),
+        content: [
+          Column(children: [
+            Padding(
+                padding: EdgeInsets.fromLTRB(0, 20, 0, 20),
+                child: Text(_gameData["example"]["questionNum"].toUpperCase(),
+                    style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white))),
+            Container(
+              color: Colors.white,
+              padding: EdgeInsets.all(5),
+              width: MediaQuery.of(context).size.width,
+              height: 60,
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: List.generate(
+                    _gameData["example"]["images"].length,
+                    (index) {
+                      return Image.asset(_gameData["example"]["images"][index]);
+                    },
+                  )),
+            ),
+            Padding(
+                padding: EdgeInsets.fromLTRB(10, 20, 10, 20),
+                child: Text(_gameData["example"]["question"],
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(fontSize: 11, color: Colors.white))),
+            Container(
                 width: MediaQuery.of(context).size.width,
-                height: 60,
+                height: 70,
+                padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
                 child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: List.generate(
-                      _gameData["example"]["images"].length,
-                      (index) {
-                        return Image.asset(
-                            _gameData["example"]["images"][index]);
-                      },
-                    )),
-              ),
-              Padding(
-                  padding: EdgeInsets.fromLTRB(10, 20, 10, 20),
-                  child: Text(_gameData["example"]["question"],
-                      textAlign: TextAlign.justify,
-                      style: TextStyle(fontSize: 11, color: Colors.white))),
-              Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 70,
-                  padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: List.generate(
-                        _gameData["example"]["multiple-choice"].length,
-                        (index) {
-                      return ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
-                        child: Image.asset(
-                            _gameData["example"]["multiple-choice"][index]),
-                      );
-                    }),
-                  ))
-            ]),
-            Column(children: [
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: List.generate(
+                      _gameData["example"]["multiple-choice"].length, (index) {
+                    return ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.asset(
+                          _gameData["example"]["multiple-choice"][index]),
+                    );
+                  }),
+                ))
+          ]),
+          Column(
+            children: [
               Padding(
                   padding: EdgeInsets.fromLTRB(0, 20, 0, 20),
                   child: Text(_gameData["example"]["questionNum"].toUpperCase(),
@@ -146,9 +146,12 @@ class _GameLogicTutorialState extends State<GameLogicTutorial> {
                           );
                   }),
                 ),
-              )
-            ])
-          ]))
+              ),
+            ],
+          )
+        ],
+      )),
+      const MenuComponent()
     ])));
   }
 }

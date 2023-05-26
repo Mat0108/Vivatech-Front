@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_shake_animated/flutter_shake_animated.dart';
 import 'package:vivatech/components/background.dart';
+import 'package:vivatech/components/menuComponent.dart';
 import 'package:vivatech/components/pass/qrCodeGenerator.dart';
 import 'package:vivatech/components/topNavigation.dart';
 
@@ -29,7 +30,7 @@ class _PassState extends State<Pass> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      "assets/pass/pass.png",
+                      "assets/pages/home/pass.png",
                       width: MediaQuery.of(context).size.width * 0.9,
                     )
                   ]))),
@@ -40,6 +41,10 @@ class _PassState extends State<Pass> {
               fontFamily: "MuseoSans",
               fontWeight: FontWeight.bold),
           textAlign: TextAlign.center),
+      Container(
+          alignment: Alignment.bottomCenter,
+          padding: const EdgeInsets.fromLTRB(0, 97, 0, 0),
+          child: const MenuComponent())
     ]);
   }
 
@@ -47,19 +52,27 @@ class _PassState extends State<Pass> {
     final arguments = (ModalRoute.of(context)?.settings.arguments ??
         <String, dynamic>{}) as Map;
 
-    return Container(
-        key: Key("second"),
-        alignment: Alignment.center,
-        height: MediaQuery.of(context).size.height * 0.65,
-        child: Container(
-            width: 200,
-            height: 200,
-            decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border.all(
-                    color: Colors.white, width: 2, style: BorderStyle.solid),
-                borderRadius: BorderRadius.circular(10)),
-            child: QrCodeGenerator(url: arguments["qrCode"])));
+    return Column(children: [
+      Container(
+          key: Key("second"),
+          alignment: Alignment.center,
+          height: MediaQuery.of(context).size.height * 0.65,
+          child: Container(
+              width: 200,
+              height: 200,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border.all(
+                      color: Colors.white, width: 2, style: BorderStyle.solid),
+                  borderRadius: BorderRadius.circular(10)),
+              child: arguments["qrCode"] == null
+                  ? Image.asset("assets/pages/pass/qrcode.png")
+                  : QrCodeGenerator(url: arguments["qrCode"]))),
+      Container(
+          alignment: Alignment.bottomCenter,
+          padding: const EdgeInsets.fromLTRB(0, 73.5, 0, 0),
+          child: const MenuComponent())
+    ]);
   }
 
   Widget _renderWidget() {
@@ -82,16 +95,18 @@ class _PassState extends State<Pass> {
     return Scaffold(
         body: BackgroundComponent(
       content: TopNavigationComponent(
-        currentPage: "pass",
-        content: GestureDetector(
-          child: AnimatedSwitcher(
-              duration: const Duration(milliseconds: 300),
-              transitionBuilder: (Widget child, Animation<double> animation) =>
-                  ScaleTransition(scale: animation, child: child),
-              child: _renderWidget()),
-          onTap: () => {_updateWidget()},
-        ),
-      ),
+          currentPage: "pass",
+          content: Column(children: [
+            GestureDetector(
+              child: AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 300),
+                  transitionBuilder:
+                      (Widget child, Animation<double> animation) =>
+                          ScaleTransition(scale: animation, child: child),
+                  child: _renderWidget()),
+              onTap: () => {_updateWidget()},
+            ),
+          ])),
     ));
   }
 }

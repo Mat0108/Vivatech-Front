@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vivatech/components/background.dart';
 import 'package:vivatech/components/game/gameContainerWithCharacter.dart';
+import 'package:vivatech/components/menuComponent.dart';
 import 'package:vivatech/components/topNavigation.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart';
@@ -49,6 +50,7 @@ class _GameMemoryTutorialState extends State<GameMemoryTutorial> {
                     return Image.asset(_gameData["images"][index]);
                   })),
             ),
+            const MenuComponent()
           ],
         ),
       ),

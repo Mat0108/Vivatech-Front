@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vivatech/components/menuComponent.dart';
 import 'package:vivatech/screens/games.dart';
 import '../components/background.dart';
 import '../components/topNavigation.dart';
@@ -22,32 +23,38 @@ class _QuizScreenState extends State<QuizScreen> {
   @override
   Widget build(BuildContext context) {
     return BackgroundComponent(
-        content: Column(children: [
-      TopNavigationComponent(
-          currentPage: "quiz",
-          content: Container(
-              width: MediaQuery.of(context).size.width,
-              decoration: const BoxDecoration(
-                color: Color.fromRGBO(0, 0, 0, 0.7),
-              ),
-              child: Container(
-                margin: const EdgeInsets.symmetric(horizontal: 20),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    _questionWidget(),
-                    _answerList(),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        _nextButton(),
-                        _quitButton(),
-                      ],
-                    ),
-                  ],
+        content: Column(
+      children: [
+        TopNavigationComponent(
+            currentPage: "quiz",
+            content: Container(
+                width: MediaQuery.of(context).size.width,
+                decoration: const BoxDecoration(
+                  color: Color.fromRGBO(0, 0, 0, 0.7),
                 ),
-              ))),
-    ]));
+                child: Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      _questionWidget(),
+                      _answerList(),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          _nextButton(),
+                          _quitButton(),
+                        ],
+                      ),
+                    ],
+                  ),
+                ))),
+        Container(
+            alignment: Alignment.bottomCenter,
+            padding: const EdgeInsets.fromLTRB(0, 34.5, 0, 0),
+            child: const MenuComponent())
+      ],
+    ));
   }
 
   _questionWidget() {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vivatech/components/color.dart';
+import 'package:vivatech/components/menuComponent.dart';
 import 'package:vivatech/screens/game_memory.dart';
 import '../components/game/gameContainer.dart';
 
@@ -19,8 +20,8 @@ class _SceneState extends State<Scene> {
     return Scaffold(
       body: GameContainerComponent(
         content: Container(
-          height: 800,
-          width: 480,
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage("assets/background/bg-gradient-vivatech-2.png"),
@@ -47,7 +48,7 @@ class _SceneState extends State<Scene> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 40),
+                const SizedBox(height: 250),
                 const SizedBox(height: 20),
                 Container(
                   margin: EdgeInsets.fromLTRB(25 * fem, 0, 25 * fem, 0),
@@ -63,6 +64,10 @@ class _SceneState extends State<Scene> {
                     ],
                   ),
                 ),
+                Container(
+                    alignment: Alignment.bottomCenter,
+                    padding: const EdgeInsets.fromLTRB(0, 291, 0, 0),
+                    child: const MenuComponent())
               ],
             ),
           ),

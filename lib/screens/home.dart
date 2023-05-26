@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:vivatech/components/color.dart';
 import 'package:vivatech/components/home/carousel.dart';
+import 'package:vivatech/components/menuComponent.dart';
+import 'package:vivatech/screens/ar.dart';
+import 'package:vivatech/screens/games.dart';
+import 'package:vivatech/screens/pass.dart';
+import 'package:vivatech/screens/pdf_viewer_page.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -17,8 +22,8 @@ class _HomeState extends State<Home> {
     double ffem = fem * 0.97;
     return Scaffold(
       body: Container(
-        height: 800,
-        width: 480,
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/background/bg-gradient-vivatech-2.png"),
@@ -31,7 +36,7 @@ class _HomeState extends State<Home> {
             children: <Widget>[
               Container(
                 width: 400,
-                height: 160,
+                height: 120,
                 margin: const EdgeInsets.fromLTRB(0, 40, 0, 0),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10 * fem),
@@ -50,25 +55,63 @@ class _HomeState extends State<Home> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    ButtonAccueil('assets/pages/home/buttonPass.png',
-                        'Mon pass', const Color(0xff00ffff), fem, ffem),
-                    ButtonAccueil('assets/pages/home/buttonGame.png', 'Jeux',
-                        const Color(0xff00ff00), fem, ffem),
-                    ButtonAccueil('assets/pages/home/buttonAR.png', 'Plan',
-                        const Color(0xffffff00), fem, ffem),
-                    ButtonAccueil('assets/pages/home/buttonCV.png', 'CV',
-                        const Color(0xfff15700), fem, ffem),
+                    GestureDetector(
+                        child: ButtonAccueil('assets/pages/home/buttonPass.png',
+                            'Mon pass', const Color(0xff00ffff), fem, ffem),
+                        onTap: () => {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Pass(),
+                                    fullscreenDialog: true),
+                              ),
+                            }),
+                    GestureDetector(
+                        child: ButtonAccueil('assets/pages/home/buttonGame.png',
+                            'Jeux', const Color(0xff00ff00), fem, ffem),
+                        onTap: () => {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Games(),
+                                    fullscreenDialog: true),
+                              ),
+                            }),
+                    GestureDetector(
+                        child: ButtonAccueil('assets/pages/home/buttonAR.png',
+                            'Plan', const Color(0xffffff00), fem, ffem),
+                        onTap: () => {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const AR(
+                                        latitude: 34.5375, longitude: 35.237),
+                                    fullscreenDialog: true),
+                              ),
+                            }),
+                    GestureDetector(
+                        child: ButtonAccueil('assets/pages/home/buttonCV.png',
+                            'CV', const Color(0xfff15700), fem, ffem),
+                        onTap: () => {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const PdfUploaderPage(),
+                                    fullscreenDialog: true),
+                              ),
+                            }),
                   ],
                 ),
               ),
               Stack(
                 children: [
-                  Positioned(
-                    top: 0,
-                    left: 60,
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(40, 20, 0, 0),
                     child: Container(
-                      width: 100,
-                      height: 20,
+                      width: 130,
+                      height: 35,
+                      alignment: Alignment.center,
                       decoration: BoxDecoration(
                         color: VivatechColor.blue,
                         borderRadius: BorderRadius.circular(5),
@@ -76,7 +119,10 @@ class _HomeState extends State<Home> {
                       child: const Center(
                         child: Text(
                           'Conférences',
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w600),
                         ),
                       ),
                     ),
@@ -86,12 +132,12 @@ class _HomeState extends State<Home> {
               ),
               Stack(
                 children: [
-                  Positioned(
-                    top: 0,
-                    left: 60,
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(40, 0, 0, 0),
                     child: Container(
-                      width: 60,
-                      height: 20,
+                      width: 130,
+                      height: 35,
+                      alignment: Alignment.topCenter,
                       decoration: BoxDecoration(
                         color: VivatechColor.blue,
                         borderRadius: BorderRadius.circular(5),
@@ -99,7 +145,10 @@ class _HomeState extends State<Home> {
                       child: const Center(
                         child: Text(
                           'Stands',
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w600),
                         ),
                       ),
                     ),
@@ -107,6 +156,7 @@ class _HomeState extends State<Home> {
                   const CarouselWithIndicatorDemo(type: "2"),
                 ],
               ),
+              const MenuComponent()
             ],
           ),
         ),
@@ -125,7 +175,7 @@ class _HomeState extends State<Home> {
         children: [
           Container(
             margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 7 * fem),
-            height: 70,
+            height: 60,
             width: 70,
             decoration: BoxDecoration(
               border: Border.all(color: border),
@@ -151,11 +201,13 @@ class _HomeState extends State<Home> {
             ),
           ),
           Container(
-            // monpassSE9 (1:41)
             margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 5 * fem, 0 * fem),
             child: Text(
               titre,
-              style: const TextStyle(fontSize: 14, color: VivatechColor.white),
+              style: const TextStyle(
+                  fontSize: 11,
+                  color: VivatechColor.white,
+                  fontWeight: FontWeight.w700),
             ),
           ),
         ],

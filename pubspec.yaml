@@ -44,7 +44,6 @@ flutter:
      - assets/background/
      - assets/icons/
      - assets/pages/
-     - assets/images/
      - assets/pages/home/
      - assets/pages/games/
      - assets/pages/games/characters/

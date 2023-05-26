@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class GamesContainerComponent extends StatelessWidget {
   final String text;
   final String image;
-  final String gameName;
+  final Widget gameName;
 
   const GamesContainerComponent(
       {Key? key,
@@ -49,7 +49,14 @@ class GamesContainerComponent extends StatelessWidget {
                                   color: Colors.white,
                                   fontWeight: FontWeight.w700)),
                         )),
-                    onTap: () => {Navigator.pushNamed(context, gameName)},
+                    onTap: () => {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => gameName,
+                            fullscreenDialog: true),
+                      ),
+                    },
                   )
                 ])));
   }

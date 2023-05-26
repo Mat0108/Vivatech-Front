@@ -4,6 +4,8 @@ import 'package:vivatech/components/background.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:vivatech/components/topNavigation.dart';
 
+import '../components/menuComponent.dart';
+
 class ScanQrCode extends StatefulWidget {
   @override
   State<ScanQrCode> createState() => _ScanQrCodeState();
@@ -69,6 +71,15 @@ class _ScanQrCodeState extends State<ScanQrCode> {
                             )
                           : Container(),
                     ),
+                    result != null
+                        ? Container(
+                            alignment: Alignment.bottomCenter,
+                            padding: const EdgeInsets.fromLTRB(0, 16.5, 0, 0),
+                            child: const MenuComponent())
+                        : Container(
+                            alignment: Alignment.bottomCenter,
+                            padding: const EdgeInsets.fromLTRB(0, 66.5, 0, 0),
+                            child: const MenuComponent())
                   ],
                 )))));
   }

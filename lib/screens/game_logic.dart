@@ -5,6 +5,7 @@ import 'package:vivatech/components/background.dart';
 import 'package:vivatech/components/game/gameContainer.dart';
 import 'package:vivatech/components/game/quitGameContainer.dart';
 import 'package:vivatech/components/game/winLoseContainer.dart';
+import 'package:vivatech/components/menuComponent.dart';
 import 'package:vivatech/components/topNavigation.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart';
@@ -227,7 +228,7 @@ class _GameLogicState extends State<GameLogic> {
                             );
                           },
                         )
-                      }))
+                      })),
         ],
       ))),
     ])));

@@ -12,6 +12,7 @@ import 'dart:math';
 import 'package:vector_math/vector_math_64.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:vivatech/components/color.dart';
+import 'package:vivatech/components/menuComponent.dart';
 
 class AR extends StatefulWidget {
   const AR({super.key, required this.latitude, required this.longitude});
@@ -101,8 +102,8 @@ class _AR extends State<AR> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-            height: 800,
-            width: 480,
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("assets/images/fond.png"),
@@ -112,8 +113,9 @@ class _AR extends State<AR> with TickerProviderStateMixin {
             child: Center(
                 child: Stack(children: [
               Container(
-                  height: 600,
-                  width: 350,
+                  alignment: Alignment.center,
+                  height: MediaQuery.of(context).size.height * 0.95,
+                  width: MediaQuery.of(context).size.width,
                   decoration: const BoxDecoration(
                     color: VivatechColor.white,
                     borderRadius: BorderRadius.all(Radius.circular(15)),
@@ -124,7 +126,11 @@ class _AR extends State<AR> with TickerProviderStateMixin {
                         PlaneDetectionConfig.horizontalAndVertical,
                     showPlatformType: false,
                   )),
-              Text("Angle: $anglet")
+              Text("Angle: $anglet"),
+              Container(
+                  alignment: Alignment.bottomCenter,
+                  padding: const EdgeInsets.fromLTRB(0, 785, 0, 0),
+                  child: const MenuComponent())
             ]))));
   }
 

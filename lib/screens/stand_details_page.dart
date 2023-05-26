@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:vivatech/components/background.dart';
+import 'package:vivatech/components/menuComponent.dart';
 import 'package:vivatech/widgets/padding_description.dart';
 import 'package:vivatech/widgets/pink_row.dart';
 import 'package:vivatech/widgets/rounded_image.dart';
+
 import '../models/stand.dart';
 
 class StandDetailsPage extends StatelessWidget {
@@ -18,16 +21,18 @@ class StandDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    return Container(
-        child: Column(children: [
+    return Scaffold(
+        body: BackgroundComponent(
+            content: Container(
+                child: Column(children: [
       Row(
         children: [
           Container(
             margin: const EdgeInsets.only(left: 10, right: 10),
             padding: const EdgeInsets.all(3),
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(30)),
-            child: RoundedImage(
-                30, const Color(0xFFFFFF00), const AssetImage("assets/qr.png")),
+            child: RoundedImage(30, Color(0xFFFFFF00),
+                AssetImage("assets/pages/stands/oreal_stand.png")),
           ),
           Expanded(
               child: Container(
@@ -39,19 +44,19 @@ class StandDetailsPage extends StatelessWidget {
                 topRight: Radius.circular(10),
                 bottomRight: Radius.circular(10),
               ),
-              border: Border.all(color: const Color(0xFFFFFF00), width: 2),
+              border: Border.all(color: Color(0xFFFFFF00), width: 2),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   Oreal.name.toUpperCase(),
-                  style: const TextStyle(
+                  style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: Colors.purple),
                 ),
-                const SizedBox(width: 10),
+                SizedBox(width: 10),
               ],
             ),
           )),
@@ -76,7 +81,7 @@ class StandDetailsPage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Icon(
+                        Icon(
                           Icons.location_on,
                           color: Colors.pink,
                         ),
@@ -85,7 +90,8 @@ class StandDetailsPage extends StatelessWidget {
                     )
                   ],
                 ))),
-      )
-    ]));
+      ),
+      const MenuComponent()
+    ]))));
   }
 }

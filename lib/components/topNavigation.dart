@@ -54,6 +54,10 @@ class _TopNavigationComponentState extends State<TopNavigationComponent> {
       setState(() {
         datasPage = datas['pass'];
       });
+    } else if (widget.currentPage == "scan-qrcode") {
+      setState(() {
+        datasPage = datas['scan-qrcode'];
+      });
     } else if (widget.currentPage == "cv") {
       setState(() {
         datasPage = datas['cv'];

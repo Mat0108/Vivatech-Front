@@ -3,6 +3,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_pdfview/flutter_pdfview.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:vivatech/components/menuComponent.dart';
 import 'package:vivatech/components/topNavigation.dart';
 import 'package:share_plus/share_plus.dart';
 
@@ -80,7 +81,7 @@ class _PdfUploaderPageState extends State<PdfUploaderPage> {
                         children: const [
                           Icon(Icons.share, color: Colors.white, size: 24),
                           SizedBox(height: 4),
-                          Text("Share",
+                          Text("Partager",
                               style:
                                   TextStyle(color: Colors.white, fontSize: 12)),
                         ],
@@ -101,7 +102,7 @@ class _PdfUploaderPageState extends State<PdfUploaderPage> {
                         children: const [
                           Icon(Icons.download, color: Colors.white, size: 24),
                           SizedBox(height: 4),
-                          Text('Upload',
+                          Text('Ajouter',
                               style:
                                   TextStyle(color: Colors.white, fontSize: 12)),
                         ],
@@ -112,12 +113,22 @@ class _PdfUploaderPageState extends State<PdfUploaderPage> {
               ),
               if (pdfPath != null)
                 Container(
+                  padding: const EdgeInsets.fromLTRB(0, 40, 0, 0),
                   width: 350,
                   height: 520,
                   child: PDFView(
                     filePath: pdfPath!,
                   ),
                 ),
+              pdfPath != null
+                  ? Container(
+                      alignment: Alignment.bottomCenter,
+                      padding: const EdgeInsets.fromLTRB(0, 46, 0, 0),
+                      child: const MenuComponent())
+                  : Container(
+                      alignment: Alignment.bottomCenter,
+                      padding: const EdgeInsets.fromLTRB(0, 566.5, 0, 0),
+                      child: const MenuComponent())
             ],
           ),
         ),

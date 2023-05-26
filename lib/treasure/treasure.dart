@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vivatech/components/game/gameContainerWithCharacter.dart';
+import 'package:vivatech/components/menuComponent.dart';
 import 'package:vivatech/treasure/stage1.dart';
 import 'dart:developer';
 import 'package:flutter/foundation.dart';
@@ -39,6 +40,9 @@ class _TreasurePageState extends State<TreasurePage> {
                     showNextButton: true,
                     gameName: "treasure",
                     game: const TreasureStage1())),
+            Padding(
+                padding: EdgeInsets.fromLTRB(0, 56.5, 0, 0),
+                child: const MenuComponent())
           ],
         ),
       ),

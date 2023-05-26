@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:vivatech/components/background.dart';
+import 'package:vivatech/components/menuComponent.dart';
 import 'package:vivatech/widgets/rounded_image.dart';
 import '../components/SessionCard.dart';
 import '../models/conference.dart';
@@ -14,49 +16,51 @@ class ConferenceDetailsPage extends StatefulWidget {
 
 class _ConferenceDetailsPageState extends State<ConferenceDetailsPage> {
   int _currentPage = 0;
-  final CarouselController _carouselController = CarouselController();
+  CarouselController _carouselController = CarouselController();
 
   @override
   Widget build(BuildContext context) {
-    Presenter presenter51 =
-        Presenter("Bruno BRITSCH", 'assets/conference/Metaverse/Tim Gould.png');
-    Presenter presenter52 =
-        Presenter("Timo Gross", 'assets/conference/Metaverse/Timo Gross.png');
-    Presenter presenter53 = Presenter(
-        "Arnaud Santin", 'assets/conference/Metaverse/Arnaud Santin.png');
+// Instanciation des présentateurs
+    Presenter presenter51 = Presenter(
+        "Bruno BRITSCH", 'assets/pages/conferences/Metaverse/Tim Gould.png');
+    Presenter presenter52 = Presenter(
+        "Timo Gross", 'assets/pages/conferences/Metaverse/Timo Gross.png');
+    Presenter presenter53 = Presenter("Arnaud Santin",
+        'assets/pages/conferences/Metaverse/Arnaud Santin.png');
     Presenter presenter54 = Presenter("Dimitri Carbonnelle",
-        'assets/conference/Metaverse/Dimitri Carbonnelle.png');
-    Presenter presenter55 =
-        Presenter("Tim Gould", 'assets/conference/Metaverse/Tim Gould.png');
-    Presenter presenter56 =
-        Presenter("Ann Mettler", 'assets/conference/Metaverse/Ann Mettler.png');
+        'assets/pages/conferences/Metaverse/Dimitri Carbonnelle.png');
+    Presenter presenter55 = Presenter(
+        "Tim Gould", 'assets/pages/conferences/Metaverse/Tim Gould.png');
+    Presenter presenter56 = Presenter(
+        "Ann Mettler", 'assets/pages/conferences/Metaverse/Ann Mettler.png');
     Presenter presenter57 = Presenter(
-        "Loïck Peyron ", 'assets/conference/Metaverse/Loïck Peyron.png');
+        "Loïck Peyron ", 'assets/pages/conferences/Metaverse/Loïck Peyron.png');
     Presenter presenter58 = Presenter(
-        "Alex Thomson", 'assets/conference/Metaverse/Alex Thomson.png');
-    Presenter presenter59 = Presenter(
-        "Arianna Simpson", 'assets/conference/Metaverse/Arianna Simpson.png');
-    Presenter presenter60 = Presenter(
-        "Brandon Millman", 'assets/conference/Metaverse/Brandon Millman.png');
+        "Alex Thomson", 'assets/pages/conferences/Metaverse/Alex Thomson.png');
+    Presenter presenter59 = Presenter("Arianna Simpson",
+        'assets/pages/conferences/Metaverse/Arianna Simpson.png');
+    Presenter presenter60 = Presenter("Brandon Millman",
+        'assets/pages/conferences/Metaverse/Brandon Millman.png');
     Presenter presenter61 = Presenter("Catherine Chabaud",
-        'assets/conference/Metaverse/Catherine Chabaud.png');
+        'assets/pages/conferences/Metaverse/Catherine Chabaud.png');
     Presenter presenter62 = Presenter("Marc Van Peteghem",
-        'assets/conference/Metaverse/Marc Van Peteghem.png');
-    Presenter presenter63 = Presenter(
-        "Grégoire Carlier", 'assets/conference/Metaverse/Grégoire Carlier.png');
-    Presenter presenter64 = Presenter(
-        "Fabien Gastou", 'assets/conference/Metaverse/Fabien Gastou.png');
-    Presenter presenter65 = Presenter(
-        "Patrick Aufort", 'assets/conference/Metaverse/Patrick Aufort.png');
-    Presenter presenter66 = Presenter(
-        "Claire Pétreault", 'assets/conference/Metaverse/Claire Pétreault.png');
+        'assets/pages/conferences/Metaverse/Marc Van Peteghem.png');
+    Presenter presenter63 = Presenter("Grégoire Carlier",
+        'assets/pages/conferences/Metaverse/Grégoire Carlier.png');
+    Presenter presenter64 = Presenter("Fabien Gastou",
+        'assets/pages/conferences/Metaverse/Fabien Gastou.png');
+    Presenter presenter65 = Presenter("Patrick Aufort",
+        'assets/pages/conferences/Metaverse/Patrick Aufort.png');
+    Presenter presenter66 = Presenter("Claire Pétreault",
+        'assets/pages/conferences/Metaverse/Claire Pétreault.png');
     Presenter presenter67 = Presenter(
-        "Sophie Viger", 'assets/conference/Metaverse/Sophie Viger.png');
+        "Sophie Viger", 'assets/pages/conferences/Metaverse/Sophie Viger.png');
     Presenter presenter68 = Presenter("Thomas fonde Widoobiz",
-        'assets/conference/Metaverse/Thomas fonde Widoobiz.png');
-    Presenter presenter69 = Presenter(
-        "Caroline Ramade", 'assets/conference/Metaverse/Caroline Ramade.png');
+        'assets/pages/conferences/Metaverse/Thomas fonde Widoobiz.png');
+    Presenter presenter69 = Presenter("Caroline Ramade",
+        'assets/pages/conferences/Metaverse/Caroline Ramade.png');
 
+// Création des sessions pour chaque jour
     Session session23 = Session("12:00 - 12:30", [presenter51],
         "La nouvelle économie de propriété du Web3 et la redéfinition des programmes CRM");
     Session session24 = Session("10:45 - 11:15", [presenter52, presenter53],
@@ -80,19 +84,22 @@ class _ConferenceDetailsPageState extends State<ConferenceDetailsPage> {
     Session session31 = Session("14:00 - 14:20", [presenter68, presenter69],
         "De la Start-up Nation à l'Impact Nation ?");
 
+// Création des jours avec leurs titres et sessions
     Day day1_Metaverse = Day("Mercredi 14", [session23, session24, session25]);
     Day day2_Metaverse = Day("Vendredi 16", [session26, session27, session28]);
     Day day3_Metaverse = Day("Samedi 17", [session29, session30, session31]);
 
+// Création de l'objet Conference avec le programme complet
     Conference conferenceMetaverse = Conference(
         "Économie, jeux et métaverse ",
         [day1_Metaverse, day2_Metaverse, day3_Metaverse],
         "web",
-        "assets/conference/Metaverse/metaverce_image.png");
+        "assets/pages/conferences/Metaverse/metaverce_image.png");
 
     double width = MediaQuery.of(context).size.width;
-    return Container(
-      child: Column(
+    return Scaffold(
+        body: BackgroundComponent(
+      content: Column(
         children: [
           Row(
             children: [
@@ -104,7 +111,7 @@ class _ConferenceDetailsPageState extends State<ConferenceDetailsPage> {
                 ),
                 child: RoundedImage(
                   30,
-                  const Color(0xFF00FF00),
+                  Color(0xFF00FF00),
                   AssetImage(conferenceMetaverse.imageURL),
                 ),
               ),
@@ -125,7 +132,7 @@ class _ConferenceDetailsPageState extends State<ConferenceDetailsPage> {
                   ),
                   child: Text(
                     conferenceMetaverse.name.toUpperCase(),
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: Colors.purple,
@@ -170,7 +177,7 @@ class _ConferenceDetailsPageState extends State<ConferenceDetailsPage> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   IconButton(
-                                    icon: const Icon(
+                                    icon: Icon(
                                       Icons.arrow_back,
                                       color: Color(0xFF00FF00),
                                     ),
@@ -180,7 +187,7 @@ class _ConferenceDetailsPageState extends State<ConferenceDetailsPage> {
                                   ),
                                   RowPink(day.title),
                                   IconButton(
-                                    icon: const Icon(
+                                    icon: Icon(
                                       Icons.arrow_forward,
                                       color: Color(0xFF00FF00),
                                     ),
@@ -197,7 +204,7 @@ class _ConferenceDetailsPageState extends State<ConferenceDetailsPage> {
                                     Wrap(
                                       children: day.sessions.map((session) {
                                         return Padding(
-                                          padding: const EdgeInsets.all(10),
+                                          padding: EdgeInsets.all(10),
                                           child: SessionCard(session: session),
                                         );
                                       }).toList(),
@@ -215,8 +222,9 @@ class _ConferenceDetailsPageState extends State<ConferenceDetailsPage> {
               ),
             ),
           ),
+          const MenuComponent()
         ],
       ),
-    );
+    ));
   }
 }

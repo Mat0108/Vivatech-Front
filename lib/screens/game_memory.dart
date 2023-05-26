@@ -4,6 +4,7 @@ import 'package:vivatech/components/color.dart';
 import 'package:vivatech/components/game/gameContainer.dart';
 import 'package:vivatech/components/game/quitGameContainer.dart';
 import 'package:collection/collection.dart';
+import 'package:vivatech/components/menuComponent.dart';
 
 class ListImage {
   String url;
@@ -271,63 +272,78 @@ class _GameMemoryState extends State<GameMemory> with TickerProviderStateMixin {
             }));
 
     return GameContainerComponent(
-        content: Positioned(
-      width: 390,
-      height: 400,
-      top: 80,
-      child: SizedBox(
-        width: 390,
-        height: 400,
-        child: Column(
-          children: <Widget>[
-            Container(
-                width: 390,
-                height: 600,
-                margin: const EdgeInsets.fromLTRB(0, 25, 0, 0),
-                child: GridView.count(
-                    crossAxisCount: 4,
-                    crossAxisSpacing: 10,
-                    children: listWidget.toList())),
-            Container(
-              width: 390,
-              height: 50,
-              margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  Container(
-                    width: 110,
-                    height: 48,
-                    decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                      color: VivatechColor.pink,
-                    ),
-                    child: TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const QuitGameContainerComponent(
-                                      gameName: 'game-memory',
-                                    )));
-                      },
-                      child: const Text(
-                        "Quitter",
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: VivatechColor.white,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
+        content: Container(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image:
+                    AssetImage("assets/background/bg-gradient-vivatech-2.png"),
+                fit: BoxFit.cover,
               ),
             ),
-          ],
-        ),
-      ),
-    ));
+            child: Positioned(
+              width: 390,
+              height: 400,
+              top: 80,
+              child: SizedBox(
+                width: 390,
+                height: 400,
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                        width: 390,
+                        height: 600,
+                        margin: const EdgeInsets.fromLTRB(0, 25, 0, 0),
+                        child: GridView.count(
+                            crossAxisCount: 4,
+                            crossAxisSpacing: 10,
+                            children: listWidget.toList())),
+                    Container(
+                      width: 390,
+                      height: 50,
+                      margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          Container(
+                            width: 110,
+                            height: 48,
+                            decoration: const BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(15)),
+                              color: VivatechColor.pink,
+                            ),
+                            child: TextButton(
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const QuitGameContainerComponent(
+                                              gameName: 'game-memory',
+                                            )));
+                              },
+                              child: const Text(
+                                "Quitter",
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  color: VivatechColor.white,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                        alignment: Alignment.bottomCenter,
+                        padding: const EdgeInsets.fromLTRB(0, 101.5, 0, 0),
+                        child: const MenuComponent())
+                  ],
+                ),
+              ),
+            )));
   }
 
   Widget card(String url, bool cond, VoidCallback callback) {

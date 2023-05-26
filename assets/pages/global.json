@@ -33,6 +33,16 @@
             "85", "8", "160", "0.2"
         ]
     },
+    "scan-qrcode": {
+        "title": "Scanner QR Code",
+        "image": "assets/qr.png",
+        "color": [
+            "255", "255", "255", "0.3"
+        ],
+        "border-color": [
+            "0", "255", "0", "1"
+        ]
+    },
     "cv": {
         "title": "CV",
         "image": "assets/pages/home/cv.png",
