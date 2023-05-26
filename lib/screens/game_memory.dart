@@ -1,39 +1,32 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:vivatech/components/color.dart';
-import 'package:collection/collection.dart';
 import 'package:vivatech/components/game/gameContainer.dart';
+import 'package:vivatech/components/game/quitGameContainer.dart';
 import 'package:vivatech/screens/niveaux.dart';
-
-import '../components/game/quitGameContainer.dart';
 
 class ListImage {
   String url;
   bool cond;
   bool globalcond;
   int? index;
-  // AnimationController? controller;
-  // Animation? animation ;
-  // AnimationStatus status = AnimationStatus.dismissed;
   ListImage({
     required this.url,
     required this.cond,
     required this.globalcond,
     this.index,
-    // this.controller,
-    // this.animation
   });
 }
 
-class Memoire extends StatefulWidget {
-  const Memoire({super.key, required this.niveau});
+class GameMemory extends StatefulWidget {
+  const GameMemory({super.key, required this.niveau});
   final double niveau;
 
   @override
-  State<Memoire> createState() => _MemoireState();
+  State<GameMemory> createState() => _GameMemoryState();
 }
 
-class _MemoireState extends State<Memoire> with TickerProviderStateMixin {
+class _GameMemoryState extends State<GameMemory> with TickerProviderStateMixin {
   late AnimationController _controller;
 
 // 8 cartes
@@ -278,9 +271,7 @@ class _MemoireState extends State<Memoire> with TickerProviderStateMixin {
             }));
 
     return GameContainerComponent(
-        content: Container(
-            child: Text(
-                "test")) /*Positioned(
+        content: Positioned(
       width: 390,
       height: 400,
       top: 80,
@@ -336,8 +327,7 @@ class _MemoireState extends State<Memoire> with TickerProviderStateMixin {
           ],
         ),
       ),
-    )*/
-        );
+    ));
   }
 
   Widget card(String url, bool cond, VoidCallback callback) {

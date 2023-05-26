@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vivatech/components/color.dart';
 import 'package:vivatech/screens/game_memory.dart';
-
 import '../components/game/gameContainer.dart';
 
 class Scene extends StatefulWidget {
@@ -24,8 +23,7 @@ class _SceneState extends State<Scene> {
           width: 480,
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image:
-                  AssetImage("assets/background/bg-gradient-vivatech-2.png"),
+              image: AssetImage("assets/background/bg-gradient-vivatech-2.png"),
               fit: BoxFit.cover,
             ),
           ),
@@ -61,8 +59,7 @@ class _SceneState extends State<Scene> {
                           'Facile', 1, VivatechColor.green, fem, ffem),
                       ButtonAccueil(
                           'Moyen', 2, VivatechColor.orange, fem, ffem),
-                      ButtonAccueil(
-                          'Difficile', 3, Colors.red, fem, ffem),
+                      ButtonAccueil('Difficile', 3, Colors.red, fem, ffem),
                     ],
                   ),
                 ),
@@ -102,14 +99,14 @@ class _SceneState extends State<Scene> {
             child: TextButton(
               child: Text(
                 titre,
-                style: const TextStyle(
-                    fontSize: 15, color: VivatechColor.white),
+                style:
+                    const TextStyle(fontSize: 15, color: VivatechColor.white),
               ),
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => Memoire(
+                    builder: (context) => GameMemory(
                       niveau: niveau,
                     ),
                   ),

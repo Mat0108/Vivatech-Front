@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors, prefer_final_fields, avoid_print
 import 'package:flutter/material.dart';
 import 'package:vivatech/components/game/textTyperAnimation.dart';
-import 'package:vivatech/screens/game_memory_tutorial.dart';
 
 class GameContainerWithCharacterComponent extends StatefulWidget {
   final List<dynamic> tutorial;
@@ -35,6 +34,7 @@ class _GameContainerWithCharacterComponentState
   String image = "";
   bool tutorialFinished = false;
   int currentIndexContent = 0;
+  bool isClicked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -111,103 +111,102 @@ class _GameContainerWithCharacterComponentState
       }
     }
 
-    print("index content");
-    print(currentIndexContent);
-    print("index");
-    print(currentIndex);
-    return Container(
-        width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(
-          color: Color.fromRGBO(0, 0, 0, 0.7),
-        ),
-        child: Column(children: [
-          Padding(
-            padding: withContent
-                ? EdgeInsets.fromLTRB(0, 10, 0, 0)
-                : EdgeInsets.fromLTRB(0, 100, 0, 0),
-            child: Stack(
-              children: <Widget>[
-                Container(
-                  alignment: Alignment.topRight,
-                  child: Image.asset(
-                    "assets/pages/games/bubble-chat.png",
-                    width: withContent ? 350 : 400,
-                    height: withContent ? 250 : 300,
-                  ),
-                ),
-                Container(
-                    alignment: Alignment.topCenter,
-                    padding: withContent
-                        ? EdgeInsets.fromLTRB(140, 50, 80, 75)
-                        : EdgeInsets.fromLTRB(90, 75, 90, 75),
-                    child: showFullText
-                        ? Text(widget.tutorial[currentIndex],
-                            textAlign: TextAlign.justify,
-                            style: const TextStyle(
-                              color: Colors.black,
-                              fontSize: 13.5,
-                              fontWeight: FontWeight.w700,
-                            ))
-                        : TextTyperAnimationComponent(
-                            text: widget.tutorial[currentIndex])),
-                if (widget.showNextButton)
-                  GestureDetector(
-                      child: Padding(
-                          padding: withContent
-                              ? EdgeInsets.fromLTRB(300, 140, 0, 0)
-                              : EdgeInsets.fromLTRB(290, 170, 0, 0),
-                          child: Container(
-                              width: withContent ? 30 : 40,
-                              height: withContent ? 30 : 40,
-                              alignment: Alignment.topRight,
-                              child:
-                                  Image.asset("assets/pages/games/next.png"))),
-                      onTap: () {
-                        tapCount++;
-
-                        if (tapCount == 2) {
-                          if (currentIndex + 1 == widget.tutorial.length) {
-                            Navigator.push(
-                              context,
-                              PageRouteBuilder(
-                                pageBuilder: (BuildContext context,
-                                    Animation<double> animation1,
-                                    Animation<double> animation2) {
-                                  return widget.game;
-                                },
-                                transitionDuration: Duration.zero,
-                                reverseTransitionDuration: Duration.zero,
-                              ),
-                            );
-                          } else if (currentIndex < widget.tutorial.length) {
-                            currentIndex++;
-                            tapCount = 0;
-
-                            print(currentIndex);
-                            setState(() {
-                              showFullText = false;
-                            });
-                          }
-                        } else if (tapCount == 1) {
-                          setState(() {
-                            showFullText = true;
-                          });
-                        }
-                      })
-              ],
+    return widget.tutorial != null
+        ? Container(
+            width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(
+              color: Color.fromRGBO(0, 0, 0, 0.7),
             ),
-          ),
-          Container(
-            padding: withContent
-                ? EdgeInsets.fromLTRB(50, 0, 0, 0)
-                : EdgeInsets.fromLTRB(0, 0, 0, 0),
-            alignment: Alignment.centerLeft,
-            child: Image.asset(image,
-                width: withContent ? 110 : 180,
-                height: withContent ? 110 : 180),
-          ),
-          if (widget.content != null && withContent != false)
-            widget.content![currentIndexContent]
-        ]));
+            child: Column(children: [
+              Padding(
+                padding: withContent
+                    ? EdgeInsets.fromLTRB(0, 10, 0, 0)
+                    : EdgeInsets.fromLTRB(0, 100, 0, 0),
+                child: Stack(
+                  children: <Widget>[
+                    Container(
+                      alignment: Alignment.topRight,
+                      child: Image.asset(
+                        "assets/pages/games/bubble-chat.png",
+                        width: withContent ? 350 : 400,
+                        height: withContent ? 250 : 300,
+                      ),
+                    ),
+                    Container(
+                        alignment: Alignment.topCenter,
+                        padding: withContent
+                            ? EdgeInsets.fromLTRB(140, 50, 80, 75)
+                            : EdgeInsets.fromLTRB(90, 75, 90, 75),
+                        child: showFullText
+                            ? Text(widget.tutorial[currentIndex],
+                                textAlign: TextAlign.justify,
+                                style: const TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 13.5,
+                                  fontWeight: FontWeight.w700,
+                                ))
+                            : TextTyperAnimationComponent(
+                                text: widget.tutorial[currentIndex])),
+                    if (widget.showNextButton)
+                      GestureDetector(
+                          child: Padding(
+                              padding: withContent
+                                  ? EdgeInsets.fromLTRB(300, 140, 0, 0)
+                                  : EdgeInsets.fromLTRB(290, 170, 0, 0),
+                              child: Container(
+                                  width: withContent ? 30 : 40,
+                                  height: withContent ? 30 : 40,
+                                  alignment: Alignment.topRight,
+                                  child: Image.asset(
+                                      "assets/pages/games/next.png"))),
+                          onTap: () {
+                            tapCount++;
+
+                            if (tapCount == 2) {
+                              if (currentIndex + 1 == widget.tutorial.length) {
+                                Navigator.push(
+                                  context,
+                                  PageRouteBuilder(
+                                    pageBuilder: (BuildContext context,
+                                        Animation<double> animation1,
+                                        Animation<double> animation2) {
+                                      return widget.game;
+                                    },
+                                    transitionDuration: Duration.zero,
+                                    reverseTransitionDuration: Duration.zero,
+                                  ),
+                                );
+                              } else if (currentIndex <
+                                  widget.tutorial.length) {
+                                currentIndex++;
+                                tapCount = 0;
+
+                                print(currentIndex);
+                                setState(() {
+                                  showFullText = false;
+                                });
+                              }
+                            } else if (tapCount == 1) {
+                              setState(() {
+                                showFullText = true;
+                              });
+                            }
+                          })
+                  ],
+                ),
+              ),
+              Container(
+                padding: withContent
+                    ? EdgeInsets.fromLTRB(50, 0, 0, 0)
+                    : EdgeInsets.fromLTRB(0, 0, 0, 0),
+                alignment: Alignment.centerLeft,
+                child: Image.asset(image,
+                    width: withContent ? 110 : 180,
+                    height: withContent ? 110 : 180),
+              ),
+              if (widget.content != null && withContent != false)
+                widget.content![currentIndexContent]
+            ]))
+        : CircularProgressIndicator();
   }
 }

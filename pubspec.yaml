@@ -1,43 +1,30 @@
 name: vivatech
 description: A new Flutter project.
-# The following line prevents the package from being accidentally published to
-# pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-
-# The following defines the version and build number for your application.
-# A version number is three numbers separated by dots, like 1.2.43
-# followed by an optional build number separated by a +.
-# Both the version and the builder number may be overridden in flutter
-# build by specifying --build-name and --build-number, respectively.
-# In Android, build-name is used as versionName while build-number used as versionCode.
-# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
-# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
-# Read more about iOS versioning at
-# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-# In Windows, build-name is used as the major, minor, and patch parts
-# of the product and file versions while build-number is used as the build suffix.
 version: 1.0.0+1
 
 environment:
   sdk: '>=2.19.6 <3.0.0'
 
-# Dependencies specify other packages that your package needs in order to work.
-# To automatically upgrade your package dependencies to the latest versions
-# consider running `flutter pub upgrade --major-versions`. Alternatively,
-# dependencies can be manually updated by changing the version numbers below to
-# the latest version available on pub.dev. To see which dependencies have newer
-# versions available, run `flutter pub outdated`.
 dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
+  dio: ^5.1.2
+  path_provider: ^2.0.15
+  flutter_pdfview: ^1.3.1
+  aspose_words_cloud: ^23.4.0
+  file_picker: ^5.3.1
+  http: ^0.13.4
+  path: ^1.8.0
+  permission_handler: ^8.1.6
+  cv: ^0.2.12
   provider: ^6.0.5
   qr_flutter: ^4.0.1
-  flutter_barcode_scanner: ^2.0.0
-  flutter_pdfview: ^1.3.1
-  file_picker: ^5.3.1
-  path_provider: ^2.0.15
   share_plus: ^7.0.1
+  qr_code_scanner: ^1.0.1
+  carousel_slider: ^4.2.1
+  animated_text_kit: ^4.2.2
+  ar_flutter_plugin: ^0.6.2
 
 dev_dependencies:
   flutter_test:
@@ -45,20 +32,35 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_native_splash: ^2.0.1+1
   flutter_launcher_icons: ^0.13.1
+  flutter_shake_animated: ^0.0.5
   onboarding_animation: any
-  animated_text_kit: ^4.2.2
+
 
 # The following section is specific to Flutter packages.
 flutter:
   uses-material-design: true
   assets:
+     - assets/
      - assets/background/
      - assets/icons/
+     - assets/pages/
+     - assets/images/
      - assets/pages/home/
      - assets/pages/games/
      - assets/pages/games/characters/
      - assets/pages/games/memory/
+     - assets/pages/games/logic/
+     - assets/pages/conferences/
+     - assets/pages/conferences/FoodTech/
+     - assets/pages/conferences/Cybersecurity/
+     - assets/pages/conferences/DeepTech/
+     - assets/pages/conferences/Metaverse/
+     - assets/pages/conferences/IA/
+     - assets/pages/stands/
      - assets/pages/pass/
+     - assets/pages/ar/
+     - assets/pages/cv/
+   
   fonts:
      - family: MuseoSans
        fonts:
@@ -74,6 +76,7 @@ flutter:
            weight: 900
 
 
+
 #custom splash screen
 flutter_native_splash:
   image: assets/splashscreen/icon.png
@@ -83,9 +86,8 @@ flutter_native_splash:
 
 
 #custom launch icon
-flutter_icons:
+flutter_launcher_icons:
   android: launcher_icon
   ios: true
   remove_alpha_ios: true
   image_path: assets/icons/icon.png
-  min_sdk_android: 21
