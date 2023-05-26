@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:vivatech/components/game/gameContainerWithCharacter.dart';
 import 'package:vivatech/components/game/quitGameContainer.dart';
 import 'package:vivatech/components/topNavigation.dart';
+=======
+import 'package:vivatech/components/color.dart';
+>>>>>>> e259d92075b40665b8124c810ca42369025a9097
 import 'package:vivatech/treasure/treasure.dart';
-import '../color.dart';
 import 'stage3.dart';
 
 const List<String> list = <String>[
@@ -24,26 +27,18 @@ const List<String> list = <String>[
 class TreasureStage2 extends StatefulWidget {
   const TreasureStage2({super.key});
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
   @override
   State<TreasureStage2> createState() => _TreasureStage2State();
 }
 
 class _TreasureStage2State extends State<TreasureStage2> {
-  @override
   bool showmap = false;
   bool showquit = false;
   String dropdown = list.first;
   String text =
       "Grace à la carte, nous savons où se trouve a peu pres la derniere étape. Serai tu capables de trouver l'allée du stand La Poste Groupe";
+
+  @override
   Widget build(BuildContext context) {
     return Container(
       height: 800,
@@ -55,32 +50,16 @@ class _TreasureStage2State extends State<TreasureStage2> {
         ),
       ),
       child: Center(
-          // Center is a layout widget. It takes a single child and positions it
-          // in the middle of the parent.
           child: Stack(children: [
         Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
           mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            const TopNavigationComponent(currentPage: "treasure"),
+          children: [
+            TopNavigationComponent(currentPage: "treasure", content:
             Container(
                 width: 480,
                 height: 600,
                 child: Stack(
-                  children: <Widget>[
+                  children: [
                     Positioned(
                         width: 480,
                         height: 370,
@@ -167,7 +146,7 @@ class _TreasureStage2State extends State<TreasureStage2> {
                                 child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceEvenly,
-                                    children: <Widget>[
+                                    children: [
                                       Theme(
                                           data: Theme.of(context).copyWith(
                                               canvasColor: VivatechColor.blue),
@@ -254,7 +233,7 @@ class _TreasureStage2State extends State<TreasureStage2> {
                                       )
                                     ]))))
                   ],
-                ))
+                )))
           ],
         ),
         if (showquit)
@@ -267,7 +246,6 @@ class _TreasureStage2State extends State<TreasureStage2> {
                   child:
                       const QuitGameContainerComponent(gameName: "treasure")))
       ])),
-      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

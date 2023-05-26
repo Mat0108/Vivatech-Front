@@ -1,0 +1,27 @@
+{
+    "tutorial" : {
+        "explanations" :[
+            "Bonjour! Bienvenue au jeu de la mémoire. Je suis Coumba. Je suis ici pour vous guider avant commencer de jouer le jeu",
+            "Vous devrez d’abord choisir le niveau de difficulté que vous voulez jouer. Il y a trois niveaux : facile, moyen, difficile.",
+            "Donc, votre mission dans ce jeu est de trouver le match de chaque carte. Vous verrez quelques cartes avec la même image comme ci-dessous.",
+            "D’abord, vous pouvez choisir n’importe quelle carte. Par exemple, je vais choisir la première carte.",
+            "Lorsque vous cliquez sur une carte, la carte est retournée et affiche l’image à l’intérieur. Ainsi, la première carte affiche une image Huawei.",
+            "Cela signifie que vous avez juste besoin de trouver une autre carte avec le même logo Huawei comme ci-dessous.",
+            "Si les deux cartes, vous avez choisi ne correspondent pas, les deux cartes seront retournées.",
+            "Comme indiqué ci-dessous.",
+            "Lorsque toutes les cartes ont été appariées avec succès, cela signifie que vous avez gagné le jeu.",
+            "Alors maintenant, vous pouvez commencer le jeu et vous souhaiter tout le meilleur!"
+        ],
+        "images": [
+            "assets/pages/games/memory/tuto1.png",
+            "assets/pages/games/memory/tuto2.png",
+            "assets/pages/games/memory/tuto4.png",
+            "assets/pages/games/memory/tuto5.png",
+            "assets/pages/games/memory/tuto6.png",
+            "assets/pages/games/memory/tuto7.png"
+        ]
+
+        
+    }
+    
+}

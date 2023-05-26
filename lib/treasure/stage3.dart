@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:vivatech/components/color.dart';
 import 'package:vivatech/components/game/gameContainerWithCharacter.dart';
 import 'package:vivatech/components/game/quitGameContainer.dart';
 import 'package:vivatech/components/topNavigation.dart';
 import 'package:vivatech/treasure/treasure.dart';
 import 'package:vivatech/treasure/treasurewin.dart';
-import '../color.dart';
 
 const List<String> listA = <String>[
   "A",
@@ -25,21 +25,11 @@ const List<double> list = <double>[1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 class TreasureStage3 extends StatefulWidget {
   const TreasureStage3({super.key});
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
   @override
   State<TreasureStage3> createState() => _TreasureStage3State();
 }
 
 class _TreasureStage3State extends State<TreasureStage3> {
-  @override
   String text = "Combien avez il de cartes Vivatech ?";
   String text2 = "Dans quel allée nous a mené la carte ?";
   double dropdowndouble = list.first;
@@ -177,7 +167,7 @@ class _TreasureStage3State extends State<TreasureStage3> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => TreasureWinPage()));
+                              builder: (context) => const TreasureWinPage()));
                     }
                   },
                   child: const Text("Valider",
