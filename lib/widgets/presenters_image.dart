@@ -5,14 +5,12 @@ Container myPic(double radius, String imagePath) {
     decoration: BoxDecoration(
       shape: BoxShape.circle,
       border: Border.all(
-        // Spécifier la couleur de la bordure ici
         width: 3,
-        color: Color(0xFF00FF00),
+        color: const Color(0xFF00FF00),
       ),
-      color: Colors.white, // Spécifier la couleur de fond ici
+      color: Colors.white,
     ),
     child: CircleAvatar(
-
       foregroundColor: null,
       backgroundColor: Colors.transparent,
       radius: radius,
@@ -25,14 +23,14 @@ Column PresentersImage(String name, String imagePath, double width) {
   return Column(
     children: [
       Container(
-        margin: EdgeInsets.all(5),
+        margin: const EdgeInsets.all(5),
         width: width,
         height: width,
         child: myPic(5, imagePath),
       ),
       Text(
         name,
-        style: TextStyle(
+        style: const TextStyle(
           color: Colors.white,
         ),
       ),

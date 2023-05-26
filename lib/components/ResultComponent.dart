@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:vivatech/components/textTyperAnimation.dart';
-
 
 class ResultComponent extends StatefulWidget {
   final String ruselt;
   final String gameName;
   final bool display;
 
-
   const ResultComponent(
-      {Key? key, required this.ruselt, required this.gameName, required this.display})
+      {Key? key,
+      required this.ruselt,
+      required this.gameName,
+      required this.display})
       : super(key: key);
 
   @override
@@ -21,7 +21,6 @@ class _ResultComponent extends State<ResultComponent> {
   int currentIndex = 0;
   int tapCount = 0;
   bool withContent = false;
-
 
   @override
   Widget build(BuildContext context) {
@@ -43,61 +42,53 @@ class _ResultComponent extends State<ResultComponent> {
       image = "assets/pages/games/characters/matthieu.png";
     }
 
-    return Expanded(child: SingleChildScrollView(
-        child: Container(
-            width: MediaQuery
-                .of(context)
-                .size
-                .width,
-            decoration: BoxDecoration(
-              image:widget.display? DecorationImage(
-                image: AssetImage("assets/background/victoire.png"),
-                fit: BoxFit.fitWidth,
-              ) : null,
-              color: Color.fromRGBO(0, 0, 0, 0.7),
-            ),
-            child: Column(children: [
-              Padding(
-                padding: EdgeInsets.fromLTRB(0, 100, 0, 0),
-                child: Stack(
-                  children: <Widget>[
-                    Container(
-                      alignment: Alignment.topRight,
-                      child: Image.asset(
-                        "assets/pages/games/bubble-chat.png",
-                        width:  400,
-                        height: 300,
+    return Expanded(
+      child: SingleChildScrollView(
+          child: Container(
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                image: widget.display
+                    ? const DecorationImage(
+                        image: AssetImage("assets/background/victoire.png"),
+                        fit: BoxFit.fitWidth,
+                      )
+                    : null,
+                color: const Color.fromRGBO(0, 0, 0, 0.7),
+              ),
+              child: Column(children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 100, 0, 0),
+                  child: Stack(
+                    children: <Widget>[
+                      Container(
+                        alignment: Alignment.topRight,
+                        child: Image.asset(
+                          "assets/pages/games/bubble-chat.png",
+                          width: 400,
+                          height: 300,
+                        ),
                       ),
-                    ),
-                    Container(
-                        alignment: Alignment.topCenter,
-                        padding: EdgeInsets.fromLTRB(90, 75, 90, 75),
-                        child: Text(widget.ruselt,
-                            textAlign: TextAlign.justify,
-                            style: const TextStyle(
-                              color: Colors.black,
-                              fontSize: 18.5,
-                              fontWeight: FontWeight.w900,
-                            ))
-                            ),
-
-                  ],
+                      Container(
+                          alignment: Alignment.topCenter,
+                          padding: const EdgeInsets.fromLTRB(90, 75, 90, 75),
+                          child: Text(widget.ruselt,
+                              textAlign: TextAlign.justify,
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontSize: 18.5,
+                                fontWeight: FontWeight.w900,
+                              ))),
+                    ],
+                  ),
                 ),
-              ),
-              Container(
-                padding: withContent
-                    ? EdgeInsets.fromLTRB(30, 0, 0, 0)
-                    : EdgeInsets.fromLTRB(0, 0, 0, 0),
-                alignment: Alignment.centerLeft,
-                child: Image.asset(image,
-                    width:  180,
-                    height:  180),
-              ),
-
-            ])
-        )
-    ),
+                Container(
+                  padding: withContent
+                      ? const EdgeInsets.fromLTRB(30, 0, 0, 0)
+                      : const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                  alignment: Alignment.centerLeft,
+                  child: Image.asset(image, width: 180, height: 180),
+                ),
+              ]))),
     );
   }
-
 }

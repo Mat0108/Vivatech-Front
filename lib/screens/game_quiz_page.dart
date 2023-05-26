@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:vivatech/main.dart';
-import 'package:vivatech/pages/victory_quiz_page.dart';
-
+import 'package:vivatech/screens/games.dart';
 import '../components/background.dart';
 import '../components/topNavigation.dart';
 import '../models/answer_model.dart';
 import '../models/question_model.dart';
-import 'defeat_quiz_page.dart';
 
 class QuizScreen extends StatefulWidget {
+  const QuizScreen({super.key});
+
   @override
   State<QuizScreen> createState() => _QuizScreenState();
 }
@@ -23,30 +22,31 @@ class _QuizScreenState extends State<QuizScreen> {
   @override
   Widget build(BuildContext context) {
     return BackgroundComponent(
-            content: Column(children: [
-      TopNavigationComponent(currentPage: "quiz"),
-      Container(
-          width: MediaQuery.of(context).size.width,
-          decoration: BoxDecoration(
-            color: Color.fromRGBO(0, 0, 0, 0.7),
-          ),
-          child: Container(
-            margin: EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                _questionWidget(),
-                _answerList(),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        content: Column(children: [
+      TopNavigationComponent(
+          currentPage: "quiz",
+          content: Container(
+              width: MediaQuery.of(context).size.width,
+              decoration: const BoxDecoration(
+                color: Color.fromRGBO(0, 0, 0, 0.7),
+              ),
+              child: Container(
+                margin: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    _nextButton(),
-                    _quitButton(),
+                    _questionWidget(),
+                    _answerList(),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        _nextButton(),
+                        _quitButton(),
+                      ],
+                    ),
                   ],
                 ),
-              ],
-            ),
-          ))
+              ))),
     ]));
   }
 
@@ -57,11 +57,11 @@ class _QuizScreenState extends State<QuizScreen> {
       children: [
         Center(
           child: Container(
-            margin: EdgeInsets.only(top: 20), // Add margin top here
+            margin: const EdgeInsets.only(top: 20), // Add margin top here
             child: Text(
               "Question ${currentQuestionIndex + 1}/${questionList.length.toString()}"
                   .toUpperCase(),
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white,
                 fontSize: 20,
                 fontWeight: FontWeight.w900,
@@ -69,7 +69,7 @@ class _QuizScreenState extends State<QuizScreen> {
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         Container(
@@ -82,7 +82,7 @@ class _QuizScreenState extends State<QuizScreen> {
           ),
           child: Text(
             questionList[currentQuestionIndex].questionText,
-            style: TextStyle(
+            style: const TextStyle(
                 color: Colors.white, fontSize: 18, fontWeight: FontWeight.w700),
           ),
         )
@@ -103,12 +103,12 @@ class _QuizScreenState extends State<QuizScreen> {
     bool isSelected = answer == selectedAnswer;
     return Container(
       width: MediaQuery.of(context).size.width * 0.75,
-      margin: EdgeInsets.symmetric(vertical: 20),
+      margin: const EdgeInsets.symmetric(vertical: 20),
       height: 48,
       child: ElevatedButton(
         child: Text(answer.answerText),
         style: ElevatedButton.styleFrom(
-            shape: StadiumBorder(),
+            shape: const StadiumBorder(),
             primary: isSelected ? Colors.lightGreenAccent : Colors.purple,
             onPrimary: isSelected ? Colors.black : Colors.white),
         onPressed: () {
@@ -133,29 +133,29 @@ class _QuizScreenState extends State<QuizScreen> {
 
     return Container(
       width: MediaQuery.of(context).size.width * 0.35,
-      margin: EdgeInsets.symmetric(vertical: 20),
+      margin: const EdgeInsets.symmetric(vertical: 20),
       height: 48,
       child: ElevatedButton(
         child: Text(
           isLastQuestion ? "Valider" : "Ensuite",
-          style: TextStyle(fontWeight: FontWeight.w600),
+          style: const TextStyle(fontWeight: FontWeight.w600),
         ),
         style: ElevatedButton.styleFrom(
-            shape: StadiumBorder(),
+            shape: const StadiumBorder(),
             primary: Colors.pink,
             onPrimary: Colors.white),
         onPressed: () {
           if (isLastQuestion) {
             if (score > 8) {
-              Navigator.push(
+              /*Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => VictoryPage(score)),
-              );
+              );*/
             } else {
-              Navigator.push(
+              /* Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => DefeatPage(score)),
-              );
+              );*/
             }
           } else {
             setState(() {
@@ -171,7 +171,7 @@ class _QuizScreenState extends State<QuizScreen> {
   _quitButton() {
     return Container(
       width: MediaQuery.of(context).size.width * 0.35,
-      margin: EdgeInsets.symmetric(vertical: 20),
+      margin: const EdgeInsets.symmetric(vertical: 20),
       height: 48,
       child: ElevatedButton(
           child: Text(
@@ -179,7 +179,7 @@ class _QuizScreenState extends State<QuizScreen> {
             style: TextStyle(fontWeight: FontWeight.w600),
           ),
           style: ElevatedButton.styleFrom(
-              shape: StadiumBorder(),
+              shape: const StadiumBorder(),
               primary: Colors.pink,
               onPrimary: Colors.white),
           onPressed: () {
@@ -201,7 +201,7 @@ class _QuizScreenState extends State<QuizScreen> {
               content: Column(
                 children: [
                   Padding(
-                    padding: EdgeInsets.fromLTRB(0, 100, 0, 0),
+                    padding: const EdgeInsets.fromLTRB(0, 100, 0, 0),
                     child: Stack(
                       children: <Widget>[
                         Container(
@@ -214,7 +214,7 @@ class _QuizScreenState extends State<QuizScreen> {
                         ),
                         Container(
                           alignment: Alignment.topCenter,
-                          padding: EdgeInsets.fromLTRB(50, 50, 80, 60),
+                          padding: const EdgeInsets.fromLTRB(50, 50, 80, 60),
                           child: Text(
                             showConfirmation
                                 ? "Votre progression ne sera pas sauvegardée. Êtes-vous sûr de vouloir quitter le jeu ?"
@@ -247,18 +247,19 @@ class _QuizScreenState extends State<QuizScreen> {
                                     setState(() {
                                       showConfirmation = false;
                                     });
-                                    Future.delayed(Duration(seconds: 3), () {
+                                    Future.delayed(const Duration(seconds: 3),
+                                        () {
                                       Navigator.pushReplacement(
                                         context,
                                         MaterialPageRoute(
-                                          builder: (context) => MyApp(),
+                                          builder: (context) => Games(),
                                         ),
                                       );
                                     });
                                   },
                                 ),
-                                SizedBox(width: 4),
-                                Text(
+                                const SizedBox(width: 4),
+                                const Text(
                                   'Oui',
                                   style: TextStyle(color: Colors.black),
                                 ),
@@ -288,8 +289,8 @@ class _QuizScreenState extends State<QuizScreen> {
                                     Navigator.of(context).pop();
                                   },
                                 ),
-                                SizedBox(width: 4),
-                                Text(
+                                const SizedBox(width: 4),
+                                const Text(
                                   'Non',
                                   style: TextStyle(color: Colors.black),
                                 ),
@@ -300,7 +301,7 @@ class _QuizScreenState extends State<QuizScreen> {
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
                     alignment: Alignment.centerLeft,
                     child: Image.asset(
                       "assets/pages/games/characters/nihel.png",
@@ -316,5 +317,4 @@ class _QuizScreenState extends State<QuizScreen> {
       },
     );
   }
-
 }

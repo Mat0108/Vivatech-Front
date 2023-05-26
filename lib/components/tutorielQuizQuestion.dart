@@ -27,7 +27,7 @@ class TutorialQuizWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Center(
+        const Center(
           child: Text(
             "Question 1/10",
             style: TextStyle(
@@ -37,7 +37,7 @@ class TutorialQuizWidget extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         Container(
@@ -50,7 +50,7 @@ class TutorialQuizWidget extends StatelessWidget {
           ),
           child: Text(
             questionText,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 18,
               fontWeight: FontWeight.w700,
@@ -63,19 +63,21 @@ class TutorialQuizWidget extends StatelessWidget {
 
   Widget _answerList(BuildContext context) {
     return Column(
-      children: answerOptions.map((option) => _answerButton(context, option)).toList(),
+      children: answerOptions
+          .map((option) => _answerButton(context, option))
+          .toList(),
     );
   }
 
   Widget _answerButton(BuildContext context, String answerOption) {
     return Container(
       width: MediaQuery.of(context).size.width * 0.75,
-      margin: EdgeInsets.symmetric(vertical: 20),
+      margin: const EdgeInsets.symmetric(vertical: 20),
       height: 48,
       child: ElevatedButton(
         child: Text(answerOption),
         style: ElevatedButton.styleFrom(
-          shape: StadiumBorder(),
+          shape: const StadiumBorder(),
           primary: Colors.purple,
           onPrimary: Colors.white,
         ),
@@ -87,15 +89,15 @@ class TutorialQuizWidget extends StatelessWidget {
   Widget _nextButton(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width * 0.5,
-      margin: EdgeInsets.symmetric(vertical: 20),
+      margin: const EdgeInsets.symmetric(vertical: 20),
       height: 48,
       child: ElevatedButton(
         child: Text(
           "Suivant",
-          style: TextStyle(fontWeight: FontWeight.w600),
+          style: const TextStyle(fontWeight: FontWeight.w600),
         ),
         style: ElevatedButton.styleFrom(
-          shape: StadiumBorder(),
+          shape: const StadiumBorder(),
           primary: Colors.pink,
           onPrimary: Colors.white,
         ),

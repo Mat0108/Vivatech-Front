@@ -8,7 +8,7 @@ Padding PadDescription(String text) {
       children: [
         Text(
           text,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.white,
             fontSize: 16,
           ),

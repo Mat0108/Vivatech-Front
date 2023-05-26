@@ -5,10 +5,10 @@ Row RowPink(String text) {
     children: [
       Center(
         child: Container(
-          margin: EdgeInsets.only(left: 10, top: 10),
+          margin: const EdgeInsets.only(left: 10, top: 10),
           width: 100,
           height: 30,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.pink,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(10.0),
@@ -20,7 +20,7 @@ Row RowPink(String text) {
           child: Center(
             child: Text(
               text,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white,
                 fontSize: 16,
               ),

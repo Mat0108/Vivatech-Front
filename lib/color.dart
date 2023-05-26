@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
 
-// final ThemeData CompanyThemeData = new ThemeData(
-//     brightness: Brightness.light,
-//     primaryColorBrightness: Brightness.light,
-//     accentColor: CompanyColors.black[500],
-//     accentColorBrightness: Brightness.light);
-
 class VivatechColor {
-  VivatechColor._(); // this basically makes it so you can instantiate this class
+  VivatechColor._();
 
   static const Color white = Colors.white;
   static const Color black = Colors.black;

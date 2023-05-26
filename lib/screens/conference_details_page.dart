@@ -18,7 +18,6 @@ class _ConferenceDetailsPageState extends State<ConferenceDetailsPage> {
 
   @override
   Widget build(BuildContext context) {
-// Instanciation des présentateurs
     Presenter presenter51 =
         Presenter("Bruno BRITSCH", 'assets/conference/Metaverse/Tim Gould.png');
     Presenter presenter52 =
@@ -58,7 +57,6 @@ class _ConferenceDetailsPageState extends State<ConferenceDetailsPage> {
     Presenter presenter69 = Presenter(
         "Caroline Ramade", 'assets/conference/Metaverse/Caroline Ramade.png');
 
-// Création des sessions pour chaque jour
     Session session23 = Session("12:00 - 12:30", [presenter51],
         "La nouvelle économie de propriété du Web3 et la redéfinition des programmes CRM");
     Session session24 = Session("10:45 - 11:15", [presenter52, presenter53],
@@ -82,18 +80,15 @@ class _ConferenceDetailsPageState extends State<ConferenceDetailsPage> {
     Session session31 = Session("14:00 - 14:20", [presenter68, presenter69],
         "De la Start-up Nation à l'Impact Nation ?");
 
-// Création des jours avec leurs titres et sessions
     Day day1_Metaverse = Day("Mercredi 14", [session23, session24, session25]);
     Day day2_Metaverse = Day("Vendredi 16", [session26, session27, session28]);
     Day day3_Metaverse = Day("Samedi 17", [session29, session30, session31]);
 
-// Création de l'objet Conference avec le programme complet
     Conference conferenceMetaverse = Conference(
-      "Économie, jeux et métaverse ",
-      [day1_Metaverse, day2_Metaverse, day3_Metaverse],
-      "web",
-      "assets/conference/Metaverse/metaverce_image.png"
-    );
+        "Économie, jeux et métaverse ",
+        [day1_Metaverse, day2_Metaverse, day3_Metaverse],
+        "web",
+        "assets/conference/Metaverse/metaverce_image.png");
 
     double width = MediaQuery.of(context).size.width;
     return Container(

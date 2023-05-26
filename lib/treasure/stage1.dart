@@ -7,14 +7,6 @@ const List<double> list = <double>[1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
 class TreasureStage1 extends StatefulWidget {
   const TreasureStage1({super.key});
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
 
   @override
   State<TreasureStage1> createState() => _TreasureStage1State();

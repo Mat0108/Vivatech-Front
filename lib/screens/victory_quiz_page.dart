@@ -3,21 +3,21 @@ import '../components/ResultComponent.dart';
 import '../components/background.dart';
 import '../components/topNavigation.dart';
 
-class DefeatPage extends StatelessWidget {
+class VictoryPage extends StatelessWidget {
   final int score;
 
-  DefeatPage(this.score);
+  VictoryPage(this.score);
 
   @override
   Widget build(BuildContext context) {
     return BackgroundComponent(
-            content: Column(children: [
+        content: Column(children: [
       TopNavigationComponent(currentPage: "quiz"),
       ResultComponent(
         ruselt:
-            "Dommage que vous n’avez obtenu que  ${score} sur 10. Essayez encore votre chance la prochaine fois! ",
+            "Félicitations! Vous avez obtenu  ${score} sur 10. À la prochaine !",
         gameName: 'quiz',
-        display: false,
+        display: true,
       )
     ]));
   }

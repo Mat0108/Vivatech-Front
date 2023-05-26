@@ -5,7 +5,7 @@ import '../models/conference.dart';
 class SessionCard extends StatelessWidget {
   final Session session;
 
-  SessionCard({required this.session});
+  const SessionCard({super.key, required this.session});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class SessionCard extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         border: Border.all(
-          color: Color(0xFF00FF00),
+          color: const Color(0xFF00FF00),
           width: 2.0,
         ),
         borderRadius: BorderRadius.circular(8.0),
@@ -26,21 +26,21 @@ class SessionCard extends StatelessWidget {
             children: [
               Text(
                 session.name,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 10),
-              Text(
+              const SizedBox(height: 10),
+              const Text(
                 'Présentateurs:',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 5),
+              const SizedBox(height: 5),
               Container(
-                margin: EdgeInsets.only(top: 10),
+                margin: const EdgeInsets.only(top: 10),
                 child: Column(
                   children: [
                     for (var i = 0; i < session.presenters.length; i += 3)
@@ -55,36 +55,31 @@ class SessionCard extends StatelessWidget {
                                 Row(
                                   children: [
                                     Container(
-                                      margin: EdgeInsets.all(5),
-                                      width: width/6,
-                                      height: width/6,
-                                      child: myPic(5, session.presenters[j].imageURL),
+                                      margin: const EdgeInsets.all(5),
+                                      width: width / 6,
+                                      height: width / 6,
+                                      child: myPic(
+                                          5, session.presenters[j].imageURL),
                                     ),
                                   ],
                                 ),
-
                                 Row(
                                   children: [
                                     Container(
-                                      margin: EdgeInsets.only(top: 5),
-                                      width: width/6,
-                                      height: width/6,
+                                      margin: const EdgeInsets.only(top: 5),
+                                      width: width / 6,
+                                      height: width / 6,
                                       child: Text(
                                         session.presenters[j].name,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           color: Colors.black,
                                         ),
                                       ),
                                     )
                                   ],
                                 )
-
                               ],
                             ),
-
-
-
-
                         ],
                       )
                   ],

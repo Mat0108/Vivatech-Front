@@ -21,23 +21,15 @@ const List<String> list = <String>[
 class TreasureStage2 extends StatefulWidget {
   const TreasureStage2({super.key});
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
   @override
   State<TreasureStage2> createState() => _TreasureStage2State();
 }
 
 class _TreasureStage2State extends State<TreasureStage2> {
-  @override
   bool showmap = false;
   String dropdown = list.first;
+
+  @override
   Widget build(BuildContext context) {
     return Container(
         width: 400,
@@ -92,7 +84,8 @@ class _TreasureStage2State extends State<TreasureStage2> {
                     decoration: BoxDecoration(
                         color: VivatechColor.white,
                         border: Border.all(color: VivatechColor.blue, width: 3),
-                        borderRadius: BorderRadius.all(Radius.circular(90))),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(90))),
                     child: Ink(
                       child: IconButton(
                           iconSize: 30,
