@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:vivatech/components/color.dart';
 import 'package:vivatech/treasure/treasure.dart';
-import '../color.dart';
 
 const List<String> listA = <String>[
   "A",

@@ -85,7 +85,7 @@ class TopNavigationComponent extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: const Color.fromRGBO(255, 255, 255, 0.7),
                     border: Border.all(
-                        color: Color.fromRGBO(0, 255, 255, 1),
+                        color: const Color.fromRGBO(0, 255, 255, 1),
                         width: 3,
                         style: BorderStyle.solid)),
                 child: Text(textNav,

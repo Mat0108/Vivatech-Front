@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:vivatech/components/color.dart';
 import 'package:vivatech/treasure/stage1.dart';
 import 'package:vivatech/treasure/stage2.dart';
-import '../color.dart';
 import 'dart:developer';
 import 'package:flutter/foundation.dart';
 

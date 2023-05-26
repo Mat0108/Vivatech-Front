@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class VivatechColor {
-  VivatechColor._(); // this basically makes it so you can instantiate this class
+  VivatechColor._();
 
   static const Color white = Colors.white;
   static const Color black = Colors.black;
