@@ -30,10 +30,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
   provider: ^6.0.5
+  cupertino_icons: ^1.0.2
   qr_flutter: ^4.0.1
   qr_code_scanner: ^1.0.1
+  carousel_slider: ^4.2.1
+  animated_text_kit: ^4.2.2
+  ar_flutter_plugin: ^0.6.2
 
 dev_dependencies:
   flutter_test:
@@ -41,20 +44,29 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_native_splash: ^2.0.1+1
   flutter_launcher_icons: ^0.13.1
-
+  onboarding_animation: any
 
 # The following section is specific to Flutter packages.
 flutter:
+
   uses-material-design: true
   assets:
+     - assets/
      - assets/background/
      - assets/icons/
      - assets/pages/home/
      - assets/pages/games/
      - assets/pages/games/characters/
      - assets/pages/conferences/
+     - assets/pages/conferences/FoodTech/
+     - assets/pages/conferences/Cybersecurity/
+     - assets/pages/conferences/DeepTech/
+     - assets/pages/conferences/Metaverse/
+     - assets/pages/conferences/IA/
      - assets/pages/stands/
      - assets/pages/pass/
+     - assets/pages/ar/
+   
   fonts:
      - family: MuseoSans
        fonts:
@@ -70,6 +82,7 @@ flutter:
            weight: 900
 
 
+
 #custom splash screen
 flutter_native_splash:
   image: assets/splashscreen/icon.png
@@ -79,9 +92,8 @@ flutter_native_splash:
 
 
 #custom launch icon
-flutter_icons:
+flutter_launcher_icons:
   android: launcher_icon
   ios: true
   remove_alpha_ios: true
   image_path: assets/icons/icon.png
-  min_sdk_android: 21
