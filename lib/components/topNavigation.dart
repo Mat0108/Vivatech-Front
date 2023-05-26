@@ -1,4 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors, prefer_final_fields, avoid_print
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart';
@@ -85,7 +84,7 @@ class _TopNavigationComponentState extends State<TopNavigationComponent> {
       Row(children: [
         Container(
             alignment: Alignment.topCenter,
-            margin: EdgeInsets.fromLTRB(20, 40, 20, 40),
+            margin: const EdgeInsets.fromLTRB(20, 40, 20, 40),
             child: Row(children: [
               Container(
                   height: 70,
@@ -113,15 +112,15 @@ class _TopNavigationComponentState extends State<TopNavigationComponent> {
                           child: Image.asset(imageNav, fit: BoxFit.contain))
                       : Padding(
                           padding: widget.currentPage == "pass"
-                              ? EdgeInsets.all(2)
-                              : EdgeInsets.all(8),
+                              ? const EdgeInsets.all(2)
+                              : const EdgeInsets.all(8),
                           child: Image.asset(datasPage["image"]))),
               Container(
                 width: MediaQuery.of(context).size.width * 0.7,
-                margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                padding: EdgeInsets.all(12),
+                margin: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                    color: Color.fromRGBO(255, 255, 255, 0.7),
+                    color: const Color.fromRGBO(255, 255, 255, 0.7),
                     border: Border.all(
                         color: Color.fromRGBO(
                             int.parse(datasPage["border-color"][0]),
@@ -131,7 +130,7 @@ class _TopNavigationComponentState extends State<TopNavigationComponent> {
                         width: 3,
                         style: BorderStyle.solid)),
                 child: Text(datasPage["title"].toUpperCase(),
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Color.fromRGBO(85, 8, 160, 0.7),
                         fontSize: 22,
                         fontFamily: "MuseoSans",

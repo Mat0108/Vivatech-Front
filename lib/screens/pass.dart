@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors, prefer_final_fields, avoid_print
 import 'package:flutter/material.dart';
+import 'package:flutter_shake_animated/flutter_shake_animated.dart';
 import 'package:vivatech/components/background.dart';
 import 'package:vivatech/components/pass/qrCodeGenerator.dart';
 import 'package:vivatech/components/topNavigation.dart';
@@ -14,26 +15,32 @@ class _PassState extends State<Pass> {
   bool _isClicked = false;
 
   Widget _renderPassWidget() {
-    return Container(
-        key: Key("first"),
-        alignment: Alignment.center,
-        height: MediaQuery.of(context).size.height * 0.65,
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Image.asset(
-            "assets/pages/home/pass.png",
-            width: MediaQuery.of(context).size.width * 0.9,
-          ),
-          Padding(
-            padding: EdgeInsets.all(15.0),
-            child: Text("Cliquez le billet pour afficher le QR Code",
-                style: TextStyle(
-                    color: Color.fromRGBO(255, 255, 255, 0.7),
-                    fontSize: 15,
-                    fontFamily: "MuseoSans",
-                    fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center),
-          )
-        ]));
+    return Column(children: [
+      ShakeWidget(
+          duration: Duration(seconds: 5),
+          shakeConstant: ShakeRotateConstant1(),
+          autoPlay: true,
+          enableWebMouseHover: true,
+          child: Container(
+              key: Key("first"),
+              alignment: Alignment.center,
+              height: MediaQuery.of(context).size.height * 0.6,
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      "assets/pass/pass.png",
+                      width: MediaQuery.of(context).size.width * 0.9,
+                    )
+                  ]))),
+      Text("Cliquez le billet pour afficher le QR Code",
+          style: TextStyle(
+              color: Color.fromRGBO(255, 255, 255, 0.7),
+              fontSize: 15,
+              fontFamily: "MuseoSans",
+              fontWeight: FontWeight.bold),
+          textAlign: TextAlign.center),
+    ]);
   }
 
   Widget _renderQrCodeWidget() {

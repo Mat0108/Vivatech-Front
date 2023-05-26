@@ -123,4 +123,8 @@ class _QuitGameContainerComponentState
               )
             ])));
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 12b5b1c7a0be6cfc16558701fab61f78c964f6fc

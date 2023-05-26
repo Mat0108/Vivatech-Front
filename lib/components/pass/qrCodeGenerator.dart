@@ -11,13 +11,12 @@ class QrCodeGenerator extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.transparent,
-      body: Container(
-          child: Center(
-              child: QrImageView(
+      body: Center(
+          child: QrImageView(
         data: url,
         version: QrVersions.auto,
         size: 200.0,
-      ))),
+      )),
     );
   }
 }
