@@ -1,7 +1,12 @@
 .DS_Store
 .dart_tool
 build/*
-.idea
+/.idea/*
+# Logs
+*.log
+*.log.*
+*.txt
 .flutter-plugins
 .flutter-plugins-dependencies
 .vscode
+

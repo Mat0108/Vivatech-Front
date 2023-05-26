@@ -1,6 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors, prefer_final_fields, avoid_print
 import 'package:flutter/material.dart';
 import 'package:flutter_shake_animated/flutter_shake_animated.dart';
+import 'package:vivatech/components/background.dart';
+import 'package:vivatech/components/qrCodeGenerator.dart';
+import 'package:vivatech/components/topNavigation.dart';
 
 class Pass extends StatefulWidget {
   @override
@@ -9,7 +12,7 @@ class Pass extends StatefulWidget {
 
 class _PassState extends State<Pass> {
   int _widgetId = 1;
-  bool clicked = false;
+  bool _isClicked = false;
 
   Widget _renderPassWidget() {
     return Column(children: [
@@ -41,11 +44,22 @@ class _PassState extends State<Pass> {
   }
 
   Widget _renderQrCodeWidget() {
+    final arguments = (ModalRoute.of(context)?.settings.arguments ??
+        <String, dynamic>{}) as Map;
+
     return Container(
         key: Key("second"),
         alignment: Alignment.center,
         height: MediaQuery.of(context).size.height * 0.65,
-        child: Image.asset("assets/pass/qrcode.png"));
+        child: Container(
+            width: 200,
+            height: 200,
+            decoration: BoxDecoration(
+                color: Colors.white,
+                border: Border.all(
+                    color: Colors.white, width: 2, style: BorderStyle.solid),
+                borderRadius: BorderRadius.circular(10)),
+            child: QrCodeGenerator(url: arguments["qrCode"])));
   }
 
   Widget _renderWidget() {
@@ -54,11 +68,11 @@ class _PassState extends State<Pass> {
 
   void _updateWidget() {
     setState(() {
-      if (!clicked) {
+      if (!_isClicked) {
         _widgetId = _widgetId == 1 ? 2 : 1;
-        clicked = true;
+        _isClicked = true;
       } else {
-        clicked = false;
+        _isClicked = false;
       }
     });
   }
@@ -66,53 +80,10 @@ class _PassState extends State<Pass> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-      //width: MediaQuery.of(context).size.width,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage("assets/background/bg-gradient-vivatech-2.png"),
-          fit: BoxFit.cover,
-        ),
-      ),
-      child: Column(children: [
-        Row(children: [
-          Container(
-            alignment: Alignment.topCenter,
-            margin: EdgeInsets.fromLTRB(20, 40, 20, 40),
-            child: Row(
-              children: [
-                Container(
-                    height: 70,
-                    width: 70,
-                    decoration: BoxDecoration(
-                        color: Color.fromRGBO(0, 255, 255, 1),
-                        border: Border.all(
-                            color: Color.fromRGBO(85, 8, 160, 0.3),
-                            width: 2,
-                            style: BorderStyle.solid),
-                        borderRadius: BorderRadius.circular(100)),
-                    child: Image.asset("assets/pass/pass.png")),
-                Container(
-                  width: MediaQuery.of(context).size.width * 0.7,
-                  margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                  padding: EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                      color: Color.fromRGBO(255, 255, 255, 0.7),
-                      border:
-                          Border.all(color: Color.fromRGBO(0, 255, 255, 1))),
-                  child: Text("Mon Pass",
-                      style: TextStyle(
-                          color: Color.fromRGBO(85, 8, 160, 0.7),
-                          fontSize: 22,
-                          fontFamily: "MuseoSans",
-                          fontWeight: FontWeight.bold),
-                      textAlign: TextAlign.center),
-                ),
-              ],
-            ),
-          ),
-        ]),
-        GestureDetector(
+        body: BackgroundComponent(
+      content: TopNavigationComponent(
+        currentPage: "pass",
+        content: GestureDetector(
           child: AnimatedSwitcher(
               duration: const Duration(milliseconds: 300),
               transitionBuilder: (Widget child, Animation<double> animation) =>
@@ -120,7 +91,7 @@ class _PassState extends State<Pass> {
               child: _renderWidget()),
           onTap: () => {_updateWidget()},
         ),
-      ]),
+      ),
     ));
   }
 }
