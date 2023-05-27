@@ -2,3 +2,11 @@
 .dart_tool
 build/*
 /.idea/*
+# Logs
+*.log
+*.log.*
+*.txt
+.flutter-plugins
+.flutter-plugins-dependencies
+.vscode
+

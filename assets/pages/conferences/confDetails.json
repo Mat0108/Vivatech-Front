@@ -1,0 +1,577 @@
+[
+{
+  "name": "AI",
+  "program": [
+    {
+      "title": "Mercredi 14",
+      "sessions": [
+        {
+          "time": "14:00 - 14:25",
+          "presenters": [
+            {
+              "name": "Quentin Clark",
+              "imageURL": "assets/pages/conferences/IA/Quentin_Clark.png"
+            },
+            {
+              "name": "Joelle Pineau",
+              "imageURL": "assets/pages/conferences/IA/Joelle_Pineau.png"
+            }
+          ],
+          "name": "Tendances IA: du laboratoire au marché"
+        },
+        {
+          "time": "15:20 - 16:05",
+          "presenters": [
+            {
+              "name": "Jonas Andrulis",
+              "imageURL": "assets/pages/conferences/IA/Jonas_Andrulis.png"
+            },
+            {
+              "name": "Charlie Beckett",
+              "imageURL": "assets/pages/conferences/IA/Charlie_Beckett.png"
+            },
+            {
+              "name": "Gina Neff",
+              "imageURL": "assets/pages/conferences/IA/Gina_Neff.png"
+            },
+            {
+              "name": "François-Xavier Pierrel",
+              "imageURL": "assets/pages/conferences/IA/François_Xavier_Pierrel.png"
+            }
+          ],
+          "name": "(Quand) l'IA générative prendra-t-elle le relais de votre travail ?"
+        },
+        {
+          "time": "15:40 - 16:25",
+          "presenters": [
+            {
+              "name": "Hanel Baveja",
+              "imageURL": "assets/pages/conferences/IA/Hanel_Baveja.png"
+            },
+            {
+              "name": "Carolina Bessega",
+              "imageURL": "assets/pages/conferences/IA/Carolina_Bessega.png"
+            },
+            {
+              "name": "Bertrand Pailhès",
+              "imageURL": "assets/pages/conferences/IA/Bertrand_Pailhès.png"
+            },
+            {
+              "name": "Jennifer L. Schenker",
+              "imageURL": "assets/pages/conferences/IA/Jennifer_L. Schenker.png"
+            },
+            {
+              "name": "Françoise Soulié-Fogelman",
+              "imageURL": "assets/pages/conferences/IA/Françoise_Soulié-Fogelman.png"
+            }
+          ],
+          "name": "Ubiquité de l'IA: le bon, le mauvais et le truand"
+        },
+        {
+          "time": "16:10 - 16:25",
+          "presenters": [
+            {
+              "name": "Tobias Hann",
+              "imageURL": "assets/pages/conferences/IA/Tobias_Hann.png"
+            }
+          ],
+          "name": "Données synthétiques: trop belles pour être vraies?"
+        },
+        {
+          "time": "16:30 - 17:05",
+          "presenters": [
+            {
+              "name": "Jennifer L. Schenker",
+              "imageURL": "assets/pages/conferences/IA/Jennifer_L. Schenker.png"
+            },
+            {
+              "name": "Kay Firth-Butterfield",
+              "imageURL": "assets/pages/conferences/IA/Kay_Firth-Butterfield.png"
+            },
+            {
+              "name": "Renaud Allioux",
+              "imageURL": "assets/pages/conferences/IA/Renaud_Allioux.png"
+            }
+          ],
+          "name": "Whodunnit: IA, éthique et responsabilité"
+        }
+      ]
+    },
+    {
+      "title": "Vendredi 16",
+      "sessions": [
+        {
+          "time": "12:30 - 13:00",
+          "presenters": [
+            {
+              "name": "Grégory FLORIN",
+              "imageURL": "assets/pages/conferences/IA/Grégory_FLORIN.jpg"
+            },
+            {
+              "name": "Arnaud LAUGA",
+              "imageURL": "assets/pages/conferences/IA/Arnaud_LAUGA.jpg"
+            }
+          ],
+          "name": "Performics Vortex - Innovation SEO"
+        }
+      ]
+    }
+  ],
+  "theme":"AI",
+  "imageURL":"assets/pages/conferences/IA/IA_image.jpeg"
+
+
+},
+
+
+
+
+{
+  "name": "FoodTech",
+  "program": [
+    {
+      "title": "Jeudi 15",
+      "sessions": [
+        {
+          "time": "10:00 - 10:45",
+          "presenters": [
+            {
+              "name": "Roxanne Crossley",
+              "imageURL": "assets/pages/conferences/FoodTech/Roxanne Crossley.png"
+            },
+            {
+              "name": "Tina Halborg",
+              "imageURL": "assets/pages/conferences/FoodTech/Tina Halborg.png"
+            }
+          ],
+          "name": "Nourriture: du gaspillage à l'opportunité"
+        },
+        {
+          "time": "10:50 - 11:35",
+          "presenters": [
+            {
+              "name": "Isabel Fernandez",
+              "imageURL": "assets/pages/conferences/FoodTech/Isabel Fernandez.png"
+            },
+            {
+              "name": "Isabella Iglesias-Musachio",
+              "imageURL": "assets/pages/conferences/FoodTech/Isabella Iglesias-Musachio.png"
+            },
+            {
+              "name": "Isabelle Toledano-Koutsouris",
+              "imageURL": "assets/pages/conferences/FoodTech/Isabelle Toledano-Koutsouris.png"
+            },
+            {
+              "name": "Didier Toubia",
+              "imageURL": "assets/pages/conferences/FoodTech/Didier Toubia.png"
+            }
+          ],
+          "name": "Goûter l'avenir: diversifier les sources de protéines"
+        },
+        {
+          "time": "11:40 - 12:15",
+          "presenters": [
+            {
+              "name": "Patrick Hennig",
+              "imageURL": "assets/pages/conferences/FoodTech/Patrick Hennig.png"
+            },
+            {
+              "name": "Anton Soulier",
+              "imageURL": "assets/pages/conferences/FoodTech/Anton Soulier.png"
+            },
+            {
+              "name": "Thiemo van Spellen",
+              "imageURL": "assets/pages/conferences/FoodTech/Thiemo van Spellen.png"
+            }
+          ],
+          "name": "FoodTechRéinventer les restaurants: de la commande à la livraison"
+        }
+      ]
+    },
+    {
+      "title": "Samedi 17",
+      "sessions": [
+        {
+          "time": "11:30 - 12:05",
+          "presenters": [
+            {
+              "name": "Grégoire Carlier",
+              "imageURL": "assets/pages/conferences/FoodTech/Grégoire Carlier.png"
+            },
+            {
+              "name": "Fabien Gastou",
+              "imageURL": "assets/pages/conferences/FoodTech/Fabien Gastou.png"
+            }
+          ],
+          "name": "Zéro gaspi : du déchet à l'opportunité"
+        },
+        {
+          "time": "12:10 - 12:45",
+          "presenters": [
+            {
+              "name": "Anaïs Maury",
+              "imageURL": "assets/pages/conferences/FoodTech/Anaïs Maury.png"
+            }
+          ],
+          "name": "FoodTech Une bouchée du futur : que mangerons-nous demain ?"
+        }
+      ]
+    }
+  ],
+  "theme":"FoodTech",
+  "imageURL":      "assets/pages/conferences/FoodTech/foodTech_image.png"
+
+},
+
+
+
+
+{
+  "name": "DeepTech",
+  "program": [
+    {
+      "title": "Jeudi 15",
+      "sessions": [
+        {
+          "time": "10:00 - 10:15",
+          "presenters": [
+            {
+              "name": "Anne-Sophie CARRESE",
+              "imageURL": "assets/pages/conferences/DeepTech/Anne-Sophie CARRESE.png"
+            }
+          ],
+          "name": "Tendances (in)attendues: plonger dans la Deeptech"
+        },
+        {
+          "time": "10:45 - 11:20",
+          "presenters": [
+            {
+              "name": "Dr. Ramses Alcaide",
+              "imageURL": "assets/pages/conferences/DeepTech/Dr. Ramses Alcaide.png"
+            },
+            {
+              "name": "Bill Liao",
+              "imageURL": "assets/pages/conferences/DeepTech/Bill Liao.png"
+            },
+            {
+              "name": "Gabriela Ramos",
+              "imageURL": "assets/pages/conferences/DeepTech/Gabriela Ramos.png"
+            }
+          ],
+          "name": "Future Living: Éthique et opportunités du biohacking"
+        },
+        {
+          "time": "11:25 - 12:00",
+          "presenters": [
+            {
+              "name": "Françoise Baylis",
+              "imageURL": "assets/pages/conferences/DeepTech/Françoise Baylis.png"
+            },
+            {
+              "name": "Pierre Côte",
+              "imageURL": "assets/pages/conferences/DeepTech/Pierre Côte.png"
+            },
+            {
+              "name": "Catherine Feuillet",
+              "imageURL": "assets/pages/conferences/DeepTech/Catherine Feuillet.png"
+            }
+          ],
+          "name": "Copier, coller: que peut (et doit) faire l'édition de gènes?"
+        }
+      ]
+    },
+    {
+      "title": "Samedi 17",
+      "sessions": [
+        {
+          "time": "11:30 - 12:00",
+          "presenters": [
+            {
+              "name": "Boris LANGLOIS",
+              "imageURL": "assets/pages/conferences/DeepTech/Françoise Baylis.png"
+            },
+            {
+              "name": "Séverine NUBEL",
+              "imageURL": "assets/pages/conferences/DeepTech/Séverine NUBEL.png"
+            }
+          ],
+          "name": "Orange - Zone sécurisée"
+        }
+      ]
+    }
+  ],
+  "theme":"DeepTech",
+  "imageURL":"assets/pages/conferences/DeepTech/DeepTech_image.jpeg"
+},
+
+
+
+{
+  "name": "La cyber-sécurité",
+  "days": [
+    {
+      "title": "Mercredi 14",
+      "sessions": [
+        {
+          "time": "16:00 - 16:30",
+          "presenters": [
+            {
+              "name": "William Xiong",
+              "imageURL": "assets/pages/conferences/Cybersecurity/Philippe Botteri.png"
+            }
+          ],
+          "name": "Alibaba Digital Innovation pour la durabilité"
+        }
+      ]
+    },
+    {
+      "title": "Jeudi 15",
+      "sessions": [
+        {
+          "time": "14:50 - 15:25",
+          "presenters": [
+            {
+              "name": "Philippe Botteri",
+              "imageURL": "assets/pages/conferences/Cybersecurity/Philippe Botteri.png"
+            },
+            {
+              "name": "Christina Cacioppo",
+              "imageURL": "assets/pages/conferences/Cybersecurity/Christina Cacioppo.png"
+            },
+            {
+              "name": "Solange Viegas Dos Reis",
+              "imageURL": "assets/pages/conferences/Cybersecurity/Solange Viegas Dos Reis.png"
+            }
+          ],
+          "name": "Tendances en matière de cybersécurité: la sécurité dans le cloud"
+        },
+        {
+          "time": "15:30 - 15:50",
+          "presenters": [
+            {
+              "name": "Guy-Philippe Goldstein",
+              "imageURL": "assets/pages/conferences/Cybersecurity/Guy-Philippe Goldstein.png"
+            },
+            {
+              "name": "Andres Sutt",
+              "imageURL": "assets/pages/conferences/Cybersecurity/Andres Sutt.png"
+            }
+          ],
+          "name": "Cyber-résilience : Bâtir des sociétés sûres"
+        },
+        {
+          "time": "15:55 - 16:55",
+          "presenters": [
+            {
+              "name": "Mitchell Amador",
+              "imageURL": "assets/pages/conferences/Cybersecurity/Mitchell Amador.png"
+            },
+            {
+              "name": "Eleanor Fairford",
+              "imageURL": "assets/pages/conferences/Cybersecurity/Eleanor Fairford.png"
+            },
+            {
+              "name": "Paula Januszkiewicz",
+              "imageURL": "assets/pages/conferences/Cybersecurity/Paula Januszkiewicz.png"
+            }
+          ],
+          "name": "Économie de la cybercriminalité: comprendre les chiffres"
+        }
+      ]
+    },
+    {
+      "title": "Vendredi 16",
+      "sessions": [
+        {
+          "time": "10:55 - 10:35",
+          "presenters": [
+            {
+              "name": "Mitchell Amador",
+              "imageURL": "assets/pages/conferences/Cybersecurity/Mitchell Amador.png"
+            },
+            {
+              "name": "Marieke Flament",
+              "imageURL": "assets/pages/conferences/Cybersecurity/Marieke Flament.png"
+            },
+            {
+              "name": "Pascal Gauthier",
+              "imageURL": "assets/pages/conferences/Cybersecurity/Pascal Gauthier.png"
+            }
+          ],
+          "name": "La crypto est-elle toujours digne de confiance"
+        },
+        {
+          "time": "16:00 - 16:30",
+          "presenters": [
+            {
+              "name": "Vladimir Tsaganov",
+              "imageURL": "assets/pages/conferences/Cybersecurity/Andres Sutt.png"
+            }
+          ],
+          "name": "Autonomiser la transformation de la vente au détail: expérience de Double11 et meilleures pratiques"
+        }
+      ]
+    }
+  ],
+  "theme":"La cyber-sécurité",
+  "imageURL":"assets/pages/conferences/Cybersecurity/cybersecurity_image.png"
+},
+
+
+
+
+{
+  "name": "Économie, jeux et métaverse",
+  "program": [
+    {
+      "title": "Mercredi 14",
+      "sessions": [
+        {
+          "time": "12:00 - 12:30",
+          "presenters": [
+            {
+              "name": "Bruno BRITSCH",
+              "imageURL": "assets/pages/conferences/Metaverse/Brandon Millman.png"
+            }
+          ],
+          "name": "La nouvelle économie de propriété du Web3 et la redéfinition des programmes CRM"
+        },
+        {
+          "time": "10:45 - 11:15",
+          "presenters": [
+            {
+              "name": "Timo Gross",
+              "imageURL": "assets/pages/conferences/Metaverse/Timo Gross.png"
+            },
+            {
+              "name": "Arnaud Santin",
+              "imageURL": "assets/pages/conferences/Metaverse/Arnaud Santin.png"
+            }
+          ],
+          "name": "Performance sportive : utiliser les données pour gagner"
+        },
+        {
+          "time": "10:00 - 10:45",
+          "presenters": [
+            {
+              "name": "Dimitri Carbonnelle",
+              "imageURL": "assets/pages/conferences/Metaverse/Dimitri Carbonnelle.png"
+            },
+            {
+              "name": "Tim Gould",
+              "imageURL": "assets/pages/conferences/Metaverse/Tim Gould.png"
+            },
+            {
+              "name": "Ann Mettler",
+              "imageURL": "assets/pages/conferences/Metaverse/Ann Mettler.png"
+            }
+          ],
+          "name": "L'énergie de l'Europe: de la crise au catalyseur"
+        }
+      ]
+    },
+    {
+      "title": "Vendredi 16",
+      "sessions": [
+        {
+          "time": "10:30 - 11:00",
+          "presenters": [
+            {
+              "name": "Loïck Peyron",
+              "imageURL": "assets/pages/conferences/Metaverse/Loïck Peyron.png"
+            },
+            {
+              "name": "Alex Thomson",
+              "imageURL": "assets/pages/conferences/Metaverse/Alex Thomson.png"
+            }
+          ],
+          "name": "La dernière technologie de voile rendra-t-elle les skippers obsolètes ?"
+        },
+        {
+          "time": "10:40 - 11:05",
+          "presenters": [
+            {
+              "name": "Arianna Simpson",
+              "imageURL": "assets/pages/conferences/Metaverse/Arianna Simpson.png"
+            },
+            {
+              "name": "Brandon Millman",
+              "imageURL": "assets/pages/conferences/Metaverse/Brandon Millman.png"
+            }
+          ],
+          "name": "Le Web3 deviendra-t-il grand public?"
+        },
+        {
+          "time": "11:00 - 11:30",
+          "presenters": [
+            {
+              "name": "Catherine Chabaud",
+              "imageURL": "assets/pages/conferences/Metaverse/Catherine Chabaud.png"
+            },
+            {
+              "name": "Marc Van Peteghem",
+              "imageURL": "assets/pages/conferences/Metaverse/Marc Van Peteghem.png"
+            }
+          ],
+          "name": "La voile peut-elle vraiment soutenir la durabilité ?"
+        }
+      ]
+    },
+    {
+      "title": "Samedi 17",
+      "sessions": [
+        {
+          "time": "11:30 - 12:05",
+          "presenters": [
+            {
+              "name": "Grégoire Carlier",
+              "imageURL": "assets/pages/conferences/Metaverse/Grégoire Carlier.png"
+            },
+            {
+              "name": "Fabien Gastou",
+              "imageURL": "assets/pages/conferences/Metaverse/Fabien Gastou.png"
+            }
+          ],
+          "name": "Zéro gaspi : du déchet à l'opportunité"
+        },
+        {
+          "time": "12:15 - 13:00",
+          "presenters": [
+            {
+              "name": "Patrick Aufort",
+              "imageURL": "assets/pages/conferences/Metaverse/Patrick Aufort.png"
+            },
+            {
+              "name": "Claire Pétreault",
+              "imageURL": "assets/pages/conferences/Metaverse/Claire Pétreault.png"
+            },
+            {
+              "name": "Sophie Viger",
+              "imageURL": "assets/pages/conferences/Metaverse/Sophie Viger.png"
+            }
+          ],
+          "name": "Tech to Watch : Les métiers d'avenir (et comment s'y préparer)"
+        },
+        {
+          "time": "14:00 - 14:20",
+          "presenters": [
+            {
+              "name": "Thomas fonde Widoobiz",
+              "imageURL": "assets/pages/conferences/Metaverse/Thomas fonde Widoobiz.png"
+            },
+            {
+              "name": "Caroline Ramade",
+              "imageURL": "assets/pages/conferences/Metaverse/Caroline Ramade.png"
+            }
+          ],
+          "name": "De la Start-up Nation à l'Impact Nation ?"
+        }
+      ]
+    }
+  ],
+  "theme":"Économie, jeux et métaverse",
+  "imageURL":"assets/pages/conferences/Metaverse/metaverce_image.png"
+}
+  ]
+
+

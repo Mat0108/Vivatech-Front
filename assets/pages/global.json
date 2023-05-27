@@ -1,0 +1,110 @@
+{
+    "conferences": [
+        {
+            "conference": "Orange",
+            "image": "assets/pages/conferences/",
+            "color": [
+                "255", "255", "255", "0.7"
+            ],
+            "border-color": [
+                "0", "255", "0", "1"
+            ]
+        }
+    ],
+    "stands": [
+        {
+            "stand": "Orange",
+            "image": "assets/pages/conferences/",
+            "color": [
+                "255", "0", "129", "1"
+            ],
+            "border-color": [
+                "85", "8", "160", "0.2"
+            ]
+        }
+    ],
+    "pass": {
+        "title": "Mon Pass",
+        "image": "assets/pages/home/pass.png",
+        "color": [
+            "0", "255", "255", "1"
+        ],
+        "border-color": [
+            "85", "8", "160", "0.2"
+        ]
+    },
+    "scan-qrcode": {
+        "title": "Scanner QR Code",
+        "image": "assets/qr.png",
+        "color": [
+            "255", "255", "255", "0.3"
+        ],
+        "border-color": [
+            "0", "255", "0", "1"
+        ]
+    },
+    "cv": {
+        "title": "CV",
+        "image": "assets/pages/home/cv.png",
+        "color": [
+            "241", "87", "0", "1"
+        ],
+        "border-color": [
+            "85", "8", "160", "0.2"
+        ]
+    },
+    "games": {
+        "title": "Jeux",
+        "image": "assets/pages/home/game.png",
+        "color": [
+            "255", "255", "255", "0.7"
+        ],
+        "border-color": [
+            "0", "255", "0", "1"
+        ],
+        "game": [
+            {
+                "game-logic": {
+                    "title": "Jeu de logique",
+                    "image": "assets/pages/games/logic.png",
+                    "color": [
+                        "0", "255", "255", "1"
+                    ],
+                    "border-color": [
+                        "85", "8", "160", "0.2"
+                    ]
+                },
+                "game-memory": {
+                    "title": "Jeu de mémoire",
+                    "image": "assets/pages/games/memory.png",
+                    "color": [
+                        "0", "255", "0", "1"
+                    ],
+                    "border-color": [
+                        "85", "8", "160", "0.2"
+                    ]
+                },
+                "quiz": {
+                    "title": "Quiz",
+                    "image": "assets/pages/games/quiz.png",
+                    "color": [
+                        "161", "0", "155", "1"
+                    ],
+                    "border-color": [
+                        "85", "8", "160", "0.2"
+                    ]
+                },
+                "treasure": {
+                    "title": "Chasse au trésor",
+                    "image": "assets/pages/games/treasure.png",
+                    "color": [
+                        "255", "0", "129", "1"
+                    ],
+                    "border-color": [
+                        "85", "8", "160", "0.2"
+                    ]
+                }
+            }
+        ]
+    }
+}
